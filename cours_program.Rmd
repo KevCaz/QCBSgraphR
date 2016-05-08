@@ -1,0 +1,269 @@
+---
+documentclass : article
+font : 12pt
+lang: fr
+pappersize : a4paper
+title : Introduction à la programmation scientifique
+geometry: margin=1in
+linestretch: 1
+date: "`r format(Sys.time(), '%d %B %Y')`"
+header-includes:
+    - \usepackage{times}
+    - \usepackage{fancyhdr}
+    - \pagestyle{fancy}
+    - \fancyhead[CO,CE]{}
+    - \fancyfoot[CO,CE]{Introduction à la programmation scientifique}
+    - \fancyfoot[LE,RO]{\thepage}
+output:
+  pdf_document:
+      highlight: tango
+      toc: yes
+      toc_depth: 3
+      fig_caption: yes
+      keep_tex: yes
+      latex_engine: pdflatex
+      number_section: yes  
+
+---
+
+
+# Intro les grands
+
+
+
+
+
+Les grands points pour la publication
+définir des bonnes pratques ...
+
+=> refaire une fi
+
+par()
+  mar
+  lwd
+  lty
+  fig()
+
+multi figure => layout et fig
+
+automat
+
+plot()
+axis()
+box()
+title()
+points()
+lines()
+polygons()
+text()
+mtext()
+legend()
+
+
+
+
+pch
+lwd
+lty
+
+
+layout()
+
+barplot()
+boxplot()
+hist()
+
+
+=> couleur
+=> font()
+=> 
+
+
+
+
+Faire quelque chose de visuellement attrayant !
+Placement de plusieurs images par figures, légendes, etc.
+ la programmation en tant que telle.
+ mostly with ggplot. plotting multiple regressions by a grouping variable
+ Je ne connais pas assez les commandes disponibles.
+I find it hard to edit, as sometimes R is not user-friendly (in comparison to click/drag-and-drop softwar
+  Représentation simultanée de 3 (ou +) variables quantitatives corrélées entre elles. Automatisation de la production de figures.
+
+Getting axes to cooperate
+colorisation et graphiques 3 D
+
+ Difficulté a compléter toutes les détails dans R. Le temps est aussi un très grand facteur! C'est tjs trop long!
+I sometimes try to use ggplot but I find it confusing.
+ I have very limited knowledge of the resources available and struggle with high dimensionality
+ color schemes, standards for publication
+
+ rouver une façon claire de transmettre mes résultats ou une idée par le biais de graphiques.
+
+
+ know and use all the graphical applications
+
+=> Kev compléter liste
+ [QQ example](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
+
+
+
+\newpage
+
+#  Introduction à la programmation scientifique
+
+Programmer c'est trop cool !
+
+
+
+
+
+\newpage
+
+# L'interface R
+
+Ici les ressources ?
+
+## Historique
+
+## Types d'objets
+
+## Lire des fichiers
+
+## Écrire des fichiers
+
+## Faire des scripts
+
+```{r, echo=FALSE}
+knitr::read_chunk("./scripts/script1.R")
+```
+
+```{r first}
+<<script1A>>
+print(vec1)
+```
+
+deuxième bout de code
+
+```{r second}
+<<script1B>>
+```
+
+
+
+## Charger des librairies
+
+
+
+
+
+
+\newpage
+
+#  Manipulation des données
+
+## indexation des objets
+
+```{r, echo=FALSE}
+knitr::read_chunk("./scripts/script2.R")
+```
+
+```{r dataframe1}
+<<script2A>>
+```
+
+
+
+## split
+
+## merge
+
+## tableau croisé
+
+
+
+
+
+
+
+\newpage
+
+# Outils mathématiques de base
+
+## opérations de base
+
+## sommes, produits
+
+```{r addition}
+# une addition avec R.
+2+3
+# une somme sur un vecteur
+sum(c(2,5,1,9))
+```
+
+## produit matriciel
+
+## analyse de vecteurs propres
+
+
+
+
+
+
+\newpage
+
+# Fonctions
+
+## environnemnts
+
+
+
+
+
+
+
+
+
+\newpage
+
+# Récursions
+
+## For loop
+
+## While
+
+## apply (et autres)
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+# Algorithmes
+
+## Énoncés conditionnels
+
+## Planifier une séquence d'opérations
+
+
+
+
+\newpage
+
+# Processus stochastiques
+
+
+
+
+
+
+\newpage
+
+# Optimisation des scripts
