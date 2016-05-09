@@ -107,7 +107,7 @@ The function/object `par()`
 - predefined color palette
 - the rgb system
 - the hexadecimal nomenclature
-- customized color palettes
+- customised color palettes
 
 ---
 
