@@ -1,7 +1,7 @@
 ---
 title       : R Graphics
 subtitle    : An overview of possibilities
-author      : Kévin Cazelles and Nicolas Casajus
+author      : 'Kévin Cazelles and Nicolas Casajus'
 job         : Université du Québec à Rimouski
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
@@ -13,14 +13,27 @@ knit        : slidify::knit2slides
 
 <!--
 # Custom the slidify.css
-
-library(slidify)
-setwd('~/MEGA/QCBSgraphR/lecture')
-slidify('index.rmd')
-
+# J'ai fait un makefile, tu as juste à taper make !
+# Tu peux le faire dans atom directement
 -->
 
-## Plan
+<!-- To set knitr  -->
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  # fig.path = "inst/assets/img/",
+  comment = "#>",
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.width=6,
+  fig.height=6
+)
+```
+
+
+
+
+## Outline
 
 - Introduction
 - R graphics basis
@@ -36,6 +49,7 @@ slidify('index.rmd')
 ---
 
 ## The importance of graphics
+
 
 ---
 
@@ -54,12 +68,16 @@ slidify('index.rmd')
 ## Graphical packages - Graphics
 
 *** =left
-- The base package `graphics`
+- The base package *graphics*
 - S-like plotting functions
 - Contains the famous `plot()` function
 
+```{r, eval = FALSE}
+plot(1, las = 1)
+```
+
 *** =right
-```{r, echo = FALSE, fig.width = 6, fig.height = 6}
+```{r, echo = FALSE}
 plot(1, las = 1)
 ```
 
@@ -93,17 +111,26 @@ The function/object `par()`
 - line chart
 - boxplot
 - dotchart
-- map
+- maps
 
 ---
 
 ## An empty plot
 
+```{r, echo=FALSE}
+knitr::read_chunk("../scripts/script1.R")
+```
+
+```{r first}
+<<script1A>>
+print(vec1)
+```
+
 ---
 
 ## Adding points, lines, rectangles and polygons
 
-- the functions: points(), lines(), rect(), polygon() and box()
+- the functions: `points()`, `lines()`, `rect()`, `polygon()` and `box()`
 - the arguments: pch, cex, lwd, lty, col, bg, fg, border, density, angle
 
 ---

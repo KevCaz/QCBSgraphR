@@ -1,7 +1,7 @@
 ---
 title       : R Graphics
 subtitle    : An overview of possibilities
-author      : Kévin Cazelles and Nicolas Casajus
+author      : 'Kévin Cazelles and Nicolas Casajus'
 job         : Université du Québec à Rimouski
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
@@ -13,14 +13,17 @@ knit        : slidify::knit2slides
 
 <!--
 # Custom the slidify.css
-
-library(slidify)
-setwd('~/MEGA/QCBSgraphR/lecture')
-slidify('index.rmd')
-
+# J'ai fait un makefile, tu as juste à taper make !
+# Tu peux le faire dans atom directement
 -->
 
-## Plan
+<!-- To set knitr  -->
+
+
+
+
+
+## Outline
 
 - Introduction
 - R graphics basis
@@ -36,6 +39,11 @@ slidify('index.rmd')
 ---
 
 ## The importance of graphics
+
+
+```
+## [1] "/Users/kcazelles/Github/formations/QCBSgraphR/lecture"
+```
 
 ---
 
@@ -54,12 +62,17 @@ slidify('index.rmd')
 ## Graphical packages - Graphics
 
 *** =left
-- The base package `graphics`
+- The base package *graphics*
 - S-like plotting functions
 - Contains the famous `plot()` function
 
+
+```r
+plot(1, las = 1)
+```
+
 *** =right
-![plot of chunk unnamed-chunk-1](assets/fig/unnamed-chunk-1-1.png)
+![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png)
 
 ---
 
@@ -91,17 +104,32 @@ The function/object `par()`
 - line chart
 - boxplot
 - dotchart
-- map
+- maps
 
 ---
 
 ## An empty plot
 
+
+
+
+```r
+vec1 <- c(2,3,8)
+vec2 <- 1:10
+vec3 <- rep(c(1,3),4)
+vec4 <- seq(1,10,0.5)
+print(vec1)
+```
+
+```
+## [1] 2 3 8
+```
+
 ---
 
 ## Adding points, lines, rectangles and polygons
 
-- the functions: points(), lines(), rect(), polygon() and box()
+- the functions: `points()`, `lines()`, `rect()`, `polygon()` and `box()`
 - the arguments: pch, cex, lwd, lty, col, bg, fg, border, density, angle
 
 ---

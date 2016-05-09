@@ -45,14 +45,13 @@
   <article data-timings="">
     <!--
 # Custom the slidify.css
-
-library(slidify)
-setwd('~/MEGA/QCBSgraphR/lecture')
-slidify('index.rmd')
-
+# J'ai fait un makefile, tu as juste à taper make !
+# Tu peux le faire dans atom directement
 -->
 
-<h2>Plan</h2>
+<!-- To set knitr  -->
+
+<h2>Outline</h2>
 
 <ul>
 <li>Introduction</li>
@@ -82,7 +81,9 @@ slidify('index.rmd')
     <h2>The importance of graphics</h2>
   </hgroup>
   <article data-timings="">
-    
+    <pre><code>## [1] &quot;/Users/kcazelles/Github/formations/QCBSgraphR/lecture&quot;
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -125,14 +126,17 @@ slidify('index.rmd')
     
 <div style='float:left;width:60%;' class='centered'>
   <ul>
-<li>The base package <code>graphics</code></li>
+<li>The base package <em>graphics</em></li>
 <li>S-like plotting functions</li>
 <li>Contains the famous <code>plot()</code> function</li>
 </ul>
 
+<pre><code class="r">plot(1, las = 1)
+</code></pre>
+
 </div>
 <div style='float:right;width:40%;' class='centered'>
-  <p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"></p>
+  <p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"></p>
 
 </div>
 <div>
@@ -192,7 +196,7 @@ slidify('index.rmd')
 <li>line chart</li>
 <li>boxplot</li>
 <li>dotchart</li>
-<li>map</li>
+<li>maps</li>
 </ul>
 
   </article>
@@ -204,7 +208,16 @@ slidify('index.rmd')
     <h2>An empty plot</h2>
   </hgroup>
   <article data-timings="">
-    
+    <pre><code class="r">vec1 &lt;- c(2,3,8)
+vec2 &lt;- 1:10
+vec3 &lt;- rep(c(1,3),4)
+vec4 &lt;- seq(1,10,0.5)
+print(vec1)
+</code></pre>
+
+<pre><code>## [1] 2 3 8
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -215,7 +228,7 @@ slidify('index.rmd')
   </hgroup>
   <article data-timings="">
     <ul>
-<li>the functions: points(), lines(), rect(), polygon() and box()</li>
+<li>the functions: <code>points()</code>, <code>lines()</code>, <code>rect()</code>, <code>polygon()</code> and <code>box()</code></li>
 <li>the arguments: pch, cex, lwd, lty, col, bg, fg, border, density, angle</li>
 </ul>
 

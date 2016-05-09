@@ -1,16 +1,4 @@
-###
-### INSTALL SLIDIFY
-###
-
-
-### Installation
-library(devtools)
-
-install_github("ramnathv/slidify")
-install_github("ramnathv/slidifyLibraries")
-
-### Generate deck
 library(slidify)
-
-setwd('~/MEGA/QCBSgraphR')
-author('lecture', use_git = FALSE, open_rmd = FALSE)
+ext_arg <- commandArgs(trailingOnly=TRUE)
+setwd(ext_arg)
+slidify('./lecture/index.Rmd')

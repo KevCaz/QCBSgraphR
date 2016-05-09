@@ -1,10 +1,7 @@
-RMD=./cours_program.Rmd
-PDF=./document/cours_program.pdf
-# REF=library.bib
-# CSL=styles/theoretical-ecology.csl
-# PFLAGS=  --latex-engine=pdflatex #--bibliography=$(REF) --csl=$(CSL)
+rmd=./lecture/index.Rmd
+html=./lecture/index.html
 
-ALL: $(PDF)
+ALL: $(html)
 
-$(PDF): $(RMD)
-	Rscript get_doc.R `pwd`
+$(html): $(rmd)
+	Rscript get_slidify.R `pwd`

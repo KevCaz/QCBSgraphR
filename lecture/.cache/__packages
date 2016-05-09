@@ -1,2 +1,9 @@
 base
 slidify
+png
+jpeg
+devtools
+roxygen2
+testthat
+graphicsutils
+plotrix
