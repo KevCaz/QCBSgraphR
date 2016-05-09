@@ -41,10 +41,6 @@ knit        : slidify::knit2slides
 ## The importance of graphics
 
 
-```
-## [1] "/Users/kcazelles/Github/formations/QCBSgraphR/lecture"
-```
-
 ---
 
 ## The components of a graphic
@@ -72,7 +68,7 @@ plot(1, las = 1)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png)
+![plot of chunk unnamed-chunk-3](assets/fig/unnamed-chunk-3-1.png)
 
 ---
 
@@ -114,15 +110,11 @@ The function/object `par()`
 
 
 ```r
-vec1 <- c(2,3,8)
-vec2 <- 1:10
-vec3 <- rep(c(1,3),4)
-vec4 <- seq(1,10,0.5)
 print(vec1)
 ```
 
 ```
-## [1] 2 3 8
+## Error in print(vec1): objet 'vec1' introuvable
 ```
 
 ---
