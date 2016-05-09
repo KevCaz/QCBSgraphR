@@ -49,11 +49,22 @@ slidify('index.rmd')
 
 ## The R system
 
+--- &twocol w1:50% w2:50%
+
+## Graphical packages - Graphics
+
+*** =left
+- The base package `graphics`
+- S-like plotting functions
+- Contains the famous `plot()` function
+
+*** =right
+![plot of chunk unnamed-chunk-1](assets/fig/unnamed-chunk-1-1.png)
+
 ---
 
 ## Graphical packages
 
-- graphics
 - grid
 - ggplot2
 - lattice
@@ -107,7 +118,7 @@ The function/object `par()`
 - predefined color palette
 - the rgb system
 - the hexadecimal nomenclature
-- customised color palettes
+- customized color palettes
 
 ---
 

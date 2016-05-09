@@ -49,11 +49,24 @@ slidify('index.rmd')
 
 ## The R system
 
+--- &twocol w1:50% w2:50%
+
+## Graphical packages - Graphics
+
+*** =left
+- The base package `graphics`
+- S-like plotting functions
+- Contains the famous `plot()` function
+
+*** =right
+```{r, echo = FALSE, fig.width = 6, fig.height = 6}
+plot(1, las = 1)
+```
+
 ---
 
 ## Graphical packages
 
-- graphics
 - grid
 - ggplot2
 - lattice
