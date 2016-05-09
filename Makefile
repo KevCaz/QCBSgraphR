@@ -4,4 +4,4 @@ html=./lecture/index.html
 ALL: $(html)
 
 $(html): $(rmd)
-	Rscript get_slidify.R `pwd`
+	Rscript --no-site-file --no-init-file get_slidify.R `pwd`

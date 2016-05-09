@@ -119,11 +119,13 @@ The function/object `par()`
 
 ```{r, echo=FALSE}
 knitr::read_chunk("../scripts/script1.R")
+knitr::read_chunk("../scripts/script2.R")
 ```
 
 ```{r first}
 <<script1A>>
 print(vec1)
+<<script2A>>
 ```
 
 ---
