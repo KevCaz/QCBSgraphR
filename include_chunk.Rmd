@@ -1,0 +1,7 @@
+```{r, echo=FALSE}
+knitr::read_chunk("../scripts/script1.R")
+```
+
+```{r first}
+<<script1A>>
+```

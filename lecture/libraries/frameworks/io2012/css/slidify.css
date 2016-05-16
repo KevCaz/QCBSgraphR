@@ -44,7 +44,7 @@
 /* Fonts and Spacing */
 article p, article li, article li.build, section p, section li{
   font-family: 'Open Sans','Helvetica', 'Crimson Text', 'Garamond',  'Palatino', sans-serif;
-  text-align: justify;
+  text-align: left;
   font-size:22px;
   line-height: 1.5em;
   color: #444;
@@ -90,11 +90,11 @@ article q {
 
 q {
   display: block;
-  font-size: 44px;
-  line-height: 56px;
-  margin-left: 50px;
-  margin-top: 100px;
-  margin-right: 150px;
+  font-size: 22px;
+  line-height: 1.5em;
+  margin-right: 40px;
+  margin-top: 50px;
+  text-align: right;
 }
 
 q::before {
@@ -104,7 +104,7 @@ q::before {
   margin-left: -2.1em;
   width: 2em;
   text-align: right;
-  font-size: 90px;
+  font-size: 60px;
   color: silver;
 }
 
@@ -112,7 +112,7 @@ q::after {
   content: '”';
   position: absolute;
   margin-left: .1em;
-  font-size: 90px;
+  font-size: 60px;
   color: silver;
 }
 
@@ -390,4 +390,11 @@ ul li:before {
 ul li {
     text-indent: -10px;
     padding-left: 30px;
+}
+
+.toright img {
+    margin-right: 0;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    width: 90%;
 }
