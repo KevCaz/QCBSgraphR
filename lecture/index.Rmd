@@ -11,11 +11,8 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-<!--
-# Custom the slidify.css
-# J'ai fait un makefile, tu as juste à taper make !
-# Tu peux le faire dans atom directement
--->
+
+<!-- Faudra faire attention si on met des majuscule en début d'hyphenation... -->
 
 <!-- To set knitr  -->
 ```{r echo=FALSE}
@@ -31,23 +28,35 @@ knitr::opts_chunk$set(
 )
 ```
 
+<!-- Call the script -->
 
+```{r, echo=FALSE}
+for (i in list.files("../scripts", pattern="*\\.R$")) knitr::read_chunk(paste0("../scripts/", i))
+```
+
+
+
+<!-- <style>
+article li.build {
+  font-size: 16px;
+}
+</style> -->
 
 
 ## Outline
 
 - Introduction
-- R graphics basis
-- Composition and multipanel plotting
-- Graphics automation and export
-- Ressources
+- graphics basis
+- Composition and multi-panel plotting
+- Graphics automation and exporting
+- Resources
 - Exercises
 
 --- .transition
 
 ## Introduction
 
----
+--- .bigger
 
 ## The importance of graphics
 
@@ -78,19 +87,16 @@ knitr::opts_chunk$set(
 
 ## Some guidelines for better graphics
 
-- Do not use 3D (never)
-- Do not use pie chart
-- Do not use more than 6 colors
-- Write textual informations horizontally
-- Use consistent colors
-- Do not use high contrast color
-- Start axis at 0
-- Do not use distracting elements
-- Do not add chart junk
-
-<!-- end-->
-
-- <b>Each element of a graph must have a signification to understand data</b>
+> -  Do not use 3D (never)
+> -  Do not use pie chart
+> -  Do not use more than 6 colors
+> -  Write textual informations horizontally
+> -  Use consistent colors
+> -  Do not use high contrast color
+> -  Start axis at 0
+> -  Do not use distracting elements
+> -  Do not add chart junk
+> - <b>Each element of a graph must have a signification to understand data</b>
 
 
 --- &twocol w1:50% w2:50%
@@ -98,8 +104,11 @@ knitr::opts_chunk$set(
 ## The R system
 
 *** =left
-<div style='text-align: left; margin-top: 20%;'>
-    <img src='./assets/img/r-logo.png' />
+<div style='text-align: left; margin-left: 5%;'>
+    <img src='./assets/img/r-logo.png' style="width:280px;"/>
+    <br/>
+    <br/>
+    <img src='./assets/img/Rlogo.png' style="width:280px;"/>
 </div>
 <!-- ![](./assets/img/r-logo.png) -->
 
@@ -111,6 +120,15 @@ knitr::opts_chunk$set(
 - Implementation of the S programming language
 - The core system is extended through user-created packages
 - You can do what you want with R
+
+
+---
+
+## The R system
+
+  <img src='./assets/img/Murrell2015.jpg' style="width:600px;"/>
+  Murrell, P. (2015). The gridGraphics Package. The R Jounal.
+
 
 --- &twocol w1:50% w2:50%
 
@@ -137,7 +155,8 @@ plot(1, 1)
 ## Graphical packages - grid
 
 *** =left
-- ...
+- a alternative set of graphical functions
+- well-suited for developers
 
 
 *** =right
@@ -212,17 +231,43 @@ data(soils)
 triax.plot(soils[1:10,],show.grid=TRUE,show.legend=TRUE,col.symbols= rainbow(10),pch=10)
 ```
 
+
+--- &twocol w1:50% w2:50%
+
+## Graphical packages - gplots
+
+*** =left
+- Based on the `graphics` package
+- adds enhanced versions of standard plots (_e.g_ `boxplot2`)
+- adds some extra function
+
+
+*** =right
+```{r, echo = FALSE}
+par(mar = c(4, 4, 1.5, 1.5), bg = 'transparent', fg="#8b0000")
+library(gplots, verbose=FALSE)
+ls_venn <- list()
+for (i in 1:4) ls_venn[[i]] <- floor(runif(100,0,150))
+venn(ls_venn)
+```
+
+
+
+
+
 ---
 
 ## Graphical packages - others
 
 - More than 80 others graphical packages
 - For an overview see this [R task view](https://cran.r-project.org/web/views/Graphics.html)
-- For an exhaustive list see this [post](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
+- For a more exhaustive list see this [post](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
 
 <br />
 
 - On this workshop we will only use the `graphics` package
+
+<!-- Faudrait dire que c'est un des coûts d'avoir autant de facilité... -->
 
 --- .transition
 
@@ -238,16 +283,7 @@ The function/object `par()`
 
 ## The major types of graphics
 
-~~barchart~~
-- histogram
-- scatterplot
-- line chart
-- boxplot
-- dotchart
-- maps
-
-<!-- end -->
-
+- barchart
 - High-level plotting functions vs. low-level plotting functions
 
 --- &twocol
@@ -258,7 +294,6 @@ The function/object `par()`
 - Barchart
 - Usage: ...
 
-<!-- end -->
 
 ```{r, eval = FALSE}
 ## Creation of a numerical vector
@@ -428,20 +463,21 @@ plot(1, 1, ann = FALSE, axes = FALSE, type = 'n')
 
 ## Adding points, lines, rectangles and polygons
 
-- the functions: `points()`, `lines()`, `rect()`, `polygon()` and `box()`
+- the functions: `points()`, `lines()`, `rect()`, `polygon()`, `axis()` and `box()`
 - the arguments: pch, cex, lwd, lty, col, bg, fg, border, density, angle
 
 ---
 
 ## Adding textual informations
 
-- title(), text(), mtext()
+- `title()`, `text()`, `mtext()`
 - font, family
 
 ---
 
 ## Changing colors
 
+- [A blog post](http://www.stat.ubc.ca/~jenny/STAT545A/block14_colors.html)
 - predefined color palette
 - the rgb system
 - the hexadecimal nomenclature
@@ -477,7 +513,8 @@ plot(1, 1, ann = FALSE, axes = FALSE, type = 'n')
 ## Window Partitioning
 
 - mfrow and mfcol
-- layout()
+- `layout()`
+- `split.screen`
 
 ---
 
@@ -492,7 +529,7 @@ plot(1, 1, ann = FALSE, axes = FALSE, type = 'n')
 ---
 
 - the loop for
-- pdf(), png()
+- `pdf()`, `png()`, `jpeg()`, `bmp()`, `tiff()`
 
 --- .transition
 
@@ -517,3 +554,4 @@ plot(1, 1, ann = FALSE, axes = FALSE, type = 'n')
 
 - refaire une figure du samedi
 - autre figure
+- coder son propre boxplot.

@@ -43,22 +43,26 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <article data-timings="">
-    <!--
-# Custom the slidify.css
-# J'ai fait un makefile, tu as juste à taper make !
-# Tu peux le faire dans atom directement
--->
+    <!-- Faudra faire attention si on met des majuscule en début d'hyphenation... -->
 
 <!-- To set knitr  -->
+
+<!-- Call the script -->
+
+<!-- <style>
+article li.build {
+  font-size: 16px;
+}
+</style> -->
 
 <h2>Outline</h2>
 
 <ul>
 <li>Introduction</li>
-<li>R graphics basis</li>
-<li>Composition and multipanel plotting</li>
-<li>Graphics automation and export</li>
-<li>Ressources</li>
+<li>graphics basis</li>
+<li>Composition and multi-panel plotting</li>
+<li>Graphics automation and exporting</li>
+<li>Resources</li>
 <li>Exercises</li>
 </ul>
 
@@ -76,7 +80,7 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-3" style="background:;">
+<slide class="bigger" id="slide-3" style="background:;">
   <hgroup>
     <h2>The importance of graphics</h2>
   </hgroup>
@@ -127,21 +131,16 @@
     <h2>Some guidelines for better graphics</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li>Do not use 3D (never)</li>
-<li>Do not use pie chart</li>
-<li>Do not use more than 6 colors</li>
-<li>Write textual informations horizontally</li>
-<li>Use consistent colors</li>
-<li>Do not use high contrast color</li>
-<li>Start axis at 0</li>
-<li>Do not use distracting elements</li>
-<li>Do not add chart junk</li>
-</ul>
-
-<!-- end-->
-
-<ul>
+    <ul class = "build incremental">
+<li> Do not use 3D (never)</li>
+<li> Do not use pie chart</li>
+<li> Do not use more than 6 colors</li>
+<li> Write textual informations horizontally</li>
+<li> Use consistent colors</li>
+<li> Do not use high contrast color</li>
+<li> Start axis at 0</li>
+<li> Do not use distracting elements</li>
+<li> Do not add chart junk</li>
 <li><b>Each element of a graph must have a signification to understand data</b></li>
 </ul>
 
@@ -156,8 +155,11 @@
   <article data-timings="">
     
 <div style='float:left;width:49%;text-align:left;'>
-  <div style='text-align: left; margin-top: 20%;'>
-    <img src='./assets/img/r-logo.png' />
+  <div style='text-align: left; margin-left: 5%;'>
+    <img src='./assets/img/r-logo.png' style="width:280px;"/>
+    <br/>
+    <br/>
+    <img src='./assets/img/Rlogo.png' style="width:280px;"/>
 </div>
 
 <!-- ![](./assets/img/r-logo.png) -->
@@ -184,6 +186,18 @@
 
 <slide class="" id="slide-7" style="background:;">
   <hgroup>
+    <h2>The R system</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src='./assets/img/Murrell2015.jpg' style="width:600px;"/>
+  Murrell, P. (2015). The gridGraphics Package. The R Jounal.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
     <h2>Graphical packages - graphics</h2>
   </hgroup>
   <article data-timings="">
@@ -201,28 +215,6 @@
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"></p>
-
-</div>
-<div>
-  
-</div>
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-8" style="background:;">
-  <hgroup>
-    <h2>Graphical packages - grid</h2>
-  </hgroup>
-  <article data-timings="">
-    
-<div style='float:left;width:49%;text-align:left;'>
-  <ul>
-<li class='..</li>'></ul>
-
-</div>
-<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
   <p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"></p>
 
 </div>
@@ -234,6 +226,30 @@
 </slide>
 
 <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Graphical packages - grid</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>a alternative set of graphical functions</li>
+<li>well-suited for developers</li>
+</ul>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
   <hgroup>
     <h2>Graphical packages - lattice</h2>
   </hgroup>
@@ -253,7 +269,7 @@ xyplot(1 ~ 1)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6"></p>
+  <p><img src="assets/fig/unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7"></p>
 
 </div>
 <div>
@@ -263,7 +279,7 @@ xyplot(1 ~ 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-10" style="background:;">
+<slide class="" id="slide-11" style="background:;">
   <hgroup>
     <h2>Graphical packages - ggplot2</h2>
   </hgroup>
@@ -290,7 +306,7 @@ qplot(x = 1, y = 1)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8"></p>
+  <p><img src="assets/fig/unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9"></p>
 
 </div>
 <div>
@@ -300,7 +316,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-11" style="background:;">
+<slide class="" id="slide-12" style="background:;">
   <hgroup>
     <h2>Graphical packages - plotrix</h2>
   </hgroup>
@@ -315,7 +331,7 @@ qplot(x = 1, y = 1)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9"></p>
+  <p><img src="assets/fig/unnamed-chunk-10-1.png" alt="plot of chunk unnamed-chunk-10"></p>
 
 </div>
 <div>
@@ -325,7 +341,32 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-12" style="background:;">
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Graphical packages - gplots</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Based on the <code>graphics</code> package</li>
+<li>adds enhanced versions of standard plots (<em>e.g</em> <code>boxplot2</code>)</li>
+<li>adds some extra function</li>
+</ul>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
   <hgroup>
     <h2>Graphical packages - others</h2>
   </hgroup>
@@ -333,7 +374,7 @@ qplot(x = 1, y = 1)
     <ul>
 <li>More than 80 others graphical packages</li>
 <li>For an overview see this <a href="https://cran.r-project.org/web/views/Graphics.html">R task view</a></li>
-<li>For an exhaustive list see this <a href="http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html">post</a></li>
+<li>For a more exhaustive list see this <a href="http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html">post</a></li>
 </ul>
 
 <p><br /></p>
@@ -342,11 +383,13 @@ qplot(x = 1, y = 1)
 <li>On this workshop we will only use the <code>graphics</code> package</li>
 </ul>
 
+<!-- Faudrait dire que c'est un des coûts d'avoir autant de facilité... -->
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-13" style="background:;">
+<slide class="transition" id="slide-15" style="background:;">
   <hgroup>
     <h2>R graphics basis</h2>
   </hgroup>
@@ -356,7 +399,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-14" style="background:;">
+<slide class="" id="slide-16" style="background:;">
   <hgroup>
     <h2>Graphical parameters</h2>
   </hgroup>
@@ -367,25 +410,13 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-15" style="background:;">
+<slide class="" id="slide-17" style="background:;">
   <hgroup>
     <h2>The major types of graphics</h2>
   </hgroup>
   <article data-timings="">
-    <p><del>barchart</del></p>
-
-<ul>
-<li>histogram</li>
-<li>scatterplot</li>
-<li>line chart</li>
-<li>boxplot</li>
-<li>dotchart</li>
-<li>maps</li>
-</ul>
-
-<!-- end -->
-
-<ul>
+    <ul>
+<li>barchart</li>
 <li>High-level plotting functions vs. low-level plotting functions</li>
 </ul>
 
@@ -393,7 +424,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-16" style="background:;">
+<slide class="" id="slide-18" style="background:;">
   <hgroup>
     <h2>The major types of graphics</h2>
   </hgroup>
@@ -404,8 +435,6 @@ qplot(x = 1, y = 1)
 <li>Barchart</li>
 <li>Usage: ...</li>
 </ul>
-
-<!-- end -->
 
 <pre><code class="r">## Creation of a numerical vector
 x &lt;- seq(50, 0, by = -10)
@@ -421,60 +450,7 @@ barplot(height = x,
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11"></p>
-
-</div>
-<div>
-  
-</div>
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-17" style="background:;">
-  <hgroup>
-    <h2>An empty plot</h2>
-  </hgroup>
-  <article data-timings="">
-    
-<div style='float:left;width:49%;text-align:left;'>
-  <ul>
-<li>The default plot</li>
-</ul>
-
-<pre><code class="r">plot(x = 1, y = 1)
-</code></pre>
-
-</div>
-<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
   <p><img src="assets/fig/unnamed-chunk-13-1.png" alt="plot of chunk unnamed-chunk-13"></p>
-
-</div>
-<div>
-  
-</div>
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-18" style="background:;">
-  <hgroup>
-    <h2>An empty plot</h2>
-  </hgroup>
-  <article data-timings="">
-    
-<div style='float:left;width:49%;text-align:left;'>
-  <ul>
-<li>First let&#39;s remove the box</li>
-</ul>
-
-<pre><code class="r">plot(x = 1, y = 1,
-     bty = &#39;n&#39;)
-</code></pre>
-
-</div>
-<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-15-1.png" alt="plot of chunk unnamed-chunk-15"></p>
 
 </div>
 <div>
@@ -492,12 +468,37 @@ barplot(height = x,
     
 <div style='float:left;width:49%;text-align:left;'>
   <ul>
-<li>Now remove the textual annotation</li>
+<li>The default plot</li>
+</ul>
+
+<pre><code class="r">plot(x = 1, y = 1)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-15-1.png" alt="plot of chunk unnamed-chunk-15"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>An empty plot</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>First let&#39;s remove the box</li>
 </ul>
 
 <pre><code class="r">plot(x = 1, y = 1,
-     bty = &#39;n&#39;,
-     ann = FALSE)
+     bty = &#39;n&#39;)
 </code></pre>
 
 </div>
@@ -512,7 +513,35 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-20" style="background:;">
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>An empty plot</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Now remove the textual annotation</li>
+</ul>
+
+<pre><code class="r">plot(x = 1, y = 1,
+     bty = &#39;n&#39;,
+     ann = FALSE)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-19-1.png" alt="plot of chunk unnamed-chunk-19"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -531,7 +560,7 @@ barplot(height = x,
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-19-1.png" alt="plot of chunk unnamed-chunk-19"></p>
+  <p><img src="assets/fig/unnamed-chunk-21-1.png" alt="plot of chunk unnamed-chunk-21"></p>
 
 </div>
 <div>
@@ -541,7 +570,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-21" style="background:;">
+<slide class="" id="slide-23" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -561,7 +590,7 @@ barplot(height = x,
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-21-1.png" alt="plot of chunk unnamed-chunk-21"></p>
+  <p><img src="assets/fig/unnamed-chunk-23-1.png" alt="plot of chunk unnamed-chunk-23"></p>
 
 </div>
 <div>
@@ -571,7 +600,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-22" style="background:;">
+<slide class="" id="slide-24" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -589,7 +618,7 @@ barplot(height = x,
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-23-1.png" alt="plot of chunk unnamed-chunk-23"></p>
+  <p><img src="assets/fig/unnamed-chunk-25-1.png" alt="plot of chunk unnamed-chunk-25"></p>
 
 </div>
 <div>
@@ -599,7 +628,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-23" style="background:;">
+<slide class="" id="slide-25" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -625,7 +654,7 @@ barplot(height = x,
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-25-1.png" alt="plot of chunk unnamed-chunk-25"></p>
+  <p><img src="assets/fig/unnamed-chunk-27-1.png" alt="plot of chunk unnamed-chunk-27"></p>
 
 </div>
 <div>
@@ -635,13 +664,13 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-24" style="background:;">
+<slide class="" id="slide-26" style="background:;">
   <hgroup>
     <h2>Adding points, lines, rectangles and polygons</h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li>the functions: <code>points()</code>, <code>lines()</code>, <code>rect()</code>, <code>polygon()</code> and <code>box()</code></li>
+<li>the functions: <code>points()</code>, <code>lines()</code>, <code>rect()</code>, <code>polygon()</code>, <code>axis()</code> and <code>box()</code></li>
 <li>the arguments: pch, cex, lwd, lty, col, bg, fg, border, density, angle</li>
 </ul>
 
@@ -649,13 +678,13 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-25" style="background:;">
+<slide class="" id="slide-27" style="background:;">
   <hgroup>
     <h2>Adding textual informations</h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li>title(), text(), mtext()</li>
+<li><code>title()</code>, <code>text()</code>, <code>mtext()</code></li>
 <li>font, family</li>
 </ul>
 
@@ -663,12 +692,13 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-26" style="background:;">
+<slide class="" id="slide-28" style="background:;">
   <hgroup>
     <h2>Changing colors</h2>
   </hgroup>
   <article data-timings="">
     <ul>
+<li><a href="http://www.stat.ubc.ca/%7Ejenny/STAT545A/block14_colors.html">A blog post</a></li>
 <li>predefined color palette</li>
 <li>the rgb system</li>
 <li>the hexadecimal nomenclature</li>
@@ -679,7 +709,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-27" style="background:;">
+<slide class="" id="slide-29" style="background:;">
   <hgroup>
     <h2>Changing fonts</h2>
   </hgroup>
@@ -693,7 +723,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-28" style="background:;">
+<slide class="" id="slide-30" style="background:;">
   <hgroup>
     <h2>Adding/changing axis</h2>
   </hgroup>
@@ -703,7 +733,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-29" style="background:;">
+<slide class="" id="slide-31" style="background:;">
   <hgroup>
     <h2>Adding legend</h2>
   </hgroup>
@@ -713,7 +743,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-30" style="background:;">
+<slide class="" id="slide-32" style="background:;">
   <hgroup>
     <h2>Figure margins</h2>
   </hgroup>
@@ -726,7 +756,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-31" style="background:;">
+<slide class="transition" id="slide-33" style="background:;">
   <hgroup>
     <h2>Composition and multipanel plotting</h2>
   </hgroup>
@@ -736,21 +766,22 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-32" style="background:;">
+<slide class="" id="slide-34" style="background:;">
   <hgroup>
     <h2>Window Partitioning</h2>
   </hgroup>
   <article data-timings="">
     <ul>
 <li>mfrow and mfcol</li>
-<li>layout()</li>
+<li><code>layout()</code></li>
+<li><code>split.screen</code></li>
 </ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-33" style="background:;">
+<slide class="" id="slide-35" style="background:;">
   <hgroup>
     <h2>Insets</h2>
   </hgroup>
@@ -763,7 +794,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-34" style="background:;">
+<slide class="transition" id="slide-36" style="background:;">
   <hgroup>
     <h2>Graphics automation and export</h2>
   </hgroup>
@@ -773,18 +804,18 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-35" style="background:;">
+<slide class="" id="slide-37" style="background:;">
   <article data-timings="">
     <ul>
 <li>the loop for</li>
-<li>pdf(), png()</li>
+<li><code>pdf()</code>, <code>png()</code>, <code>jpeg()</code>, <code>bmp()</code>, <code>tiff()</code></li>
 </ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-36" style="background:;">
+<slide class="transition" id="slide-38" style="background:;">
   <hgroup>
     <h2>Ressources</h2>
   </hgroup>
@@ -794,7 +825,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-37" style="background:;">
+<slide class="" id="slide-39" style="background:;">
   <hgroup>
     <h2>Ressources</h2>
   </hgroup>
@@ -810,7 +841,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-38" style="background:;">
+<slide class="transition" id="slide-40" style="background:;">
   <hgroup>
     <h2>Let&#39;s do pratice!</h2>
   </hgroup>
@@ -820,7 +851,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-39" style="background:;">
+<slide class="" id="slide-41" style="background:;">
   <hgroup>
     <h2>Two exercises</h2>
   </hgroup>
@@ -828,6 +859,7 @@ barplot(height = x,
     <ul>
 <li>refaire une figure du samedi</li>
 <li>autre figure</li>
+<li>coder son propre boxplot.</li>
 </ul>
 
   </article>
@@ -876,73 +908,73 @@ barplot(height = x,
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='Graphical packages - graphics'>
+        data-slide=7 title='The R system'>
          7
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='Graphical packages - grid'>
+        data-slide=8 title='Graphical packages - graphics'>
          8
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='Graphical packages - lattice'>
+        data-slide=9 title='Graphical packages - grid'>
          9
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Graphical packages - ggplot2'>
+        data-slide=10 title='Graphical packages - lattice'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Graphical packages - plotrix'>
+        data-slide=11 title='Graphical packages - ggplot2'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Graphical packages - others'>
+        data-slide=12 title='Graphical packages - plotrix'>
          12
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='R graphics basis'>
+        data-slide=13 title='Graphical packages - gplots'>
          13
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title='Graphical parameters'>
+        data-slide=14 title='Graphical packages - others'>
          14
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='The major types of graphics'>
+        data-slide=15 title='R graphics basis'>
          15
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='The major types of graphics'>
+        data-slide=16 title='Graphical parameters'>
          16
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='An empty plot'>
+        data-slide=17 title='The major types of graphics'>
          17
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title='An empty plot'>
+        data-slide=18 title='The major types of graphics'>
          18
       </a>
     </li>
@@ -978,98 +1010,110 @@ barplot(height = x,
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=24 title='Adding points, lines, rectangles and polygons'>
+        data-slide=24 title='An empty plot'>
          24
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=25 title='Adding textual informations'>
+        data-slide=25 title='An empty plot'>
          25
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=26 title='Changing colors'>
+        data-slide=26 title='Adding points, lines, rectangles and polygons'>
          26
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=27 title='Changing fonts'>
+        data-slide=27 title='Adding textual informations'>
          27
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=28 title='Adding/changing axis'>
+        data-slide=28 title='Changing colors'>
          28
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=29 title='Adding legend'>
+        data-slide=29 title='Changing fonts'>
          29
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title='Figure margins'>
+        data-slide=30 title='Adding/changing axis'>
          30
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=31 title='Composition and multipanel plotting'>
+        data-slide=31 title='Adding legend'>
          31
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='Window Partitioning'>
+        data-slide=32 title='Figure margins'>
          32
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=33 title='Insets'>
+        data-slide=33 title='Composition and multipanel plotting'>
          33
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=34 title='Graphics automation and export'>
+        data-slide=34 title='Window Partitioning'>
          34
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=35 title='NA'>
+        data-slide=35 title='Insets'>
          35
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=36 title='Ressources'>
+        data-slide=36 title='Graphics automation and export'>
          36
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=37 title='Ressources'>
+        data-slide=37 title='NA'>
          37
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=38 title='Let&#39;s do pratice!'>
+        data-slide=38 title='Ressources'>
          38
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=39 title='Two exercises'>
+        data-slide=39 title='Ressources'>
          39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='Let&#39;s do pratice!'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='Two exercises'>
+         41
       </a>
     </li>
   </ul>

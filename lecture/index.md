@@ -11,32 +11,39 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-<!--
-# Custom the slidify.css
-# J'ai fait un makefile, tu as juste à taper make !
-# Tu peux le faire dans atom directement
--->
+
+<!-- Faudra faire attention si on met des majuscule en début d'hyphenation... -->
 
 <!-- To set knitr  -->
 
 
+<!-- Call the script -->
 
+
+
+
+
+<!-- <style>
+article li.build {
+  font-size: 16px;
+}
+</style> -->
 
 
 ## Outline
 
 - Introduction
-- R graphics basis
-- Composition and multipanel plotting
-- Graphics automation and export
-- Ressources
+- graphics basis
+- Composition and multi-panel plotting
+- Graphics automation and exporting
+- Resources
 - Exercises
 
 --- .transition
 
 ## Introduction
 
----
+--- .bigger
 
 ## The importance of graphics
 
@@ -67,19 +74,16 @@ knit        : slidify::knit2slides
 
 ## Some guidelines for better graphics
 
-- Do not use 3D (never)
-- Do not use pie chart
-- Do not use more than 6 colors
-- Write textual informations horizontally
-- Use consistent colors
-- Do not use high contrast color
-- Start axis at 0
-- Do not use distracting elements
-- Do not add chart junk
-
-<!-- end-->
-
-- <b>Each element of a graph must have a signification to understand data</b>
+> -  Do not use 3D (never)
+> -  Do not use pie chart
+> -  Do not use more than 6 colors
+> -  Write textual informations horizontally
+> -  Use consistent colors
+> -  Do not use high contrast color
+> -  Start axis at 0
+> -  Do not use distracting elements
+> -  Do not add chart junk
+> - <b>Each element of a graph must have a signification to understand data</b>
 
 
 --- &twocol w1:50% w2:50%
@@ -87,8 +91,11 @@ knit        : slidify::knit2slides
 ## The R system
 
 *** =left
-<div style='text-align: left; margin-top: 20%;'>
-    <img src='./assets/img/r-logo.png' />
+<div style='text-align: left; margin-left: 5%;'>
+    <img src='./assets/img/r-logo.png' style="width:280px;"/>
+    <br/>
+    <br/>
+    <img src='./assets/img/Rlogo.png' style="width:280px;"/>
 </div>
 <!-- ![](./assets/img/r-logo.png) -->
 
@@ -100,6 +107,15 @@ knit        : slidify::knit2slides
 - Implementation of the S programming language
 - The core system is extended through user-created packages
 - You can do what you want with R
+
+
+---
+
+## The R system
+
+  <img src='./assets/img/Murrell2015.jpg' style="width:600px;"/>
+  Murrell, P. (2015). The gridGraphics Package. The R Jounal.
+
 
 --- &twocol w1:50% w2:50%
 
@@ -117,18 +133,19 @@ plot(x = 1, y = 1)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-3](assets/fig/unnamed-chunk-3-1.png)
+![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png)
 
 --- &twocol w1:50% w2:50%
 
 ## Graphical packages - grid
 
 *** =left
-- ...
+- a alternative set of graphical functions
+- well-suited for developers
 
 
 *** =right
-![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png)
+![plot of chunk unnamed-chunk-5](assets/fig/unnamed-chunk-5-1.png)
 
 --- &twocol w1:50% w2:50%
 
@@ -147,7 +164,7 @@ xyplot(1 ~ 1)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-6](assets/fig/unnamed-chunk-6-1.png)
+![plot of chunk unnamed-chunk-7](assets/fig/unnamed-chunk-7-1.png)
 
 --- &twocol w1:50% w2:50%
 
@@ -170,7 +187,7 @@ qplot(x = 1, y = 1)
 
 - See the QCBS workshop on [ggplot2](http://qcbs.ca/wiki/r_workshop4)
 *** =right
-![plot of chunk unnamed-chunk-8](assets/fig/unnamed-chunk-8-1.png)
+![plot of chunk unnamed-chunk-9](assets/fig/unnamed-chunk-9-1.png)
 
 --- &twocol w1:50% w2:50%
 
@@ -183,7 +200,25 @@ qplot(x = 1, y = 1)
 
 
 *** =right
-![plot of chunk unnamed-chunk-9](assets/fig/unnamed-chunk-9-1.png)
+![plot of chunk unnamed-chunk-10](assets/fig/unnamed-chunk-10-1.png)
+
+
+--- &twocol w1:50% w2:50%
+
+## Graphical packages - gplots
+
+*** =left
+- Based on the `graphics` package
+- adds enhanced versions of standard plots (_e.g_ `boxplot2`)
+- adds some extra function
+
+
+*** =right
+![plot of chunk unnamed-chunk-11](assets/fig/unnamed-chunk-11-1.png)
+
+
+
+
 
 ---
 
@@ -191,11 +226,13 @@ qplot(x = 1, y = 1)
 
 - More than 80 others graphical packages
 - For an overview see this [R task view](https://cran.r-project.org/web/views/Graphics.html)
-- For an exhaustive list see this [post](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
+- For a more exhaustive list see this [post](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
 
 <br />
 
 - On this workshop we will only use the `graphics` package
+
+<!-- Faudrait dire que c'est un des coûts d'avoir autant de facilité... -->
 
 --- .transition
 
@@ -211,16 +248,7 @@ The function/object `par()`
 
 ## The major types of graphics
 
-~~barchart~~
-- histogram
-- scatterplot
-- line chart
-- boxplot
-- dotchart
-- maps
-
-<!-- end -->
-
+- barchart
 - High-level plotting functions vs. low-level plotting functions
 
 --- &twocol
@@ -231,7 +259,6 @@ The function/object `par()`
 - Barchart
 - Usage: ...
 
-<!-- end -->
 
 
 ```r
@@ -248,7 +275,7 @@ barplot(height = x,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-11](assets/fig/unnamed-chunk-11-1.png)
+![plot of chunk unnamed-chunk-13](assets/fig/unnamed-chunk-13-1.png)
 
 --- &twocol
 
@@ -263,7 +290,7 @@ plot(x = 1, y = 1)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-13](assets/fig/unnamed-chunk-13-1.png)
+![plot of chunk unnamed-chunk-15](assets/fig/unnamed-chunk-15-1.png)
 
 --- &twocol
 
@@ -279,7 +306,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-15](assets/fig/unnamed-chunk-15-1.png)
+![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17-1.png)
 
 --- &twocol
 
@@ -296,7 +323,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17-1.png)
+![plot of chunk unnamed-chunk-19](assets/fig/unnamed-chunk-19-1.png)
 
 --- &twocol
 
@@ -314,7 +341,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-19](assets/fig/unnamed-chunk-19-1.png)
+![plot of chunk unnamed-chunk-21](assets/fig/unnamed-chunk-21-1.png)
 
 --- &twocol
 
@@ -333,7 +360,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-21](assets/fig/unnamed-chunk-21-1.png)
+![plot of chunk unnamed-chunk-23](assets/fig/unnamed-chunk-23-1.png)
 
 --- &twocol
 
@@ -350,7 +377,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-23](assets/fig/unnamed-chunk-23-1.png)
+![plot of chunk unnamed-chunk-25](assets/fig/unnamed-chunk-25-1.png)
 
 --- &twocol
 
@@ -373,26 +400,27 @@ plot(x = 1, y = 1,
 - It is now possible to use low-level plotting functions such as `points()` or `axis()`
 
 *** =right
-![plot of chunk unnamed-chunk-25](assets/fig/unnamed-chunk-25-1.png)
+![plot of chunk unnamed-chunk-27](assets/fig/unnamed-chunk-27-1.png)
 
 ---
 
 ## Adding points, lines, rectangles and polygons
 
-- the functions: `points()`, `lines()`, `rect()`, `polygon()` and `box()`
+- the functions: `points()`, `lines()`, `rect()`, `polygon()`, `axis()` and `box()`
 - the arguments: pch, cex, lwd, lty, col, bg, fg, border, density, angle
 
 ---
 
 ## Adding textual informations
 
-- title(), text(), mtext()
+- `title()`, `text()`, `mtext()`
 - font, family
 
 ---
 
 ## Changing colors
 
+- [A blog post](http://www.stat.ubc.ca/~jenny/STAT545A/block14_colors.html)
 - predefined color palette
 - the rgb system
 - the hexadecimal nomenclature
@@ -428,7 +456,8 @@ plot(x = 1, y = 1,
 ## Window Partitioning
 
 - mfrow and mfcol
-- layout()
+- `layout()`
+- `split.screen`
 
 ---
 
@@ -443,7 +472,7 @@ plot(x = 1, y = 1,
 ---
 
 - the loop for
-- pdf(), png()
+- `pdf()`, `png()`, `jpeg()`, `bmp()`, `tiff()`
 
 --- .transition
 
@@ -468,3 +497,4 @@ plot(x = 1, y = 1,
 
 - refaire une figure du samedi
 - autre figure
+- coder son propre boxplot.
