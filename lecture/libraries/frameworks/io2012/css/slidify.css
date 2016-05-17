@@ -398,3 +398,11 @@ ul li {
     margin-left: 10%;
     width: 90%;
 }
+
+.andy {
+    background-image: url(andy.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-origin: border-box;
+    background-size: 40%;
+}
