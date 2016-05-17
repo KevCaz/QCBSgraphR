@@ -238,7 +238,7 @@ The function/object `par()`
 
 ## The major types of graphics
 
-- barchart
+~~barchart~~
 - histogram
 - scatterplot
 - line chart
@@ -249,6 +249,41 @@ The function/object `par()`
 <!-- end -->
 
 - High-level plotting functions vs. low-level plotting functions
+
+--- &twocol
+
+## The major types of graphics
+
+*** =left
+- Barchart
+- Usage: ...
+
+<!-- end -->
+
+```{r, eval = FALSE}
+## Creation of a numerical vector
+x <- seq(50, 0, by = -10)
+names(x) <- LETTERS[1:length(x)]
+
+## Plotting the barchart
+barplot(height = x,
+        names.arg = names(x),
+        col = 'gray',
+        border = 'darkgray',
+        las = 1)
+```
+
+*** =right
+```{r, echo = FALSE}
+par(mar = c(4, 4, 1.5, 1.5), bg = 'transparent')
+x <- seq(50, 0, by = -10)
+names(x) <- LETTERS[1:length(x)]
+barplot(height = x,
+        names.arg = names(x),
+        col = 'gray',
+        border = 'darkgray',
+        las = 1)
+```
 
 --- &twocol
 

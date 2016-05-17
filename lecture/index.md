@@ -117,7 +117,7 @@ plot(x = 1, y = 1)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-3](assets/fig/unnamed-chunk-3-1.pdf)
+![plot of chunk unnamed-chunk-3](assets/fig/unnamed-chunk-3-1.png)
 
 --- &twocol w1:50% w2:50%
 
@@ -128,7 +128,7 @@ plot(x = 1, y = 1)
 
 
 *** =right
-![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.pdf)
+![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png)
 
 --- &twocol w1:50% w2:50%
 
@@ -147,7 +147,7 @@ xyplot(1 ~ 1)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-6](assets/fig/unnamed-chunk-6-1.pdf)
+![plot of chunk unnamed-chunk-6](assets/fig/unnamed-chunk-6-1.png)
 
 --- &twocol w1:50% w2:50%
 
@@ -170,7 +170,7 @@ qplot(x = 1, y = 1)
 
 - See the QCBS workshop on [ggplot2](http://qcbs.ca/wiki/r_workshop4)
 *** =right
-![plot of chunk unnamed-chunk-8](assets/fig/unnamed-chunk-8-1.pdf)
+![plot of chunk unnamed-chunk-8](assets/fig/unnamed-chunk-8-1.png)
 
 --- &twocol w1:50% w2:50%
 
@@ -183,7 +183,7 @@ qplot(x = 1, y = 1)
 
 
 *** =right
-![plot of chunk unnamed-chunk-9](assets/fig/unnamed-chunk-9-1.pdf)
+![plot of chunk unnamed-chunk-9](assets/fig/unnamed-chunk-9-1.png)
 
 ---
 
@@ -211,7 +211,7 @@ The function/object `par()`
 
 ## The major types of graphics
 
-- barchart
+~~barchart~~
 - histogram
 - scatterplot
 - line chart
@@ -222,6 +222,33 @@ The function/object `par()`
 <!-- end -->
 
 - High-level plotting functions vs. low-level plotting functions
+
+--- &twocol
+
+## The major types of graphics
+
+*** =left
+- Barchart
+- Usage: ...
+
+<!-- end -->
+
+
+```r
+## Creation of a numerical vector
+x <- seq(50, 0, by = -10)
+names(x) <- LETTERS[1:length(x)]
+
+## Plotting the barchart
+barplot(height = x,
+        names.arg = names(x),
+        col = 'gray',
+        border = 'darkgray',
+        las = 1)
+```
+
+*** =right
+![plot of chunk unnamed-chunk-11](assets/fig/unnamed-chunk-11-1.png)
 
 --- &twocol
 
@@ -236,7 +263,7 @@ plot(x = 1, y = 1)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-11](assets/fig/unnamed-chunk-11-1.pdf)
+![plot of chunk unnamed-chunk-13](assets/fig/unnamed-chunk-13-1.png)
 
 --- &twocol
 
@@ -252,7 +279,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-13](assets/fig/unnamed-chunk-13-1.pdf)
+![plot of chunk unnamed-chunk-15](assets/fig/unnamed-chunk-15-1.png)
 
 --- &twocol
 
@@ -269,7 +296,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-15](assets/fig/unnamed-chunk-15-1.pdf)
+![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17-1.png)
 
 --- &twocol
 
@@ -287,7 +314,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17-1.pdf)
+![plot of chunk unnamed-chunk-19](assets/fig/unnamed-chunk-19-1.png)
 
 --- &twocol
 
@@ -306,7 +333,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-19](assets/fig/unnamed-chunk-19-1.pdf)
+![plot of chunk unnamed-chunk-21](assets/fig/unnamed-chunk-21-1.png)
 
 --- &twocol
 
@@ -323,7 +350,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-21](assets/fig/unnamed-chunk-21-1.pdf)
+![plot of chunk unnamed-chunk-23](assets/fig/unnamed-chunk-23-1.png)
 
 --- &twocol
 
@@ -346,7 +373,7 @@ plot(x = 1, y = 1,
 - It is now possible to use low-level plotting functions such as `points()` or `axis()`
 
 *** =right
-![plot of chunk unnamed-chunk-23](assets/fig/unnamed-chunk-23-1.pdf)
+![plot of chunk unnamed-chunk-25](assets/fig/unnamed-chunk-25-1.png)
 
 ---
 

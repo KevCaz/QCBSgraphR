@@ -201,7 +201,7 @@
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-3-1.pdf" alt="plot of chunk unnamed-chunk-3"></p>
+  <p><img src="assets/fig/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"></p>
 
 </div>
 <div>
@@ -223,7 +223,7 @@
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-4-1.pdf" alt="plot of chunk unnamed-chunk-4"></p>
+  <p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"></p>
 
 </div>
 <div>
@@ -253,7 +253,7 @@ xyplot(1 ~ 1)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-6-1.pdf" alt="plot of chunk unnamed-chunk-6"></p>
+  <p><img src="assets/fig/unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6"></p>
 
 </div>
 <div>
@@ -290,7 +290,7 @@ qplot(x = 1, y = 1)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-8-1.pdf" alt="plot of chunk unnamed-chunk-8"></p>
+  <p><img src="assets/fig/unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8"></p>
 
 </div>
 <div>
@@ -315,7 +315,7 @@ qplot(x = 1, y = 1)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-9-1.pdf" alt="plot of chunk unnamed-chunk-9"></p>
+  <p><img src="assets/fig/unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9"></p>
 
 </div>
 <div>
@@ -372,8 +372,9 @@ qplot(x = 1, y = 1)
     <h2>The major types of graphics</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li>barchart</li>
+    <p><del>barchart</del></p>
+
+<ul>
 <li>histogram</li>
 <li>scatterplot</li>
 <li>line chart</li>
@@ -394,21 +395,33 @@ qplot(x = 1, y = 1)
 
 <slide class="" id="slide-16" style="background:;">
   <hgroup>
-    <h2>An empty plot</h2>
+    <h2>The major types of graphics</h2>
   </hgroup>
   <article data-timings="">
     
 <div style='float:left;width:49%;text-align:left;'>
   <ul>
-<li>The default plot</li>
+<li>Barchart</li>
+<li>Usage: ...</li>
 </ul>
 
-<pre><code class="r">plot(x = 1, y = 1)
+<!-- end -->
+
+<pre><code class="r">## Creation of a numerical vector
+x &lt;- seq(50, 0, by = -10)
+names(x) &lt;- LETTERS[1:length(x)]
+
+## Plotting the barchart
+barplot(height = x,
+        names.arg = names(x),
+        col = &#39;gray&#39;,
+        border = &#39;darkgray&#39;,
+        las = 1)
 </code></pre>
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-11-1.pdf" alt="plot of chunk unnamed-chunk-11"></p>
+  <p><img src="assets/fig/unnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11"></p>
 
 </div>
 <div>
@@ -426,16 +439,15 @@ qplot(x = 1, y = 1)
     
 <div style='float:left;width:49%;text-align:left;'>
   <ul>
-<li>First let&#39;s remove the box</li>
+<li>The default plot</li>
 </ul>
 
-<pre><code class="r">plot(x = 1, y = 1,
-     bty = &#39;n&#39;)
+<pre><code class="r">plot(x = 1, y = 1)
 </code></pre>
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-13-1.pdf" alt="plot of chunk unnamed-chunk-13"></p>
+  <p><img src="assets/fig/unnamed-chunk-13-1.png" alt="plot of chunk unnamed-chunk-13"></p>
 
 </div>
 <div>
@@ -453,17 +465,16 @@ qplot(x = 1, y = 1)
     
 <div style='float:left;width:49%;text-align:left;'>
   <ul>
-<li>Now remove the textual annotation</li>
+<li>First let&#39;s remove the box</li>
 </ul>
 
 <pre><code class="r">plot(x = 1, y = 1,
-     bty = &#39;n&#39;,
-     ann = FALSE)
+     bty = &#39;n&#39;)
 </code></pre>
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-15-1.pdf" alt="plot of chunk unnamed-chunk-15"></p>
+  <p><img src="assets/fig/unnamed-chunk-15-1.png" alt="plot of chunk unnamed-chunk-15"></p>
 
 </div>
 <div>
@@ -474,6 +485,34 @@ qplot(x = 1, y = 1)
 </slide>
 
 <slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>An empty plot</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Now remove the textual annotation</li>
+</ul>
+
+<pre><code class="r">plot(x = 1, y = 1,
+     bty = &#39;n&#39;,
+     ann = FALSE)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-17-1.png" alt="plot of chunk unnamed-chunk-17"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -492,7 +531,7 @@ qplot(x = 1, y = 1)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-17-1.pdf" alt="plot of chunk unnamed-chunk-17"></p>
+  <p><img src="assets/fig/unnamed-chunk-19-1.png" alt="plot of chunk unnamed-chunk-19"></p>
 
 </div>
 <div>
@@ -502,7 +541,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-20" style="background:;">
+<slide class="" id="slide-21" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -522,7 +561,7 @@ qplot(x = 1, y = 1)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-19-1.pdf" alt="plot of chunk unnamed-chunk-19"></p>
+  <p><img src="assets/fig/unnamed-chunk-21-1.png" alt="plot of chunk unnamed-chunk-21"></p>
 
 </div>
 <div>
@@ -532,7 +571,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-21" style="background:;">
+<slide class="" id="slide-22" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -550,7 +589,7 @@ qplot(x = 1, y = 1)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-21-1.pdf" alt="plot of chunk unnamed-chunk-21"></p>
+  <p><img src="assets/fig/unnamed-chunk-23-1.png" alt="plot of chunk unnamed-chunk-23"></p>
 
 </div>
 <div>
@@ -560,7 +599,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-22" style="background:;">
+<slide class="" id="slide-23" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -586,7 +625,7 @@ qplot(x = 1, y = 1)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-23-1.pdf" alt="plot of chunk unnamed-chunk-23"></p>
+  <p><img src="assets/fig/unnamed-chunk-25-1.png" alt="plot of chunk unnamed-chunk-25"></p>
 
 </div>
 <div>
@@ -596,7 +635,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-23" style="background:;">
+<slide class="" id="slide-24" style="background:;">
   <hgroup>
     <h2>Adding points, lines, rectangles and polygons</h2>
   </hgroup>
@@ -610,7 +649,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-24" style="background:;">
+<slide class="" id="slide-25" style="background:;">
   <hgroup>
     <h2>Adding textual informations</h2>
   </hgroup>
@@ -624,7 +663,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-25" style="background:;">
+<slide class="" id="slide-26" style="background:;">
   <hgroup>
     <h2>Changing colors</h2>
   </hgroup>
@@ -640,7 +679,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-26" style="background:;">
+<slide class="" id="slide-27" style="background:;">
   <hgroup>
     <h2>Changing fonts</h2>
   </hgroup>
@@ -654,7 +693,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-27" style="background:;">
+<slide class="" id="slide-28" style="background:;">
   <hgroup>
     <h2>Adding/changing axis</h2>
   </hgroup>
@@ -664,7 +703,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-28" style="background:;">
+<slide class="" id="slide-29" style="background:;">
   <hgroup>
     <h2>Adding legend</h2>
   </hgroup>
@@ -674,7 +713,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-29" style="background:;">
+<slide class="" id="slide-30" style="background:;">
   <hgroup>
     <h2>Figure margins</h2>
   </hgroup>
@@ -687,7 +726,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-30" style="background:;">
+<slide class="transition" id="slide-31" style="background:;">
   <hgroup>
     <h2>Composition and multipanel plotting</h2>
   </hgroup>
@@ -697,7 +736,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-31" style="background:;">
+<slide class="" id="slide-32" style="background:;">
   <hgroup>
     <h2>Window Partitioning</h2>
   </hgroup>
@@ -711,7 +750,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-32" style="background:;">
+<slide class="" id="slide-33" style="background:;">
   <hgroup>
     <h2>Insets</h2>
   </hgroup>
@@ -724,7 +763,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-33" style="background:;">
+<slide class="transition" id="slide-34" style="background:;">
   <hgroup>
     <h2>Graphics automation and export</h2>
   </hgroup>
@@ -734,7 +773,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-34" style="background:;">
+<slide class="" id="slide-35" style="background:;">
   <article data-timings="">
     <ul>
 <li>the loop for</li>
@@ -745,7 +784,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-35" style="background:;">
+<slide class="transition" id="slide-36" style="background:;">
   <hgroup>
     <h2>Ressources</h2>
   </hgroup>
@@ -755,7 +794,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-36" style="background:;">
+<slide class="" id="slide-37" style="background:;">
   <hgroup>
     <h2>Ressources</h2>
   </hgroup>
@@ -771,7 +810,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-37" style="background:;">
+<slide class="transition" id="slide-38" style="background:;">
   <hgroup>
     <h2>Let&#39;s do pratice!</h2>
   </hgroup>
@@ -781,7 +820,7 @@ qplot(x = 1, y = 1)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-38" style="background:;">
+<slide class="" id="slide-39" style="background:;">
   <hgroup>
     <h2>Two exercises</h2>
   </hgroup>
@@ -891,7 +930,7 @@ qplot(x = 1, y = 1)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='An empty plot'>
+        data-slide=16 title='The major types of graphics'>
          16
       </a>
     </li>
@@ -933,79 +972,79 @@ qplot(x = 1, y = 1)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=23 title='Adding points, lines, rectangles and polygons'>
+        data-slide=23 title='An empty plot'>
          23
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=24 title='Adding textual informations'>
+        data-slide=24 title='Adding points, lines, rectangles and polygons'>
          24
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=25 title='Changing colors'>
+        data-slide=25 title='Adding textual informations'>
          25
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=26 title='Changing fonts'>
+        data-slide=26 title='Changing colors'>
          26
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=27 title='Adding/changing axis'>
+        data-slide=27 title='Changing fonts'>
          27
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=28 title='Adding legend'>
+        data-slide=28 title='Adding/changing axis'>
          28
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=29 title='Figure margins'>
+        data-slide=29 title='Adding legend'>
          29
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title='Composition and multipanel plotting'>
+        data-slide=30 title='Figure margins'>
          30
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=31 title='Window Partitioning'>
+        data-slide=31 title='Composition and multipanel plotting'>
          31
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='Insets'>
+        data-slide=32 title='Window Partitioning'>
          32
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=33 title='Graphics automation and export'>
+        data-slide=33 title='Insets'>
          33
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=34 title='NA'>
+        data-slide=34 title='Graphics automation and export'>
          34
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=35 title='Ressources'>
+        data-slide=35 title='NA'>
          35
       </a>
     </li>
@@ -1017,14 +1056,20 @@ qplot(x = 1, y = 1)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=37 title='Let&#39;s do pratice!'>
+        data-slide=37 title='Ressources'>
          37
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=38 title='Two exercises'>
+        data-slide=38 title='Let&#39;s do pratice!'>
          38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='Two exercises'>
+         39
       </a>
     </li>
   </ul>
