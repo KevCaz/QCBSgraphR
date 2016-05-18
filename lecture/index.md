@@ -67,7 +67,7 @@ article li.build {
 <!-- *** =left -->
 
 *** =right
-
+![plot of chunk unnamed-chunk-3](assets/fig/unnamed-chunk-3-1.pdf)
 
 --- &twocol
 
@@ -77,7 +77,7 @@ article li.build {
 - Chart area
 
 *** =right
-
+![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.pdf)
 
 --- &twocol
 
@@ -88,7 +88,7 @@ article li.build {
 - Plot area
 
 *** =right
-
+![plot of chunk unnamed-chunk-5](assets/fig/unnamed-chunk-5-1.pdf)
 
 --- &twocol
 
@@ -101,7 +101,7 @@ article li.build {
 
 
 *** =right
-
+![plot of chunk unnamed-chunk-6](assets/fig/unnamed-chunk-6-1.pdf)
 
 --- &twocol
 
@@ -114,7 +114,7 @@ article li.build {
 - Axis (scaling, labeling)
 
 *** =right
-
+![plot of chunk unnamed-chunk-7](assets/fig/unnamed-chunk-7-1.pdf)
 
 --- &twocol
 
@@ -128,7 +128,7 @@ article li.build {
 - Figure title
 
 *** =right
-
+![plot of chunk unnamed-chunk-8](assets/fig/unnamed-chunk-8-1.pdf)
 
 --- &twocol
 
@@ -143,7 +143,7 @@ article li.build {
 - Legend
 
 *** =right
-
+![plot of chunk unnamed-chunk-9](assets/fig/unnamed-chunk-9-1.pdf)
 
 ---
 
@@ -159,7 +159,7 @@ article li.build {
 - Use consistent colors
 
 *** =right
-
+![plot of chunk unnamed-chunk-10](assets/fig/unnamed-chunk-10-1.pdf)
 
 --- &twocol
 
@@ -172,7 +172,7 @@ article li.build {
 - Do prefer this representation
 
 *** =right
-
+![plot of chunk unnamed-chunk-11](assets/fig/unnamed-chunk-11-1.pdf)
 
 --- &twocol
 
@@ -183,7 +183,7 @@ article li.build {
 - Do not use high contrast color
 
 *** =right
-
+![plot of chunk unnamed-chunk-12](assets/fig/unnamed-chunk-12-1.pdf)
 
 --- &twocol
 
@@ -195,7 +195,7 @@ article li.build {
 - Sometimes sizes and symbols are better
 
 *** =right
-
+![plot of chunk unnamed-chunk-13](assets/fig/unnamed-chunk-13-1.pdf)
 
 --- &twocol
 
@@ -207,7 +207,7 @@ article li.build {
 - Do not add chart junk
 
 *** =right
-
+![plot of chunk unnamed-chunk-14](assets/fig/unnamed-chunk-14-1.pdf)
 
 --- &twocol
 
@@ -220,7 +220,7 @@ article li.build {
 - Think about the Data-Ink ratio (Tufte, 1983)
 
 *** =right
-
+![plot of chunk unnamed-chunk-15](assets/fig/unnamed-chunk-15-1.pdf)
 
 ---
 
@@ -258,7 +258,7 @@ article li.build {
   <div class='centered'>Murrell, P. (2015) The gridGraphics Package. The R Jounal.</div>
 
 
---- &twocol w1:50% w2:50%
+--- &twocol
 
 ## Graphical packages - graphics
 
@@ -270,13 +270,16 @@ article li.build {
 
 
 ```r
-plot(x = 1, y = 1)
+plot(x, y, ...)
+points(x, y, ...)
+title(main, ...)
+legend(legend, ...)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17-1.png)
+![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17-1.pdf)
 
---- &twocol w1:50% w2:50%
+--- &twocol
 
 ## Graphical packages - grid
 
@@ -287,9 +290,9 @@ plot(x = 1, y = 1)
 
 
 *** =right
-![plot of chunk unnamed-chunk-18](assets/fig/unnamed-chunk-18-1.png)
+![plot of chunk unnamed-chunk-18](assets/fig/unnamed-chunk-18-1.pdf)
 
---- &twocol w1:50% w2:50%
+--- &twocol
 
 ## Graphical packages - lattice
 
@@ -302,13 +305,14 @@ plot(x = 1, y = 1)
 
 ```r
 library(lattice)
-xyplot(1 ~ 1)
+xyplot(y ~ x, dat, group = z,
+       auto.key = list(columns = 2))
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-20](assets/fig/unnamed-chunk-20-1.png)
+![plot of chunk unnamed-chunk-20](assets/fig/unnamed-chunk-20-1.pdf)
 
---- &twocol w1:50% w2:50%
+--- &twocol
 
 ## Graphical packages - ggplot2
 
@@ -322,16 +326,17 @@ xyplot(1 ~ 1)
 
 ```r
 library(ggplot2)
-qplot(x = 1, y = 1)
+p <- ggplot(data = dat,
+            aes(x = x, y = y, colour = z))
+p <- p + geom_point(size = 3)
+p
 ```
-
-<br />
 
 - See the QCBS workshop on [ggplot2](http://qcbs.ca/wiki/r_workshop4)
 *** =right
-![plot of chunk unnamed-chunk-22](assets/fig/unnamed-chunk-22-1.png)
+![plot of chunk unnamed-chunk-22](assets/fig/unnamed-chunk-22-1.pdf)
 
---- &twocol w1:50% w2:50%
+--- &twocol
 
 ## Graphical packages - plotrix
 
@@ -341,26 +346,33 @@ qplot(x = 1, y = 1)
 - and various labeling, axis and color scaling functions
 
 
+```r
+library(plotrix)
+data(soils)
+triax.plot(...)
+```
+
 *** =right
-![plot of chunk unnamed-chunk-23](assets/fig/unnamed-chunk-23-1.png)
+![plot of chunk unnamed-chunk-24](assets/fig/unnamed-chunk-24-1.pdf)
 
 
---- &twocol w1:50% w2:50%
+--- &twocol
 
 ## Graphical packages - gplots
 
 *** =left
 - Based on the `graphics` package
-- adds enhanced versions of standard plots (_e.g_ `boxplot2`)
-- adds some extra function
+- Adds enhanced versions of standard plots (e.g. `boxplot2`)
+- and some extra functions (e.g. Venn diagram)
 
+
+```r
+library(gplots)
+venn(...)
+```
 
 *** =right
-![plot of chunk unnamed-chunk-24](assets/fig/unnamed-chunk-24-1.png)
-
-
-
-
+![plot of chunk unnamed-chunk-26](assets/fig/unnamed-chunk-26-1.pdf)
 
 ---
 
@@ -378,7 +390,7 @@ qplot(x = 1, y = 1)
 
 --- .transition
 
-## R graphics basis
+## The graphics package basis
 
 ---
 
@@ -390,7 +402,6 @@ The function/object `par()`
 
 ## The major types of graphics
 
-- barchart
 - High-level plotting functions vs. low-level plotting functions
 
 --- &twocol
@@ -398,26 +409,24 @@ The function/object `par()`
 ## The major types of graphics
 
 *** =left
-- Barchart
-- Usage: ...
+- Bar chart
+- Usage: representation of discrete variables
+- The length of bars is proportional to values
 
 
 
 ```r
-## Creation of a numerical vector
 x <- seq(50, 0, by = -10)
-names(x) <- LETTERS[1:length(x)]
 
-## Plotting the barchart
 barplot(height = x,
-        names.arg = names(x),
-        col = 'gray',
-        border = 'darkgray',
+        names.arg = LETTERS[1:length(x)],
+        col = '#08519c',
+        border = '#2c7fb8',
         las = 1)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-26](assets/fig/unnamed-chunk-26-1.png)
+![plot of chunk unnamed-chunk-28](assets/fig/unnamed-chunk-28-1.pdf)
 
 --- &twocol
 
@@ -432,7 +441,7 @@ plot(x = 1, y = 1)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-28](assets/fig/unnamed-chunk-28-1.png)
+![plot of chunk unnamed-chunk-30](assets/fig/unnamed-chunk-30-1.pdf)
 
 --- &twocol
 
@@ -448,7 +457,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-30](assets/fig/unnamed-chunk-30-1.png)
+![plot of chunk unnamed-chunk-32](assets/fig/unnamed-chunk-32-1.pdf)
 
 --- &twocol
 
@@ -465,7 +474,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-32](assets/fig/unnamed-chunk-32-1.png)
+![plot of chunk unnamed-chunk-34](assets/fig/unnamed-chunk-34-1.pdf)
 
 --- &twocol
 
@@ -483,7 +492,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-34](assets/fig/unnamed-chunk-34-1.png)
+![plot of chunk unnamed-chunk-36](assets/fig/unnamed-chunk-36-1.pdf)
 
 --- &twocol
 
@@ -502,7 +511,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-36](assets/fig/unnamed-chunk-36-1.png)
+![plot of chunk unnamed-chunk-38](assets/fig/unnamed-chunk-38-1.pdf)
 
 --- &twocol
 
@@ -519,7 +528,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-38](assets/fig/unnamed-chunk-38-1.png)
+![plot of chunk unnamed-chunk-40](assets/fig/unnamed-chunk-40-1.pdf)
 
 --- &twocol
 
@@ -542,7 +551,7 @@ plot(x = 1, y = 1,
 - It is now possible to use low-level plotting functions such as `points()` or `axis()`
 
 *** =right
-![plot of chunk unnamed-chunk-40](assets/fig/unnamed-chunk-40-1.png)
+![plot of chunk unnamed-chunk-42](assets/fig/unnamed-chunk-42-1.pdf)
 
 ---
 
