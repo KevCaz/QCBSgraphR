@@ -67,7 +67,7 @@ article li.build {
 <!-- *** =left -->
 
 *** =right
-![plot of chunk unnamed-chunk-3](assets/fig/unnamed-chunk-3-1.pdf)
+
 
 --- &twocol
 
@@ -77,7 +77,7 @@ article li.build {
 - Chart area
 
 *** =right
-![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.pdf)
+
 
 --- &twocol
 
@@ -88,7 +88,7 @@ article li.build {
 - Plot area
 
 *** =right
-![plot of chunk unnamed-chunk-5](assets/fig/unnamed-chunk-5-1.pdf)
+
 
 --- &twocol
 
@@ -101,7 +101,7 @@ article li.build {
 
 
 *** =right
-![plot of chunk unnamed-chunk-6](assets/fig/unnamed-chunk-6-1.pdf)
+
 
 --- &twocol
 
@@ -114,7 +114,7 @@ article li.build {
 - Axis (scaling, labeling)
 
 *** =right
-![plot of chunk unnamed-chunk-7](assets/fig/unnamed-chunk-7-1.pdf)
+
 
 --- &twocol
 
@@ -128,7 +128,7 @@ article li.build {
 - Figure title
 
 *** =right
-![plot of chunk unnamed-chunk-8](assets/fig/unnamed-chunk-8-1.pdf)
+
 
 --- &twocol
 
@@ -143,7 +143,7 @@ article li.build {
 - Legend
 
 *** =right
-![plot of chunk unnamed-chunk-9](assets/fig/unnamed-chunk-9-1.pdf)
+
 
 ---
 
@@ -159,7 +159,7 @@ article li.build {
 - Use consistent colors
 
 *** =right
-![plot of chunk unnamed-chunk-10](assets/fig/unnamed-chunk-10-1.pdf)
+
 
 --- &twocol
 
@@ -172,7 +172,7 @@ article li.build {
 - Do prefer this representation
 
 *** =right
-![plot of chunk unnamed-chunk-11](assets/fig/unnamed-chunk-11-1.pdf)
+
 
 --- &twocol
 
@@ -183,7 +183,7 @@ article li.build {
 - Do not use high contrast color
 
 *** =right
-![plot of chunk unnamed-chunk-12](assets/fig/unnamed-chunk-12-1.pdf)
+
 
 --- &twocol
 
@@ -195,7 +195,7 @@ article li.build {
 - Sometimes sizes and symbols are better
 
 *** =right
-![plot of chunk unnamed-chunk-13](assets/fig/unnamed-chunk-13-1.pdf)
+
 
 --- &twocol
 
@@ -207,7 +207,7 @@ article li.build {
 - Do not add chart junk
 
 *** =right
-![plot of chunk unnamed-chunk-14](assets/fig/unnamed-chunk-14-1.pdf)
+
 
 --- &twocol
 
@@ -220,13 +220,15 @@ article li.build {
 - Think about the Data-Ink ratio (Tufte, 1983)
 
 *** =right
-![plot of chunk unnamed-chunk-15](assets/fig/unnamed-chunk-15-1.pdf)
+
 
 ---
 
 ## Some guidelines for better graphics
 
-- <b>Each element of a graph must have a signification to understand data</b>
+<q>Each element of a graph has to help understanding data</q>
+
+<q>Choose the graphic that shows what you want to show</q>
 
 
 --- &twocol
@@ -235,7 +237,6 @@ article li.build {
 
 *** =left
 <div style='text-align: left; margin: 10% 5%;'>
-
     <img src='./assets/img/Rlogo.png' style="width:90%;"/>
 </div>
 
@@ -273,7 +274,7 @@ plot(x = 1, y = 1)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17-1.pdf)
+![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17-1.png)
 
 --- &twocol w1:50% w2:50%
 
@@ -286,7 +287,7 @@ plot(x = 1, y = 1)
 
 
 *** =right
-![plot of chunk unnamed-chunk-18](assets/fig/unnamed-chunk-18-1.pdf)
+![plot of chunk unnamed-chunk-18](assets/fig/unnamed-chunk-18-1.png)
 
 --- &twocol w1:50% w2:50%
 
@@ -305,7 +306,7 @@ xyplot(1 ~ 1)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-20](assets/fig/unnamed-chunk-20-1.pdf)
+![plot of chunk unnamed-chunk-20](assets/fig/unnamed-chunk-20-1.png)
 
 --- &twocol w1:50% w2:50%
 
@@ -328,7 +329,7 @@ qplot(x = 1, y = 1)
 
 - See the QCBS workshop on [ggplot2](http://qcbs.ca/wiki/r_workshop4)
 *** =right
-![plot of chunk unnamed-chunk-22](assets/fig/unnamed-chunk-22-1.pdf)
+![plot of chunk unnamed-chunk-22](assets/fig/unnamed-chunk-22-1.png)
 
 --- &twocol w1:50% w2:50%
 
@@ -341,7 +342,7 @@ qplot(x = 1, y = 1)
 
 
 *** =right
-![plot of chunk unnamed-chunk-23](assets/fig/unnamed-chunk-23-1.pdf)
+![plot of chunk unnamed-chunk-23](assets/fig/unnamed-chunk-23-1.png)
 
 
 --- &twocol w1:50% w2:50%
@@ -355,7 +356,7 @@ qplot(x = 1, y = 1)
 
 
 *** =right
-![plot of chunk unnamed-chunk-24](assets/fig/unnamed-chunk-24-1.pdf)
+![plot of chunk unnamed-chunk-24](assets/fig/unnamed-chunk-24-1.png)
 
 
 
@@ -416,7 +417,7 @@ barplot(height = x,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-26](assets/fig/unnamed-chunk-26-1.pdf)
+![plot of chunk unnamed-chunk-26](assets/fig/unnamed-chunk-26-1.png)
 
 --- &twocol
 
@@ -431,7 +432,7 @@ plot(x = 1, y = 1)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-28](assets/fig/unnamed-chunk-28-1.pdf)
+![plot of chunk unnamed-chunk-28](assets/fig/unnamed-chunk-28-1.png)
 
 --- &twocol
 
@@ -447,7 +448,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-30](assets/fig/unnamed-chunk-30-1.pdf)
+![plot of chunk unnamed-chunk-30](assets/fig/unnamed-chunk-30-1.png)
 
 --- &twocol
 
@@ -464,7 +465,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-32](assets/fig/unnamed-chunk-32-1.pdf)
+![plot of chunk unnamed-chunk-32](assets/fig/unnamed-chunk-32-1.png)
 
 --- &twocol
 
@@ -482,7 +483,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-34](assets/fig/unnamed-chunk-34-1.pdf)
+![plot of chunk unnamed-chunk-34](assets/fig/unnamed-chunk-34-1.png)
 
 --- &twocol
 
@@ -501,7 +502,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-36](assets/fig/unnamed-chunk-36-1.pdf)
+![plot of chunk unnamed-chunk-36](assets/fig/unnamed-chunk-36-1.png)
 
 --- &twocol
 
@@ -518,7 +519,7 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-38](assets/fig/unnamed-chunk-38-1.pdf)
+![plot of chunk unnamed-chunk-38](assets/fig/unnamed-chunk-38-1.png)
 
 --- &twocol
 
@@ -541,7 +542,7 @@ plot(x = 1, y = 1,
 - It is now possible to use low-level plotting functions such as `points()` or `axis()`
 
 *** =right
-![plot of chunk unnamed-chunk-40](assets/fig/unnamed-chunk-40-1.pdf)
+![plot of chunk unnamed-chunk-40](assets/fig/unnamed-chunk-40-1.png)
 
 ---
 

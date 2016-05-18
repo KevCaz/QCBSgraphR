@@ -264,7 +264,9 @@ article li.build {
 
 ## Some guidelines for better graphics
 
-- <b>Each element of a graph must have a signification to understand data</b>
+<q>Each element of a graph has to help understanding data</q>
+
+<q>Choose the graphic that shows what you want to show</q>
 
 
 --- &twocol
@@ -273,7 +275,6 @@ article li.build {
 
 *** =left
 <div style='text-align: left; margin: 10% 5%;'>
-
     <img src='./assets/img/Rlogo.png' style="width:90%;"/>
 </div>
 
