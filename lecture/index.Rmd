@@ -830,13 +830,63 @@ layout(mat_lay, widths=c(.25,1,1),
 
 
 
----
+--- &twocol
 
 ## Embedded plots
 
-- fig and new
+*** =left
 
-- Normalized Device Coordinates (NDC)
+- You must call `new=TRUE` and specifying `fig` in `par()`:
+
+  1. Create your first post
+  2. use `par()`
+  3. add your new figure
+
+
+*** =right
+
+```{r, echo = FALSE}
+<<fignew1>>
+```
+
+
+--- &twocol
+
+## Embedded plots
+
+*** =left
+
+- You must call `new=TRUE` and specifying `fig` in `par()`:
+
+  1. Create your first post
+  2. use `par()`
+  3. add your new figure
+
+*** =right
+
+```{r, echo = FALSE}
+  <<fignew1>>
+```
+
+
+-- &twocol
+
+## Embedded plots
+
+*** =left
+
+- You must call `new=TRUE` and specifying `fig` in `par()`:
+
+  1. Create your first post
+  2. use `par()`
+  3. add your new figure
+
+*** =right
+
+```{r, echo = FALSE}
+<<fignew1>>
+```
+
 
 
 <!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->

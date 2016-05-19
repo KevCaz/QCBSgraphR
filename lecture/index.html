@@ -1282,8 +1282,10 @@ layout(mat_lay, widths=c(.25,1,1),
   <article data-timings="">
     
 <div style='float:left;width:49%;text-align:left;'>
-  <pre><code class="r">for (i in 1:4) {
-  if (i&lt;3) par(mar=rep(0,4)) else par(mar=rep(1,4))
+  <pre><code class="r">mat_lay &lt;- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
+layout(mat_lay, widths=c(.25,1,1), heights=c(.2,1,.4))
+for (i in 1:4) {
+  if (i&lt;3) par(mar=rep(1,4)) else par(mar=rep(4,4))
   eplot()
   fillIt(col=i)
   text(0,0, labels=i, cex=4)
@@ -1292,7 +1294,7 @@ layout(mat_lay, widths=c(.25,1,1),
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-62-1.pdf" alt="plot of chunk unnamed-chunk-62"><img src="assets/fig/unnamed-chunk-62-2.pdf" alt="plot of chunk unnamed-chunk-62"><img src="assets/fig/unnamed-chunk-62-3.pdf" alt="plot of chunk unnamed-chunk-62"><img src="assets/fig/unnamed-chunk-62-4.pdf" alt="plot of chunk unnamed-chunk-62"></p>
+  <p><img src="assets/fig/unnamed-chunk-62-1.pdf" alt="plot of chunk unnamed-chunk-62"></p>
 
 </div>
 <div>
@@ -1304,18 +1306,70 @@ layout(mat_lay, widths=c(.25,1,1),
 
 <slide class="" id="slide-55" style="background:;">
   <hgroup>
-    <h2>Insets</h2>
+    <h2>Embedded plots</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li>fig and new</li>
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>You must call <code>new=TRUE</code> and specifying <code>fig</code> in <code>par()</code> :</li>
 </ul>
 
+<ol>
+<li>Create your first post</li>
+<li>use <code>par()</code></li>
+<li><p>add your new figure</p>
+
+<p>*** =right</p>
+
+<p><img src="assets/fig/unnamed-chunk-63-1.pdf" alt="plot of chunk unnamed-chunk-63"></p></li>
+</ol>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  
+</div>
+<div>
+  
+</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-56" style="background:;">
+<slide class="" id="slide-56" style="background:;">
+  <hgroup>
+    <h2>Embedded plots</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>You must call <code>new=TRUE</code> and specifying <code>fig</code> in <code>par()</code> :</li>
+</ul>
+
+<ol>
+<li>Create your first post</li>
+<li>use <code>par()</code></li>
+<li>add your new figure</li>
+</ol>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-64-1.pdf" alt="plot of chunk unnamed-chunk-64"></p>
+
+<p>-- &amp;twocol</p>
+
+<h2>Embedded plots</h2>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="transition" id="slide-57" style="background:;">
   <hgroup>
     <h2>Graphics automation and export</h2>
   </hgroup>
@@ -1325,7 +1379,7 @@ layout(mat_lay, widths=c(.25,1,1),
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-57" style="background:;">
+<slide class="" id="slide-58" style="background:;">
   <article data-timings="">
     <ul>
 <li>the loop for</li>
@@ -1336,7 +1390,7 @@ layout(mat_lay, widths=c(.25,1,1),
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-58" style="background:;">
+<slide class="transition" id="slide-59" style="background:;">
   <hgroup>
     <h2>Ressources</h2>
   </hgroup>
@@ -1346,7 +1400,7 @@ layout(mat_lay, widths=c(.25,1,1),
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-59" style="background:;">
+<slide class="" id="slide-60" style="background:;">
   <hgroup>
     <h2>Ressources</h2>
   </hgroup>
@@ -1361,7 +1415,7 @@ layout(mat_lay, widths=c(.25,1,1),
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-60" style="background:;">
+<slide class="transition" id="slide-61" style="background:;">
   <hgroup>
     <h2>Let&#39;s pratice!</h2>
   </hgroup>
@@ -1371,7 +1425,7 @@ layout(mat_lay, widths=c(.25,1,1),
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-61" style="background:;">
+<slide class="" id="slide-62" style="background:;">
   <hgroup>
     <h2>Two exercises</h2>
   </hgroup>
@@ -1716,25 +1770,25 @@ layout(mat_lay, widths=c(.25,1,1),
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=55 title='Insets'>
+        data-slide=55 title='Embedded plots'>
          55
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=56 title='Graphics automation and export'>
+        data-slide=56 title='Embedded plots'>
          56
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=57 title='NA'>
+        data-slide=57 title='Graphics automation and export'>
          57
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=58 title='Ressources'>
+        data-slide=58 title='NA'>
          58
       </a>
     </li>
@@ -1746,14 +1800,20 @@ layout(mat_lay, widths=c(.25,1,1),
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=60 title='Let&#39;s pratice!'>
+        data-slide=60 title='Ressources'>
          60
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=61 title='Two exercises'>
+        data-slide=61 title='Let&#39;s pratice!'>
          61
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=62 title='Two exercises'>
+         62
       </a>
     </li>
   </ul>

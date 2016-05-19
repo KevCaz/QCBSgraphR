@@ -765,8 +765,10 @@ layout(mat_lay, widths=c(.25,1,1),
 
 
 ```r
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
+layout(mat_lay, widths=c(.25,1,1), heights=c(.2,1,.4))
 for (i in 1:4) {
-  if (i<3) par(mar=rep(0,4)) else par(mar=rep(1,4))
+  if (i<3) par(mar=rep(1,4)) else par(mar=rep(4,4))
   eplot()
   fillIt(col=i)
   text(0,0, labels=i, cex=4)
@@ -774,20 +776,63 @@ for (i in 1:4) {
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-1.pdf)![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-2.pdf)![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-3.pdf)![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-4.pdf)
+![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-1.pdf)
 
 
 
+--- &twocol
+
+## Embedded plots
+
+*** =left
+
+- You must call `new=TRUE` and specifying `fig` in `par()` :
+
+  1. Create your first post
+  2. use `par()`
+  3. add your new figure
 
 
----
+  *** =right
 
-## Insets
+  ![plot of chunk unnamed-chunk-63](assets/fig/unnamed-chunk-63-1.pdf)
 
-- fig and new
+--- &twocol
+
+
+## Embedded plots
+
+*** =left
+
+- You must call `new=TRUE` and specifying `fig` in `par()` :
+
+  1. Create your first post
+  2. use `par()`
+  3. add your new figure
+
+*** =right
+
+![plot of chunk unnamed-chunk-64](assets/fig/unnamed-chunk-64-1.pdf)
+
+-- &twocol
+
+## Embedded plots
+
+*** =left
+
+- You must call `new=TRUE` and specifying `fig` in `par()` :
+
+  1. Create your first post
+  2. use `par()`
+  3. add your new figure
+
+*** =right
+
+![plot of chunk unnamed-chunk-65](assets/fig/unnamed-chunk-65-1.pdf)
 
 
 
+<!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
 
 
 
