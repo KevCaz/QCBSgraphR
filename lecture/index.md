@@ -9,14 +9,17 @@ hitheme     : sunburst      #
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
-assets:
-  css: "http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+assets      :
+  css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
 ---
 
 
-<!-- Faudra faire attention si on met des majuscule en début d'hyphenation... -->
+<!-- Rq:
+1. Faudra faire attention si on met des majuscule en début d'hyphenation...
+-->
 
-<!-- To set knitr  -->
+
+<!-- Setting knitr  -->
 
 
 <!-- Call the script -->
@@ -890,18 +893,13 @@ for (i in 1:4) {
 options('device')
 ```
 
-
-- Devices available:
-  - [Quartz](https://en.wikipedia.org/wiki/Quartz_(graphics_layer))
-  - [X11](https://en.wikipedia.org/wiki/X_Window_System)
+- Devices available  &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html):
+  - Quartz &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://en.wikipedia.org/wiki/Quartz_(graphics_layer)
+  - X11 &nbsp;&nbsp; [<i class="fa fa-globe" aria-hidden="true"></i>](https://en.wikipedia.org/wiki/X_Window_System)
+  - pdf, jpeg, svg, ...
   - in add-on package :
-      -  [rgl](https://cran.r-project.org/web/packages/rgl/index.html) | [site openGL](https://www.opengl.org)
-      - internet browser ex. (googleVis
-(https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html)
-
-[<i class="fa fa-globe" aria-hidden="true"></i>](https://www.opengl.org)
-
-
+      -  [rgl  package](https://cran.r-project.org/web/packages/rgl/index.html) &nbsp;&nbsp; [<i class="fa fa-globe" aria-hidden="true"></i>](https://www.opengl.org)
+      - Internet browsers [googleVis](https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html)
 
 
 
@@ -914,7 +912,7 @@ options('device')
 
 - the loop for
 - `pdf()`, `png()`, `jpeg()`, `bmp()`, `tiff()`
-
+- cairo_pdf, cairo_ps, svg
 
 
 
@@ -938,9 +936,14 @@ options('device')
 
 ## Ressources
 
-- [CRAN task view](https://cran.r-project.org/web/views/Graphics.html)
-- [More package indexed](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
-- [ggplot2](http://docs.ggplot2.org/current/)
+- CRAN task view fro graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
+- more packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
+- ggplot2 website &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://docs.ggplot2.org/current/)
+
+
+
+
+
 
 --- .transition
 
@@ -948,7 +951,8 @@ options('device')
 
 ---
 
-## Two exercises
+## Three challenges
 
-- "refaire une figure du samedi"
-- a fig quite complictaed...
+1. "refaire une figure du samedi"
+2. a fig quite complicated...
+3. Code your own boxplot function.

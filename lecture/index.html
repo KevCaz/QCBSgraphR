@@ -13,8 +13,7 @@
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/sunburst.css" />
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
-<link rel=stylesheet href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"></link>
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"></link>
 
   
   <!-- Grab CDN jQuery, fall back to local if offline -->
@@ -44,9 +43,11 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <article data-timings="">
-    <!-- Faudra faire attention si on met des majuscule en début d'hyphenation... -->
+    <!-- Rq:
+1. Faudra faire attention si on met des majuscule en début d'hyphenation...
+-->
 
-<!-- To set knitr  -->
+<!-- Setting knitr  -->
 
 <!-- Call the script -->
 
@@ -1437,22 +1438,20 @@ plot(...)
 </code></pre>
 
 <ul>
-<li>Devices available:
+<li>Devices available  &nbsp;&nbsp;<a href="https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html"><i class="fa fa-globe" aria-hidden="true"></i></a>:
 
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Quartz_(graphics_layer">Quartz</a>)</li>
-<li><a href="https://en.wikipedia.org/wiki/X_Window_System">X11</a></li>
+<li>Quartz &nbsp;&nbsp;<a href="https://en.wikipedia.org/wiki/Quartz_(graphics_layer"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+<li>X11 &nbsp;&nbsp; <a href="https://en.wikipedia.org/wiki/X_Window_System"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+<li>pdf, jpeg, svg, ...</li>
 <li>in add-on package :
 
 <ul>
-<li> <a href="https://cran.r-project.org/web/packages/rgl/index.html">rgl</a> | <a href="https://www.opengl.org">site openGL</a></li>
-<li>internet browser ex. (googleVis
-(<a href="https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html">https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html</a>)</li>
+<li> <a href="https://cran.r-project.org/web/packages/rgl/index.html">rgl  package</a> &nbsp;&nbsp; <a href="https://www.opengl.org"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+<li>Internet browsers <a href="https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html">googleVis</a></li>
 </ul></li>
 </ul></li>
 </ul>
-
-<p><a href="https://www.opengl.org"><i class="fa fa-globe" aria-hidden="true"></i></a></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -1468,6 +1467,7 @@ plot(...)
   <ul>
 <li>the loop for</li>
 <li><code>pdf()</code>, <code>png()</code>, <code>jpeg()</code>, <code>bmp()</code>, <code>tiff()</code></li>
+<li>cairo_pdf, cairo_ps, svg</li>
 </ul>
 
 </div>
@@ -1497,9 +1497,9 @@ plot(...)
   </hgroup>
   <article data-timings="">
     <ul>
-<li><a href="https://cran.r-project.org/web/views/Graphics.html">CRAN task view</a></li>
-<li><a href="http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html">More package indexed</a></li>
-<li><a href="http://docs.ggplot2.org/current/">ggplot2</a></li>
+<li>CRAN task view fro graphs &nbsp;&nbsp;<a href="https://cran.r-project.org/web/views/Graphics.html"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+<li>more packages indexed &nbsp;&nbsp;<a href="http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+<li>ggplot2 website &nbsp;&nbsp;<a href="http://docs.ggplot2.org/current/"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
 </ul>
 
   </article>
@@ -1518,13 +1518,14 @@ plot(...)
 
 <slide class="" id="slide-65" style="background:;">
   <hgroup>
-    <h2>Two exercises</h2>
+    <h2>Three challenges</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
+    <ol>
 <li>&quot;refaire une figure du samedi&quot;</li>
-<li>a fig quite complictaed...</li>
-</ul>
+<li>a fig quite complicated...</li>
+<li>Code your own boxplot function.</li>
+</ol>
 
   </article>
   <!-- Presenter Notes -->
@@ -1920,7 +1921,7 @@ plot(...)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=65 title='Two exercises'>
+        data-slide=65 title='Three challenges'>
          65
       </a>
     </li>
