@@ -9,6 +9,8 @@ hitheme     : sunburst      #
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
+assets:
+  css: "http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
 ---
 
 
@@ -255,7 +257,7 @@ article li.build {
 ## The R system
 
   <img src='./assets/img/Murrell2015.jpg' style="width:60%; margin: 0 20%;"/>
-  <div class='centered'>Murrell, P. (2015) The gridGraphics Package. The R Jounal.</div>
+  <div class='centered'>Murrell, P. (2015) <a href="https://journal.r-project.org/archive/2015-1/murrell.pdf">The gridGraphics Package</a>. The R Jounal.</div>
 
 
 --- &twocol
@@ -607,8 +609,6 @@ plot(x = 1, y = 1,
 
 
 
-
-
 --- .transition
 
 ## Composition and multipanel plotting
@@ -862,9 +862,47 @@ for (i in 1:4) {
 
 
 
+
+
+
+
+
+
 --- .transition
 
 ## Exporting figures from the command line
+
+
+---
+
+## grDevices
+
+<img src='./assets/img/Murrell2015.jpg' style="width:60%; margin: 0 20%;"/>
+<div class='centered'>Murrell, P. (2015) <a href="https://journal.r-project.org/archive/2015-1/murrell.pdf">The gridGraphics Package</a>. The R Jounal.</div>
+
+
+---
+
+## grDevices
+
+
+```r
+options('device')
+```
+
+
+- Devices available:
+  - [Quartz](https://en.wikipedia.org/wiki/Quartz_(graphics_layer))
+  - [X11](https://en.wikipedia.org/wiki/X_Window_System)
+  - in add-on package :
+      -  [rgl](https://cran.r-project.org/web/packages/rgl/index.html) | [site openGL](https://www.opengl.org)
+      - internet browser ex. (googleVis
+(https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html)
+
+[<i class="fa fa-globe" aria-hidden="true"></i>](https://www.opengl.org)
+
+
+
 
 
 --- &twocol
