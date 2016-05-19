@@ -736,15 +736,110 @@ layout(mat_lay)
 ```
 
 
+--- &twocol
+
+## More about 'layout()'
+
+*** =left
+
+```{r, eval = FALSE}
+mat_lay <- matrix(c(1,2,4,1,3,4), nrow=3)
+layout(mat_lay)
+```
+
+```{r, echo = FALSE}
+matrix(c(1,2,4,1,3,4), nrow=3)
+```
+
+*** =right
+```{r, echo = FALSE}
+<<laymat1>>
+```
+
+
+--- &twocol
+
+## More about 'layout()'
+
+*** =left
+
+```{r, eval = FALSE}
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0), nrow=3)
+layout(mat_lay)
+```
+
+```{r, echo = FALSE}
+matrix(c(0,2,2,1,3,3,1,4,0), nrow=3)
+```
+
+*** =right
+```{r, echo = FALSE}
+<<laymat2>>
+```
+
+
+--- &twocol
+
+## More about 'layout()'
+
+*** =left
+
+```{r, eval = FALSE}
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
+layout(mat_lay, widths=c(.25,1,1))
+```
+
+*** =right
+```{r, echo = FALSE}
+<<laywd>>
+```
+
+
+--- &twocol
+
+## More about 'layout()'
+
+*** =left
+
+```{r, eval = FALSE}
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
+layout(mat_lay, widths=c(.25,1,1),
+  heights=c(.25,1,.25))
+```
+
+*** =right
+```{r, echo = FALSE}
+<<layhg>>
+```
+
+
+--- &twocol
+
+## Combining 'layout()' and 'mar'
+
+*** =left
+
+```{r, eval = FALSE}
+<<laymar>>
+```
+
+*** =right
+```{r, echo = FALSE}
+<<laymar>>
+```
+
+
 
 ---
 
-## Insets
+## Embedded plots
 
 - fig and new
 
+- Normalized Device Coordinates (NDC)
 
 
+<!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
 
 
 

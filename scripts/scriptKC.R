@@ -16,8 +16,10 @@ colb <- "#4e7bdb"
 palette(c("transparent", colr, colg, colb))
 
 
-################## - Functions
+################## - Functions and packages
 ## @knitr kcfunction
+
+library(plotrix)
 
 fillIt <- function(col){
   lp <- par()$usr
@@ -34,6 +36,12 @@ fourplots <- function() {
     text(0,0, labels=i, cex=4)
   }
 }
+
+
+
+
+####################################
+####################################
 
 ################## - par(mfrow)
 ## @knitr mfrow
@@ -68,3 +76,60 @@ par(mar=c(1,1,1,1))
 mat_lay <- matrix(c(1,2,4,1,3,4),nrow=3)
 layout(mat_lay)
 fourplots()
+
+
+
+####################################
+####################################
+
+## We now look at 'layout()' in more details
+
+################## - layout/matrix
+
+## @knitr laymat1
+
+par(mar=c(1,1,1,1))
+mat_lay <- matrix(c(1,2,4,1,3,4),nrow=3)
+layout(mat_lay)
+eplot()
+# fourplots()
+
+## @knitr laymat2
+
+par(mar=c(1,1,1,1))
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
+layout(mat_lay)
+fourplots()
+
+## @knitr laywd
+
+par(mar=c(1,1,1,1))
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
+layout(mat_lay, widths=c(.25,1,1))
+fourplots()
+
+
+## @knitr layhg
+
+par(mar=c(1,1,1,1))
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
+layout(mat_lay, widths=c(.25,1,1), heights=c(.2,1,.4))
+fourplots()
+
+
+## @knitr laymar
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
+layout(mat_lay, widths=c(.25,1,1), heights=c(.2,1,.4))
+for (i in 1:4) {
+  if (i<3) par(mar=rep(0,4)) else par(mar=rep(1,4))
+  eplot()
+  fillIt(col=i)
+  text(0,0, labels=i, cex=4)
+}
+
+
+
+####################################
+####################################
+
+## Embeded figures

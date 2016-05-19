@@ -676,6 +676,109 @@ layout(mat_lay)
 ![plot of chunk unnamed-chunk-50](assets/fig/unnamed-chunk-50-1.pdf)
 
 
+--- &twocol
+
+## More about 'layout()'
+
+*** =left
+
+
+```r
+mat_lay <- matrix(c(1,2,4,1,3,4), nrow=3)
+layout(mat_lay)
+```
+
+
+```
+#>      [,1] [,2]
+#> [1,]    1    1
+#> [2,]    2    3
+#> [3,]    4    4
+```
+
+*** =right
+![plot of chunk unnamed-chunk-53](assets/fig/unnamed-chunk-53-1.pdf)
+
+
+--- &twocol
+
+## More about 'layout()'
+
+*** =left
+
+
+```r
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0), nrow=3)
+layout(mat_lay)
+```
+
+
+```
+#>      [,1] [,2] [,3]
+#> [1,]    0    1    1
+#> [2,]    2    3    4
+#> [3,]    2    3    0
+```
+
+*** =right
+![plot of chunk unnamed-chunk-56](assets/fig/unnamed-chunk-56-1.pdf)
+
+
+--- &twocol
+
+## More about 'layout()'
+
+*** =left
+
+
+```r
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
+layout(mat_lay, widths=c(.25,1,1))
+```
+
+*** =right
+![plot of chunk unnamed-chunk-58](assets/fig/unnamed-chunk-58-1.pdf)
+
+
+--- &twocol
+
+## More about 'layout()'
+
+*** =left
+
+
+```r
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
+layout(mat_lay, widths=c(.25,1,1),
+  heights=c(.25,1,.25))
+```
+
+*** =right
+![plot of chunk unnamed-chunk-60](assets/fig/unnamed-chunk-60-1.pdf)
+
+
+--- &twocol
+
+## Combining 'layout()' and 'mar'
+
+*** =left
+
+
+```r
+for (i in 1:4) {
+  if (i<3) par(mar=rep(0,4)) else par(mar=rep(1,4))
+  eplot()
+  fillIt(col=i)
+  text(0,0, labels=i, cex=4)
+}
+```
+
+*** =right
+![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-1.pdf)![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-2.pdf)![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-3.pdf)![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-4.pdf)
+
+
+
+
 
 ---
 
