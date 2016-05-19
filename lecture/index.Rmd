@@ -5,7 +5,7 @@ author      : 'Kévin Cazelles and Nicolas Casajus'
 job         : Université du Québec à Rimouski
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      #
+hitheme     : sunburst      #
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
@@ -688,19 +688,18 @@ plot(1, 1, ann = FALSE, axes = FALSE, type = 'n')
 
 ## Ressources
 
-- QCBS worshops
-- [QQ example](http://kevincazelles)
-- [Task view](https://cran.r-project.org/web/views/Graphics.html)
-- Some books (R graphics, ggplot2, R graphic cookbook)
+- [CRAN task view](https://cran.r-project.org/web/views/Graphics.html)
+- [More package indexed](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
+- [ggplot2](http://docs.ggplot2.org/current/)
 
 --- .transition
 
-## Let's do pratice!
+## Let's pratice!
 
 ---
 
 ## Two exercises
 
-- refaire une figure du samedi
+- "refaire une figure du samedi"
 - autre figure
-- coder son propre boxplot.
+-

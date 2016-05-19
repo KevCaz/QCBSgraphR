@@ -20,3 +20,4 @@ vignettes/*.pdf
 
 # Cache et figure
 lecture/.cache
+lecture/assets/fig
