@@ -766,7 +766,9 @@ layout(mat_lay, widths=c(.25,1,1),
 
 ```r
 mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
-layout(mat_lay, widths=c(.25,1,1), heights=c(.2,1,.4))
+layout(mat_lay, widths=c(.25,1,1),
+  heights=c(.2,1,.4))
+
 for (i in 1:4) {
   if (i<3) par(mar=rep(1,4)) else par(mar=rep(4,4))
   eplot()
@@ -786,49 +788,67 @@ for (i in 1:4) {
 
 *** =left
 
-- You must call `new=TRUE` and specifying `fig` in `par()` :
+- You must call `new=TRUE` and specifying `fig` in `par()`:
 
-  1. Create your first post
-  2. use `par()`
-  3. add your new figure
+  1. create your first plot;
 
 
-  *** =right
-
-  ![plot of chunk unnamed-chunk-63](assets/fig/unnamed-chunk-63-1.pdf)
-
---- &twocol
+```r
+  plot(...)
+```
 
 
-## Embedded plots
-
-*** =left
-
-- You must call `new=TRUE` and specifying `fig` in `par()` :
-
-  1. Create your first post
-  2. use `par()`
-  3. add your new figure
 
 *** =right
 
 ![plot of chunk unnamed-chunk-64](assets/fig/unnamed-chunk-64-1.pdf)
 
--- &twocol
+
+--- &twocol
 
 ## Embedded plots
 
 *** =left
 
-- You must call `new=TRUE` and specifying `fig` in `par()` :
+- You must call `new=TRUE` and specifying `fig` in `par()`:
 
-  1. Create your first post
-  2. use `par()`
-  3. add your new figure
+  1. create your first plot;
+  2. use `par()`;
+
+
+```r
+  plot(...)
+  par(new=TRUE, fig=c(0.5,1,0.5,1))
+```
+
 
 *** =right
 
-![plot of chunk unnamed-chunk-65](assets/fig/unnamed-chunk-65-1.pdf)
+![plot of chunk unnamed-chunk-66](assets/fig/unnamed-chunk-66-1.pdf)
+
+
+--- &twocol
+
+## Embedded plots
+
+*** =left
+
+- You must call `new=TRUE` and specifying `fig` in `par()`:
+
+  1. create your first plot;
+  2. use `par()`;
+  3. add your new figure;
+
+  
+  ```r
+    plot(...)
+    par(new=TRUE, fig=c(0.5,1,0.5,1))
+    plot(...)
+  ```
+
+*** =right
+
+![plot of chunk unnamed-chunk-68](assets/fig/unnamed-chunk-68-1.pdf)
 
 
 
@@ -844,9 +864,15 @@ for (i in 1:4) {
 
 --- .transition
 
-## Graphics automation and export
+## Exporting figures from the command line
 
----
+
+--- &twocol
+
+## Embedded plots
+
+*** =left
+
 
 - the loop for
 - `pdf()`, `png()`, `jpeg()`, `bmp()`, `tiff()`
@@ -887,5 +913,4 @@ for (i in 1:4) {
 ## Two exercises
 
 - "refaire une figure du samedi"
-- autre figure
--
+- a fig quite complictaed...

@@ -119,7 +119,9 @@ fourplots()
 
 ## @knitr laymar
 mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
-layout(mat_lay, widths=c(.25,1,1), heights=c(.2,1,.4))
+layout(mat_lay, widths=c(.25,1,1),
+  heights=c(.2,1,.4))
+
 for (i in 1:4) {
   if (i<3) par(mar=rep(1,4)) else par(mar=rep(4,4))
   eplot()
@@ -137,11 +139,20 @@ for (i in 1:4) {
 ## @knitr fignew1
 
 par(mar=c(1,1,1,1))
+# fig 1
 eplot()
 fillIt(col=2)
 text(0,0, labels=1, cex=4)
 
 ## @knitr fignew2
 
+par(mar=c(1,1,1,1), las=1)
 eplot()
-fillIt(col=1)
+fillIt(col=2)
+text(0,0, labels=1, cex=4)
+par(new=TRUE, fig=c(0.5,1,0.5,1))
+# fig 2
+eplot()
+fillIt(col=3)
+text(0,0, labels=2, cex=4)
+axis(2)

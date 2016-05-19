@@ -838,9 +838,12 @@ layout(mat_lay, widths=c(.25,1,1),
 
 - You must call `new=TRUE` and specifying `fig` in `par()`:
 
-  1. Create your first post
-  2. use `par()`
-  3. add your new figure
+  1. create your first plot;
+
+```{r, eval = FALSE}
+  plot(...)
+```
+
 
 
 *** =right
@@ -858,9 +861,14 @@ layout(mat_lay, widths=c(.25,1,1),
 
 - You must call `new=TRUE` and specifying `fig` in `par()`:
 
-  1. Create your first post
-  2. use `par()`
-  3. add your new figure
+  1. create your first plot;
+  2. use `par()`;
+
+```{r, eval = FALSE}
+  plot(...)
+  par(new=TRUE, fig=c(0.5,1,0.5,1))
+```
+
 
 *** =right
 
@@ -869,7 +877,7 @@ layout(mat_lay, widths=c(.25,1,1),
 ```
 
 
--- &twocol
+--- &twocol
 
 ## Embedded plots
 
@@ -877,14 +885,20 @@ layout(mat_lay, widths=c(.25,1,1),
 
 - You must call `new=TRUE` and specifying `fig` in `par()`:
 
-  1. Create your first post
-  2. use `par()`
-  3. add your new figure
+  1. create your first plot;
+  2. use `par()`;
+  3. add your new figure;
+
+  ```{r, eval = FALSE}
+    plot(...)
+    par(new=TRUE, fig=c(0.5,1,0.5,1))
+    plot(...)
+  ```
 
 *** =right
 
 ```{r, echo = FALSE}
-<<fignew1>>
+<<fignew2>>
 ```
 
 
@@ -901,9 +915,15 @@ layout(mat_lay, widths=c(.25,1,1),
 
 --- .transition
 
-## Graphics automation and export
+## Exporting figures from the command line
 
----
+
+--- &twocol
+
+## Embedded plots
+
+*** =left
+
 
 - the loop for
 - `pdf()`, `png()`, `jpeg()`, `bmp()`, `tiff()`
@@ -944,5 +964,4 @@ layout(mat_lay, widths=c(.25,1,1),
 ## Two exercises
 
 - "refaire une figure du samedi"
-- autre figure
--
+- a fig quite complictaed...
