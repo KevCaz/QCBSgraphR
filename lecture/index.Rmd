@@ -653,23 +653,106 @@ plot(1, 1, ann = FALSE, axes = FALSE, type = 'n')
 
 - mar and oma
 
+
+
+
+
+
+
+
+
+
+
+
 --- .transition
 
 ## Composition and multipanel plotting
 
----
+*** =right
+```{r, echo = FALSE}
+<<kccolors>>
+<<kcfunction>>
+```
 
-## Window Partitioning
 
-- mfrow and mfcol
-- `layout()`
-- `split.screen`
+--- &twocol
+
+## Dividing the output device
+
+*** =left
+- `mfrow` and `mfcol` in `par()`
+
+```{r, eval = FALSE}
+par(mfrow=c(2,2))
+```
+or
+
+```{r, eval = FALSE}
+par(mfcol=c(2,2))
+```
+
+*** =right
+```{r, echo = FALSE}
+<<mfrow>>
+```
+
+
+--- &twocol
+
+## Dividing the output device
+
+*** =left
+- `mfrow` and `mfcol` in `par()`
+- `split.screen()`
+
+```{r, eval = FALSE}
+split.screen(c(1, 2))
+split.screen(c(3, 1), screen = 2)
+```
+
+*** =right
+```{r, echo = FALSE}
+<<screen>>
+```
+
+
+--- &twocol
+
+## Dividing the output device
+
+*** =left
+- mfrow and mfcol in `par()`
+- `split.screen()`
+- layout()
+
+```{r, eval = FALSE}
+mat_lay <- matrix(c(1,2,4,1,3,4),nrow=3)
+layout(mat_lay)
+```
+
+*** =right
+```{r, echo = FALSE}
+<<layout>>
+```
+
+
 
 ---
 
 ## Insets
 
 - fig and new
+
+
+
+
+
+
+
+
+
+
+
 
 --- .transition
 
@@ -679,6 +762,21 @@ plot(1, 1, ann = FALSE, axes = FALSE, type = 'n')
 
 - the loop for
 - `pdf()`, `png()`, `jpeg()`, `bmp()`, `tiff()`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 --- .transition
 

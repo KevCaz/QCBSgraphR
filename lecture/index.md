@@ -598,23 +598,101 @@ plot(x = 1, y = 1,
 
 - mar and oma
 
+
+
+
+
+
+
+
+
+
+
+
 --- .transition
 
 ## Composition and multipanel plotting
 
----
+*** =right
 
-## Window Partitioning
 
-- mfrow and mfcol
-- `layout()`
-- `split.screen`
+
+--- &twocol
+
+## Dividing the output device
+
+*** =left
+- `mfrow` and `mfcol` in `par()`
+
+
+```r
+par(mfrow=c(2,2))
+```
+or
+
+
+```r
+par(mfcol=c(2,2))
+```
+
+*** =right
+![plot of chunk unnamed-chunk-46](assets/fig/unnamed-chunk-46-1.pdf)
+
+
+--- &twocol
+
+## Dividing the output device
+
+*** =left
+- `mfrow` and `mfcol` in `par()`
+- `split.screen()`
+
+
+```r
+split.screen(c(1, 2))
+split.screen(c(3, 1), screen = 2)
+```
+
+*** =right
+![plot of chunk unnamed-chunk-48](assets/fig/unnamed-chunk-48-1.pdf)
+
+
+--- &twocol
+
+## Dividing the output device
+
+*** =left
+- mfrow and mfcol in `par()`
+- `split.screen()`
+- layout()
+
+
+```r
+mat_lay <- matrix(c(1,2,4,1,3,4),nrow=3)
+layout(mat_lay)
+```
+
+*** =right
+![plot of chunk unnamed-chunk-50](assets/fig/unnamed-chunk-50-1.pdf)
+
+
 
 ---
 
 ## Insets
 
 - fig and new
+
+
+
+
+
+
+
+
+
+
+
 
 --- .transition
 
@@ -625,6 +703,21 @@ plot(x = 1, y = 1,
 - the loop for
 - `pdf()`, `png()`, `jpeg()`, `bmp()`, `tiff()`
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 --- .transition
 
 ## Ressources
@@ -633,19 +726,18 @@ plot(x = 1, y = 1,
 
 ## Ressources
 
-- QCBS worshops
-- [QQ example](http://kevincazelles)
-- [Task view](https://cran.r-project.org/web/views/Graphics.html)
-- Some books (R graphics, ggplot2, R graphic cookbook)
+- [CRAN task view](https://cran.r-project.org/web/views/Graphics.html)
+- [More package indexed](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
+- [ggplot2](http://docs.ggplot2.org/current/)
 
 --- .transition
 
-## Let's do pratice!
+## Let's pratice!
 
 ---
 
 ## Two exercises
 
-- refaire une figure du samedi
+- "refaire une figure du samedi"
 - autre figure
-- coder son propre boxplot.
+-
