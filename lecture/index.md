@@ -5,7 +5,7 @@ author      : 'Kévin Cazelles and Nicolas Casajus'
 job         : Université du Québec à Rimouski
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : sunburst      #
+hitheme     : tomorrow      #
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
@@ -920,15 +920,6 @@ abline(v = seq(0.6, 1.4, by = 0.2))
 
 - mar and oma, xaxs et yaxs
 
-
-
-
-
-
-
-
-
-
 --- .transition
 
 ## Composition and multipanel plotting
@@ -956,7 +947,7 @@ par(mfcol=c(2,2))
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-46](assets/fig/unnamed-chunk-46-1.pdf)
+![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-1.pdf)
 
 
 --- &twocol
@@ -974,7 +965,7 @@ split.screen(c(3, 1), screen = 2)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-48](assets/fig/unnamed-chunk-48-1.pdf)
+![plot of chunk unnamed-chunk-64](assets/fig/unnamed-chunk-64-1.pdf)
 
 
 --- &twocol
@@ -993,7 +984,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-50](assets/fig/unnamed-chunk-50-1.pdf)
+![plot of chunk unnamed-chunk-66](assets/fig/unnamed-chunk-66-1.pdf)
 
 
 --- &twocol
@@ -1010,14 +1001,14 @@ layout(mat_lay)
 
 
 ```
-#>      [,1] [,2]
-#> [1,]    1    1
-#> [2,]    2    3
-#> [3,]    4    4
+##      [,1] [,2]
+## [1,]    1    1
+## [2,]    2    3
+## [3,]    4    4
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-53](assets/fig/unnamed-chunk-53-1.pdf)
+![plot of chunk unnamed-chunk-69](assets/fig/unnamed-chunk-69-1.pdf)
 
 
 --- &twocol
@@ -1034,14 +1025,14 @@ layout(mat_lay)
 
 
 ```
-#>      [,1] [,2] [,3]
-#> [1,]    0    1    1
-#> [2,]    2    3    4
-#> [3,]    2    3    0
+##      [,1] [,2] [,3]
+## [1,]    0    1    1
+## [2,]    2    3    4
+## [3,]    2    3    0
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-56](assets/fig/unnamed-chunk-56-1.pdf)
+![plot of chunk unnamed-chunk-72](assets/fig/unnamed-chunk-72-1.pdf)
 
 
 --- &twocol
@@ -1057,7 +1048,7 @@ layout(mat_lay, widths=c(.25,1,1))
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-58](assets/fig/unnamed-chunk-58-1.pdf)
+![plot of chunk unnamed-chunk-74](assets/fig/unnamed-chunk-74-1.pdf)
 
 
 --- &twocol
@@ -1074,7 +1065,7 @@ layout(mat_lay, widths=c(.25,1,1),
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-60](assets/fig/unnamed-chunk-60-1.pdf)
+![plot of chunk unnamed-chunk-76](assets/fig/unnamed-chunk-76-1.pdf)
 
 
 --- &twocol
@@ -1098,7 +1089,7 @@ for (i in 1:4) {
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-1.pdf)
+![plot of chunk unnamed-chunk-78](assets/fig/unnamed-chunk-78-1.pdf)
 
 
 
@@ -1121,7 +1112,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-64](assets/fig/unnamed-chunk-64-1.pdf)
+![plot of chunk unnamed-chunk-80](assets/fig/unnamed-chunk-80-1.pdf)
 
 
 --- &twocol
@@ -1144,7 +1135,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-66](assets/fig/unnamed-chunk-66-1.pdf)
+![plot of chunk unnamed-chunk-82](assets/fig/unnamed-chunk-82-1.pdf)
 
 
 --- &twocol
@@ -1168,7 +1159,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-68](assets/fig/unnamed-chunk-68-1.pdf)
+![plot of chunk unnamed-chunk-84](assets/fig/unnamed-chunk-84-1.pdf)
 
 
 
