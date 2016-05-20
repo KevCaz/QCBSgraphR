@@ -443,19 +443,7 @@ article li.build {
 
 *** =right
 ```{r eval = TRUE, echo = TRUE}
-## How many graphical parameters?
-length(par())
-
-## Let's get the default value of text color
-par()$col
-
-## Let's set 'red' for text color
-par(col = 'red')
-
-## Check
-par()$col
-
-## We're good!
+<<par_cmd>>
 ```
 
 ---
@@ -480,6 +468,23 @@ par()$col
     - Do the graph
     - Restaure the old par(): `par(opar)`
 
+---
+
+## Graphical parameters
+
+- Important: when you change the value of one parameter, the new value affects all the graphs until the graphical window is closed
+
+<!-- end -->
+
+- A recommendation:
+    - Save the default par(): `opar <- par()`
+    - Change the values: `par(col = 'red')`
+    - Do the graph
+    - Restaure the old par(): `par(opar)`
+
+<!-- end -->
+
+- Some graphical parameters can also be changed directly in plotting functions
 
 ---
 
@@ -529,11 +534,7 @@ par()$col
 
 *** =right
 ```{r echo = TRUE}
-load('../data/xyz.RData')
-
-head(dat)
-
-summary(dat$z)
+<<data>>
 ```
 
 
@@ -780,12 +781,7 @@ summary(dat$z)
 *** =right
 
 ```{r eval = TRUE}
-## Linear regression
-(mod <- lm(y ~ x, data = dat))
-
-(a <- coefficients(mod)[1])
-
-(b <- coefficients(mod)[2])
+<<regression>>
 ```
 
 --- &twocol
@@ -845,14 +841,165 @@ summary(dat$z)
 <<lines_3>>
 ```
 
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- Now take a look at the functions `lines()` and `points()`
+- But first, we are going to predict the model on new data
+
+*** =right
+
+```{r eval = TRUE}
+<<predict>>
+```
+
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- Let's add model regression with the functions `lines()` and `points()`
+
+```{r eval = FALSE}
+<<lines_4_cmd>>
+```
+
+*** =right
+
+```{r echo = FALSE}
+<<lines_4>>
+```
+
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- We can customize the lines with:
+    - `lwd`, the line width
+    - `col`, the line color
+    - `lty`, the line type
+
+```{r eval = FALSE}
+<<lines_5_cmd>>
+```
+
+*** =right
+
+```{r echo = FALSE}
+<<lines_5>>
+```
+
+--- &twocol
+
+## Adding polygons
+
+*** =left
+
+- To add a polygon, the function is `polygon()`
+- A special, the rectangle can be drawn with `rect()`
+- Let's predict again the model, but this time with the standard error
+
+*** =right
+```{r eval = TRUE}
+<<predict_2>>
+```
+
+
+--- &twocol
+
+## Adding polygons
+
+*** =left
+
+- We are going to add the error envelope with the function `polygon()`
+- So, let's calculate the y value of this envelope
+
+*** =right
+```{r eval = TRUE}
+<<order_pred>>
+```
+
+--- &twocol
+
+## Adding polygons
+
+*** =left
+
+- Let's add model error envelope
+
+```{r eval = FALSE}
+<<polygons_1_cmd>>
+```
+
+*** =right
+
+```{r echo = FALSE}
+<<polygons_1>>
+```
+
+--- &twocol
+
+## Adding polygons
+
+*** =left
+
+- We can customize the polygon with:
+    - `border`, the border color
+    - `col`, the background color
+    - `lwd`, the border width
+
+```{r eval = FALSE}
+<<polygons_2_cmd>>
+```
+
+*** =right
+
+```{r echo = FALSE}
+<<polygons_2>>
+```
+
+--- &twocol
+
+## Adding polygons
+
+*** =left
+
+- Finally
+
+```{r eval = FALSE}
+<<polygons_3_cmd>>
+```
+
+*** =right
+
+```{r echo = FALSE}
+<<polygons_3>>
+```
+
+--- &twocol
+
+## Adding polygons
+
+*** =left
+
+- rect(), density, angle
+
+```{r eval = FALSE}
+```
+
+*** =right
+
+```{r echo = FALSE}
+```
+
 ---
 
-## Adding points, lines, rectangles and polygons
-
-- the functions: `points()`, `lines()`, `rect()`, `polygon()`, `axis()` and `box()`
-- the arguments: pch, cex, lwd, lty, col, bg, fg, border, density, angle
-
----
 
 ## Adding textual informations
 

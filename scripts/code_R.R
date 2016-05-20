@@ -695,3 +695,233 @@ abline(v = seq(0.6, 1.4, by = 0.2))
 ## @knitr end_lines_3_cmd
 
 ################################################################################
+
+## @knitr par_cmd
+## How many graphical parameters?
+length(par())
+
+## Let's get the default value of text color
+par()$col
+
+## Let's set 'red' for text color
+par(col = 'red')
+
+## Check
+par()$col
+
+## We're good!
+## @knitr end_par_cmd
+
+################################################################################
+
+## @knitr data
+load('../data/xyz.RData')
+
+head(dat)
+
+summary(dat$z)
+## @knitr end_data
+
+################################################################################
+
+## @knitr regression
+## Linear regression
+(mod <- lm(y ~ x, data = dat))
+
+(a <- coefficients(mod)[1])
+
+(b <- coefficients(mod)[2])
+## @knitr end_regression
+
+################################################################################
+
+## @knitr predict
+## New data frame
+mat <- data.frame(x = seq(0.6, 1.4, by = 0.05))
+
+## Model prediction
+ypred <- predict(object = mod, newdata = mat)
+## @knitr end_predict
+
+################################################################################
+
+## @knitr lines_4_cmd
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding line (default settings)
+lines(x = mat$x, y = ypred)
+
+## Or, with the function points()
+points(x = mat$x, y = ypred, type = 'l')
+## @knitr end_lines_4_cmd
+
+################################################################################
+
+## @knitr lines_4
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding line (default settings)
+lines(x = mat$x, y = ypred, col = 'black')
+
+## Or, with the function points()
+points(x = mat$x, y = ypred, type = 'l')
+## @knitr end_lines_4
+
+################################################################################
+
+## @knitr lines_5_cmd
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding line (user settings)
+lines(x = mat$x, y = ypred,
+      col = 'red', lwd = 4, lty = 2)
+## @knitr end_lines_5_cmd
+
+################################################################################
+
+## @knitr lines_5
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding line (user settings)
+lines(x = mat$x, y = ypred,
+      col = 'red',
+      lwd = 4,
+      lty = 2)
+## @knitr end_lines_5
+
+################################################################################
+
+## @knitr predict_2
+## Model prediction with se
+ypred <- predict(object = mod, newdata = mat,
+                 se.fit = TRUE)
+
+class(ypred)
+
+names(ypred)[1:2]
+## @knitr end_predict_2
+
+################################################################################
+
+## @knitr order_pred
+## Superior interval
+xsup <- mat[ , 'x']
+ysup <- ypred$fit + ypred$se.fit
+
+## Inferior interval
+xinf <- mat[ , 'x']
+yinf <- ypred$fit - ypred$se.fit
+
+## Reverse sort of inf.
+xinf <- mat[nrow(mat) : 1, 'x']
+yinf <- yinf[length(yinf) : 1]
+## @knitr end_order_pred
+
+################################################################################
+
+## @knitr polygons_1_cmd
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding error envelope
+polygons(x = c(xsup, xinf), y = c(ysup, yinf))
+## @knitr end_polygons_1_cmd
+
+################################################################################
+
+## @knitr polygons_1
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding error envelope
+polygon(x = c(xsup, xinf), y = c(ysup, yinf))
+## @knitr end_polygons_1
+
+################################################################################
+
+## @knitr polygons_2_cmd
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding error envelope
+polygon(x = c(xsup, xinf), y = c(ysup, yinf),
+        col = 'orange', border = 'red',
+        lwd = 4)
+## @knitr end_polygons_2_cmd
+
+################################################################################
+
+## @knitr polygons_2
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding error envelope (user settings)
+polygon(x = c(xsup, xinf), y = c(ysup, yinf),
+        col = 'orange', border = 'red',
+        lwd = 4)
+## @knitr end_polygons_2
+
+################################################################################
+
+## @knitr polygons_3_cmd
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding model regression
+lines(x = mat$x, y = ypred$fit, lwd = 3)
+
+## Adding error envelope
+polygon(x = c(xsup, xinf), y = c(ysup, yinf),
+        col = '#aaaaaa88', border = '#aaaaaa88')
+## @knitr end_polygons_3_cmd
+
+################################################################################
+
+## @knitr polygons_3
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding model regression
+lines(x = mat$x, y = ypred$fit, lwd = 3)
+
+## Adding error envelope
+polygon(x = c(xsup, xinf), y = c(ysup, yinf),
+        col = '#aaaaaa88', border = '#aaaaaa88')
+## @knitr end_polygons_3

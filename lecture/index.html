@@ -13,7 +13,8 @@
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"></link>
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"></link>
 
   
   <!-- Grab CDN jQuery, fall back to local if offline -->
@@ -812,6 +813,38 @@ par()$col
 
 <slide class="" id="slide-32" style="background:;">
   <hgroup>
+    <h2>Graphical parameters</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Important: when you change the value of one parameter, the new value affects all the graphs until the graphical window is closed</li>
+</ul>
+
+<!-- end -->
+
+<ul>
+<li>A recommendation:
+
+<ul>
+<li>Save the default par(): <code>opar &lt;- par()</code></li>
+<li>Change the values: <code>par(col = &#39;red&#39;)</code></li>
+<li>Do the graph</li>
+<li>Restaure the old par(): <code>par(opar)</code></li>
+</ul></li>
+</ul>
+
+<!-- end -->
+
+<ul>
+<li>Some graphical parameters can also be changed directly in plotting functions</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-33" style="background:;">
+  <hgroup>
     <h2>High-level vs. low-level plotting functions</h2>
   </hgroup>
   <article data-timings="">
@@ -827,7 +860,7 @@ par()$col
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-33" style="background:;">
+<slide class="" id="slide-34" style="background:;">
   <hgroup>
     <h2>High-level vs. low-level plotting functions</h2>
   </hgroup>
@@ -852,7 +885,7 @@ par()$col
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="tocenter" id="slide-34" style="background:;">
+<slide class="tocenter" id="slide-35" style="background:;">
   <hgroup>
     <h2>High-level vs. low-level plotting functions</h2>
   </hgroup>
@@ -865,7 +898,7 @@ par()$col
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-35" style="background:;">
+<slide class="" id="slide-36" style="background:;">
   <hgroup>
     <h2>Let&#39;s take a look at the data</h2>
   </hgroup>
@@ -908,7 +941,7 @@ summary(dat$z)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-36" style="background:;">
+<slide class="" id="slide-37" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -941,7 +974,7 @@ summary(dat$z)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-37" style="background:;">
+<slide class="" id="slide-38" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -969,7 +1002,7 @@ summary(dat$z)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-38" style="background:;">
+<slide class="" id="slide-39" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -998,7 +1031,7 @@ summary(dat$z)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-39" style="background:;">
+<slide class="" id="slide-40" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -1028,7 +1061,7 @@ summary(dat$z)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-40" style="background:;">
+<slide class="" id="slide-41" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -1059,7 +1092,7 @@ summary(dat$z)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-41" style="background:;">
+<slide class="" id="slide-42" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -1088,7 +1121,7 @@ summary(dat$z)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-42" style="background:;">
+<slide class="" id="slide-43" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -1120,7 +1153,7 @@ summary(dat$z)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-43" style="background:;">
+<slide class="" id="slide-44" style="background:;">
   <hgroup>
     <h2>An empty plot</h2>
   </hgroup>
@@ -1157,7 +1190,7 @@ summary(dat$z)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-44" style="background:;">
+<slide class="" id="slide-45" style="background:;">
   <hgroup>
     <h2>An empty plot, and now what?</h2>
   </hgroup>
@@ -1182,7 +1215,7 @@ summary(dat$z)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-45" style="background:;">
+<slide class="" id="slide-46" style="background:;">
   <hgroup>
     <h2>Adding points</h2>
   </hgroup>
@@ -1214,7 +1247,7 @@ points(x = dat$x, y = dat$y)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-46" style="background:;">
+<slide class="" id="slide-47" style="background:;">
   <hgroup>
     <h2>Adding points</h2>
   </hgroup>
@@ -1252,7 +1285,7 @@ points(x = dat$x, y = dat$y,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-47" style="background:;">
+<slide class="" id="slide-48" style="background:;">
   <hgroup>
     <h2>Adding points</h2>
   </hgroup>
@@ -1291,7 +1324,7 @@ points(x = dat$x, y = dat$y,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-48" style="background:;">
+<slide class="" id="slide-49" style="background:;">
   <hgroup>
     <h2>Adding lines</h2>
   </hgroup>
@@ -1339,7 +1372,7 @@ points(x = dat$x, y = dat$y,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-49" style="background:;">
+<slide class="" id="slide-50" style="background:;">
   <hgroup>
     <h2>Adding lines</h2>
   </hgroup>
@@ -1371,7 +1404,7 @@ abline(reg = mod)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-50" style="background:;">
+<slide class="" id="slide-51" style="background:;">
   <hgroup>
     <h2>Adding lines</h2>
   </hgroup>
@@ -1402,7 +1435,7 @@ abline(a = a, b = b)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-51" style="background:;">
+<slide class="" id="slide-52" style="background:;">
   <hgroup>
     <h2>Adding lines</h2>
   </hgroup>
@@ -1435,21 +1468,304 @@ abline(v = seq(0.6, 1.4, by = 0.2))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-52" style="background:;">
+<slide class="" id="slide-53" style="background:;">
   <hgroup>
-    <h2>Adding points, lines, rectangles and polygons</h2>
+    <h2>Adding lines</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li>the functions: <code>points()</code>, <code>lines()</code>, <code>rect()</code>, <code>polygon()</code>, <code>axis()</code> and <code>box()</code></li>
-<li>the arguments: pch, cex, lwd, lty, col, bg, fg, border, density, angle</li>
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Now take a look at the functions <code>lines()</code> and <code>points()</code></li>
+<li>But first, we are going to predict the model on new data</li>
 </ul>
 
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <pre><code class="r">## New data frame
+mat &lt;- data.frame(x = seq(0.6, 1.4, by = 0.05))
+
+## Model prediction
+ypred &lt;- predict(object = mod, newdata = mat)
+</code></pre>
+
+</div>
+<div>
+  
+</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-53" style="background:;">
+<slide class="" id="slide-54" style="background:;">
+  <hgroup>
+    <h2>Adding lines</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Let&#39;s add model regression with the functions <code>lines()</code> and <code>points()</code></li>
+</ul>
+
+<pre><code class="r">## Empty plot
+plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
+     type = &#39;p&#39;, pch = 19)
+
+## Adding line (default settings)
+lines(x = mat$x, y = ypred)
+
+## Or, with the function points()
+points(x = mat$x, y = ypred, type = &#39;l&#39;)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-61-1.pdf" alt="plot of chunk unnamed-chunk-61"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-55" style="background:;">
+  <hgroup>
+    <h2>Adding lines</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>We can customize the lines with:
+
+<ul>
+<li><code>lwd</code>, the line width</li>
+<li><code>col</code>, the line color</li>
+<li><code>lty</code>, the line type</li>
+</ul></li>
+</ul>
+
+<pre><code class="r">## Empty plot
+plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
+     type = &#39;p&#39;, pch = 19)
+
+## Adding line (user settings)
+lines(x = mat$x, y = ypred,
+      col = &#39;red&#39;, lwd = 4, lty = 2)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-63-1.pdf" alt="plot of chunk unnamed-chunk-63"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-56" style="background:;">
+  <hgroup>
+    <h2>Adding polygons</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>To add a polygon, the function is <code>polygon()</code></li>
+<li>A special, the rectangle can be drawn with <code>rect()</code></li>
+<li>Let&#39;s predict again the model, but this time with the standard error</li>
+</ul>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <pre><code class="r">## Model prediction with se
+ypred &lt;- predict(object = mod, newdata = mat,
+                 se.fit = TRUE)
+
+class(ypred)
+## [1] &quot;list&quot;
+
+names(ypred)[1:2]
+## [1] &quot;fit&quot;    &quot;se.fit&quot;
+</code></pre>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-57" style="background:;">
+  <hgroup>
+    <h2>Adding polygons</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>We are going to add the error envelope with the function <code>polygon()</code></li>
+<li>So, let&#39;s calculate the y value of this envelope</li>
+</ul>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <pre><code class="r">## Superior interval
+xsup &lt;- mat[ , &#39;x&#39;]
+ysup &lt;- ypred$fit + ypred$se.fit
+
+## Inferior interval
+xinf &lt;- mat[ , &#39;x&#39;]
+yinf &lt;- ypred$fit - ypred$se.fit
+
+## Reverse sort of inf.
+xinf &lt;- mat[nrow(mat) : 1, &#39;x&#39;]
+yinf &lt;- yinf[length(yinf) : 1]
+</code></pre>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-58" style="background:;">
+  <hgroup>
+    <h2>Adding polygons</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Let&#39;s add model error envelope</li>
+</ul>
+
+<pre><code class="r">## Empty plot
+plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
+     type = &#39;p&#39;, pch = 19)
+
+## Adding error envelope
+polygons(x = c(xsup, xinf), y = c(ysup, yinf))
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-67-1.pdf" alt="plot of chunk unnamed-chunk-67"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-59" style="background:;">
+  <hgroup>
+    <h2>Adding polygons</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>We can customize the polygon with:
+
+<ul>
+<li><code>border</code>, the border color</li>
+<li><code>col</code>, the background color</li>
+<li><code>lwd</code>, the border width</li>
+</ul></li>
+</ul>
+
+<pre><code class="r">## Empty plot
+plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
+     type = &#39;p&#39;, pch = 19)
+
+## Adding error envelope
+polygon(x = c(xsup, xinf), y = c(ysup, yinf),
+        col = &#39;orange&#39;, border = &#39;red&#39;,
+        lwd = 4)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-69-1.pdf" alt="plot of chunk unnamed-chunk-69"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-60" style="background:;">
+  <hgroup>
+    <h2>Adding polygons</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Finally</li>
+</ul>
+
+<pre><code class="r">## Empty plot
+plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
+     type = &#39;p&#39;, pch = 19)
+
+## Adding model regression
+lines(x = mat$x, y = ypred$fit, lwd = 3)
+
+## Adding error envelope
+polygon(x = c(xsup, xinf), y = c(ysup, yinf),
+        col = &#39;#aaaaaa88&#39;, border = &#39;#aaaaaa88&#39;)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-71-1.pdf" alt="plot of chunk unnamed-chunk-71"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-61" style="background:;">
+  <hgroup>
+    <h2>Adding polygons</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>rect(), density, angle</li>
+</ul>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  NA
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-62" style="background:;">
   <hgroup>
     <h2>Adding textual informations</h2>
   </hgroup>
@@ -1463,7 +1779,7 @@ abline(v = seq(0.6, 1.4, by = 0.2))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-54" style="background:;">
+<slide class="" id="slide-63" style="background:;">
   <hgroup>
     <h2>Changing colors</h2>
   </hgroup>
@@ -1480,7 +1796,7 @@ abline(v = seq(0.6, 1.4, by = 0.2))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-55" style="background:;">
+<slide class="" id="slide-64" style="background:;">
   <hgroup>
     <h2>Changing fonts</h2>
   </hgroup>
@@ -1494,7 +1810,7 @@ abline(v = seq(0.6, 1.4, by = 0.2))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-56" style="background:;">
+<slide class="" id="slide-65" style="background:;">
   <hgroup>
     <h2>Adding/changing axis</h2>
   </hgroup>
@@ -1504,7 +1820,7 @@ abline(v = seq(0.6, 1.4, by = 0.2))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-57" style="background:;">
+<slide class="" id="slide-66" style="background:;">
   <hgroup>
     <h2>Adding legend</h2>
   </hgroup>
@@ -1514,7 +1830,7 @@ abline(v = seq(0.6, 1.4, by = 0.2))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-58" style="background:;">
+<slide class="" id="slide-67" style="background:;">
   <hgroup>
     <h2>Figure margins</h2>
   </hgroup>
@@ -1527,7 +1843,7 @@ abline(v = seq(0.6, 1.4, by = 0.2))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-59" style="background:;">
+<slide class="transition" id="slide-68" style="background:;">
   <hgroup>
     <h2>Composition and multipanel plotting</h2>
   </hgroup>
@@ -1537,7 +1853,7 @@ abline(v = seq(0.6, 1.4, by = 0.2))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-60" style="background:;">
+<slide class="" id="slide-69" style="background:;">
   <hgroup>
     <h2>Dividing the output device</h2>
   </hgroup>
@@ -1558,7 +1874,7 @@ abline(v = seq(0.6, 1.4, by = 0.2))
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-62-1.pdf" alt="plot of chunk unnamed-chunk-62"></p>
+  <p><img src="assets/fig/unnamed-chunk-77-1.pdf" alt="plot of chunk unnamed-chunk-77"></p>
 
 </div>
 <div>
@@ -1568,7 +1884,7 @@ abline(v = seq(0.6, 1.4, by = 0.2))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-61" style="background:;">
+<slide class="" id="slide-70" style="background:;">
   <hgroup>
     <h2>Dividing the output device</h2>
   </hgroup>
@@ -1586,7 +1902,7 @@ split.screen(c(3, 1), screen = 2)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-64-1.pdf" alt="plot of chunk unnamed-chunk-64"></p>
+  <p><img src="assets/fig/unnamed-chunk-79-1.pdf" alt="plot of chunk unnamed-chunk-79"></p>
 
 </div>
 <div>
@@ -1596,7 +1912,7 @@ split.screen(c(3, 1), screen = 2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-62" style="background:;">
+<slide class="" id="slide-71" style="background:;">
   <hgroup>
     <h2>Dividing the output device</h2>
   </hgroup>
@@ -1615,7 +1931,7 @@ layout(mat_lay)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-66-1.pdf" alt="plot of chunk unnamed-chunk-66"></p>
+  <p><img src="assets/fig/unnamed-chunk-81-1.pdf" alt="plot of chunk unnamed-chunk-81"></p>
 
 </div>
 <div>
@@ -1625,7 +1941,7 @@ layout(mat_lay)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-63" style="background:;">
+<slide class="" id="slide-72" style="background:;">
   <hgroup>
     <h2>More about &#39;layout()&#39;</h2>
   </hgroup>
@@ -1644,7 +1960,7 @@ layout(mat_lay)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-69-1.pdf" alt="plot of chunk unnamed-chunk-69"></p>
+  <p><img src="assets/fig/unnamed-chunk-84-1.pdf" alt="plot of chunk unnamed-chunk-84"></p>
 
 </div>
 <div>
@@ -1654,7 +1970,7 @@ layout(mat_lay)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-64" style="background:;">
+<slide class="" id="slide-73" style="background:;">
   <hgroup>
     <h2>More about &#39;layout()&#39;</h2>
   </hgroup>
@@ -1673,7 +1989,7 @@ layout(mat_lay)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-72-1.pdf" alt="plot of chunk unnamed-chunk-72"></p>
+  <p><img src="assets/fig/unnamed-chunk-87-1.pdf" alt="plot of chunk unnamed-chunk-87"></p>
 
 </div>
 <div>
@@ -1683,7 +1999,7 @@ layout(mat_lay)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-65" style="background:;">
+<slide class="" id="slide-74" style="background:;">
   <hgroup>
     <h2>More about &#39;layout()&#39;</h2>
   </hgroup>
@@ -1696,7 +2012,7 @@ layout(mat_lay, widths=c(.25,1,1))
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-74-1.pdf" alt="plot of chunk unnamed-chunk-74"></p>
+  <p><img src="assets/fig/unnamed-chunk-89-1.pdf" alt="plot of chunk unnamed-chunk-89"></p>
 
 </div>
 <div>
@@ -1706,7 +2022,7 @@ layout(mat_lay, widths=c(.25,1,1))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-66" style="background:;">
+<slide class="" id="slide-75" style="background:;">
   <hgroup>
     <h2>More about &#39;layout()&#39;</h2>
   </hgroup>
@@ -1720,7 +2036,7 @@ layout(mat_lay, widths=c(.25,1,1),
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-76-1.pdf" alt="plot of chunk unnamed-chunk-76"></p>
+  <p><img src="assets/fig/unnamed-chunk-91-1.pdf" alt="plot of chunk unnamed-chunk-91"></p>
 
 </div>
 <div>
@@ -1730,7 +2046,7 @@ layout(mat_lay, widths=c(.25,1,1),
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-67" style="background:;">
+<slide class="" id="slide-76" style="background:;">
   <hgroup>
     <h2>Combining &#39;layout()&#39; and &#39;mar&#39;</h2>
   </hgroup>
@@ -1751,7 +2067,7 @@ for (i in 1:4) {
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-78-1.pdf" alt="plot of chunk unnamed-chunk-78"></p>
+  <p><img src="assets/fig/unnamed-chunk-93-1.pdf" alt="plot of chunk unnamed-chunk-93"></p>
 
 </div>
 <div>
@@ -1761,7 +2077,7 @@ for (i in 1:4) {
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-68" style="background:;">
+<slide class="" id="slide-77" style="background:;">
   <hgroup>
     <h2>Embedded plots</h2>
   </hgroup>
@@ -1781,7 +2097,7 @@ for (i in 1:4) {
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-80-1.pdf" alt="plot of chunk unnamed-chunk-80"></p>
+  <p><img src="assets/fig/unnamed-chunk-95-1.pdf" alt="plot of chunk unnamed-chunk-95"></p>
 
 </div>
 <div>
@@ -1791,7 +2107,7 @@ for (i in 1:4) {
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-69" style="background:;">
+<slide class="" id="slide-78" style="background:;">
   <hgroup>
     <h2>Embedded plots</h2>
   </hgroup>
@@ -1813,7 +2129,7 @@ for (i in 1:4) {
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-82-1.pdf" alt="plot of chunk unnamed-chunk-82"></p>
+  <p><img src="assets/fig/unnamed-chunk-97-1.pdf" alt="plot of chunk unnamed-chunk-97"></p>
 
 </div>
 <div>
@@ -1823,7 +2139,7 @@ for (i in 1:4) {
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-70" style="background:;">
+<slide class="" id="slide-79" style="background:;">
   <hgroup>
     <h2>Embedded plots</h2>
   </hgroup>
@@ -1847,7 +2163,7 @@ plot(...)
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-84-1.pdf" alt="plot of chunk unnamed-chunk-84"></p>
+  <p><img src="assets/fig/unnamed-chunk-99-1.pdf" alt="plot of chunk unnamed-chunk-99"></p>
 
 <!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
 
@@ -1859,7 +2175,7 @@ plot(...)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-71" style="background:;">
+<slide class="transition" id="slide-80" style="background:;">
   <hgroup>
     <h2>Exporting figures from the command line</h2>
   </hgroup>
@@ -1869,7 +2185,7 @@ plot(...)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-72" style="background:;">
+<slide class="" id="slide-81" style="background:;">
   <hgroup>
     <h2>grDevices</h2>
   </hgroup>
@@ -1882,7 +2198,7 @@ plot(...)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-73" style="background:;">
+<slide class="" id="slide-82" style="background:;">
   <hgroup>
     <h2>grDevices</h2>
   </hgroup>
@@ -1910,7 +2226,7 @@ plot(...)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-74" style="background:;">
+<slide class="" id="slide-83" style="background:;">
   <hgroup>
     <h2>Exporting figures as a Bitmap files</h2>
   </hgroup>
@@ -1945,7 +2261,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-75" style="background:;">
+<slide class="" id="slide-84" style="background:;">
   <hgroup>
     <h2>Exporting figures as a Bitmap files</h2>
   </hgroup>
@@ -1969,7 +2285,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-76" style="background:;">
+<slide class="" id="slide-85" style="background:;">
   <hgroup>
     <h2>Exporting figures as a Bitmap files</h2>
   </hgroup>
@@ -1993,7 +2309,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-77" style="background:;">
+<slide class="" id="slide-86" style="background:;">
   <hgroup>
     <h2>Exporting figures as a Bitmap files</h2>
   </hgroup>
@@ -2032,7 +2348,7 @@ How many pixels = 1pt depends on the resolution of your image. If your image is 
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-78" style="background:;">
+<slide class="" id="slide-87" style="background:;">
   <hgroup>
     <h2>Exporting figures as a Bitmap files</h2>
   </hgroup>
@@ -2056,7 +2372,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-79" style="background:;">
+<slide class="" id="slide-88" style="background:;">
   <hgroup>
     <h2>Exporting figures as a vector files</h2>
   </hgroup>
@@ -2079,7 +2395,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-80" style="background:;">
+<slide class="" id="slide-89" style="background:;">
   <hgroup>
     <h2>Exporting figures as a vector files</h2>
   </hgroup>
@@ -2105,7 +2421,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-81" style="background:;">
+<slide class="transition" id="slide-90" style="background:;">
   <hgroup>
     <h2>Resources</h2>
   </hgroup>
@@ -2115,7 +2431,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-82" style="background:;">
+<slide class="" id="slide-91" style="background:;">
   <hgroup>
     <h2>Resources</h2>
   </hgroup>
@@ -2130,7 +2446,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-83" style="background:;">
+<slide class="transition" id="slide-92" style="background:;">
   <hgroup>
     <h2>Let&#39;s pratice!</h2>
   </hgroup>
@@ -2140,7 +2456,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-84" style="background:;">
+<slide class="" id="slide-93" style="background:;">
   <hgroup>
     <h2>Three challenges</h2>
   </hgroup>
@@ -2347,7 +2663,7 @@ dev.off()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='High-level vs. low-level plotting functions'>
+        data-slide=32 title='Graphical parameters'>
          32
       </a>
     </li>
@@ -2365,13 +2681,13 @@ dev.off()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=35 title='Let&#39;s take a look at the data'>
+        data-slide=35 title='High-level vs. low-level plotting functions'>
          35
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=36 title='An empty plot'>
+        data-slide=36 title='Let&#39;s take a look at the data'>
          36
       </a>
     </li>
@@ -2419,13 +2735,13 @@ dev.off()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=44 title='An empty plot, and now what?'>
+        data-slide=44 title='An empty plot'>
          44
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=45 title='Adding points'>
+        data-slide=45 title='An empty plot, and now what?'>
          45
       </a>
     </li>
@@ -2443,7 +2759,7 @@ dev.off()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=48 title='Adding lines'>
+        data-slide=48 title='Adding points'>
          48
       </a>
     </li>
@@ -2467,200 +2783,254 @@ dev.off()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=52 title='Adding points, lines, rectangles and polygons'>
+        data-slide=52 title='Adding lines'>
          52
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=53 title='Adding textual informations'>
+        data-slide=53 title='Adding lines'>
          53
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=54 title='Changing colors'>
+        data-slide=54 title='Adding lines'>
          54
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=55 title='Changing fonts'>
+        data-slide=55 title='Adding lines'>
          55
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=56 title='Adding/changing axis'>
+        data-slide=56 title='Adding polygons'>
          56
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=57 title='Adding legend'>
+        data-slide=57 title='Adding polygons'>
          57
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=58 title='Figure margins'>
+        data-slide=58 title='Adding polygons'>
          58
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=59 title='Composition and multipanel plotting'>
+        data-slide=59 title='Adding polygons'>
          59
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=60 title='Dividing the output device'>
+        data-slide=60 title='Adding polygons'>
          60
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=61 title='Dividing the output device'>
+        data-slide=61 title='Adding polygons'>
          61
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=62 title='Dividing the output device'>
+        data-slide=62 title='Adding textual informations'>
          62
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=63 title='More about &#39;layout()&#39;'>
+        data-slide=63 title='Changing colors'>
          63
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=64 title='More about &#39;layout()&#39;'>
+        data-slide=64 title='Changing fonts'>
          64
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=65 title='More about &#39;layout()&#39;'>
+        data-slide=65 title='Adding/changing axis'>
          65
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=66 title='More about &#39;layout()&#39;'>
+        data-slide=66 title='Adding legend'>
          66
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=67 title='Combining &#39;layout()&#39; and &#39;mar&#39;'>
+        data-slide=67 title='Figure margins'>
          67
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=68 title='Embedded plots'>
+        data-slide=68 title='Composition and multipanel plotting'>
          68
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=69 title='Embedded plots'>
+        data-slide=69 title='Dividing the output device'>
          69
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=70 title='Embedded plots'>
+        data-slide=70 title='Dividing the output device'>
          70
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=71 title='Exporting figures from the command line'>
+        data-slide=71 title='Dividing the output device'>
          71
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=72 title='grDevices'>
+        data-slide=72 title='More about &#39;layout()&#39;'>
          72
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=73 title='grDevices'>
+        data-slide=73 title='More about &#39;layout()&#39;'>
          73
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=74 title='Exporting figures as a Bitmap files'>
+        data-slide=74 title='More about &#39;layout()&#39;'>
          74
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=75 title='Exporting figures as a Bitmap files'>
+        data-slide=75 title='More about &#39;layout()&#39;'>
          75
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=76 title='Exporting figures as a Bitmap files'>
+        data-slide=76 title='Combining &#39;layout()&#39; and &#39;mar&#39;'>
          76
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=77 title='Exporting figures as a Bitmap files'>
+        data-slide=77 title='Embedded plots'>
          77
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=78 title='Exporting figures as a Bitmap files'>
+        data-slide=78 title='Embedded plots'>
          78
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=79 title='Exporting figures as a vector files'>
+        data-slide=79 title='Embedded plots'>
          79
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=80 title='Exporting figures as a vector files'>
+        data-slide=80 title='Exporting figures from the command line'>
          80
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=81 title='Resources'>
+        data-slide=81 title='grDevices'>
          81
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=82 title='Resources'>
+        data-slide=82 title='grDevices'>
          82
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=83 title='Let&#39;s pratice!'>
+        data-slide=83 title='Exporting figures as a Bitmap files'>
          83
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=84 title='Three challenges'>
+        data-slide=84 title='Exporting figures as a Bitmap files'>
          84
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=85 title='Exporting figures as a Bitmap files'>
+         85
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=86 title='Exporting figures as a Bitmap files'>
+         86
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=87 title='Exporting figures as a Bitmap files'>
+         87
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=88 title='Exporting figures as a vector files'>
+         88
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=89 title='Exporting figures as a vector files'>
+         89
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=90 title='Resources'>
+         90
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=91 title='Resources'>
+         91
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=92 title='Let&#39;s pratice!'>
+         92
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=93 title='Three challenges'>
+         93
       </a>
     </li>
   </ul>

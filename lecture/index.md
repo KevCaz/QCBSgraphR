@@ -451,6 +451,23 @@ par()$col
     - Do the graph
     - Restaure the old par(): `par(opar)`
 
+---
+
+## Graphical parameters
+
+- Important: when you change the value of one parameter, the new value affects all the graphs until the graphical window is closed
+
+<!-- end -->
+
+- A recommendation:
+    - Save the default par(): `opar <- par()`
+    - Change the values: `par(col = 'red')`
+    - Do the graph
+    - Restaure the old par(): `par(opar)`
+
+<!-- end -->
+
+- Some graphical parameters can also be changed directly in plotting functions
 
 ---
 
@@ -875,14 +892,218 @@ abline(v = seq(0.6, 1.4, by = 0.2))
 
 ![plot of chunk unnamed-chunk-58](assets/fig/unnamed-chunk-58-1.pdf)
 
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- Now take a look at the functions `lines()` and `points()`
+- But first, we are going to predict the model on new data
+
+*** =right
+
+
+```r
+## New data frame
+mat <- data.frame(x = seq(0.6, 1.4, by = 0.05))
+
+## Model prediction
+ypred <- predict(object = mod, newdata = mat)
+```
+
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- Let's add model regression with the functions `lines()` and `points()`
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding line (default settings)
+lines(x = mat$x, y = ypred)
+
+## Or, with the function points()
+points(x = mat$x, y = ypred, type = 'l')
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-61](assets/fig/unnamed-chunk-61-1.pdf)
+
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- We can customize the lines with:
+    - `lwd`, the line width
+    - `col`, the line color
+    - `lty`, the line type
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding line (user settings)
+lines(x = mat$x, y = ypred,
+      col = 'red', lwd = 4, lty = 2)
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-63](assets/fig/unnamed-chunk-63-1.pdf)
+
+--- &twocol
+
+## Adding polygons
+
+*** =left
+
+- To add a polygon, the function is `polygon()`
+- A special, the rectangle can be drawn with `rect()`
+- Let's predict again the model, but this time with the standard error
+
+*** =right
+
+```r
+## Model prediction with se
+ypred <- predict(object = mod, newdata = mat,
+                 se.fit = TRUE)
+
+class(ypred)
+## [1] "list"
+
+names(ypred)[1:2]
+## [1] "fit"    "se.fit"
+```
+
+
+--- &twocol
+
+## Adding polygons
+
+*** =left
+
+- We are going to add the error envelope with the function `polygon()`
+- So, let's calculate the y value of this envelope
+
+*** =right
+
+```r
+## Superior interval
+xsup <- mat[ , 'x']
+ysup <- ypred$fit + ypred$se.fit
+
+## Inferior interval
+xinf <- mat[ , 'x']
+yinf <- ypred$fit - ypred$se.fit
+
+## Reverse sort of inf.
+xinf <- mat[nrow(mat) : 1, 'x']
+yinf <- yinf[length(yinf) : 1]
+```
+
+--- &twocol
+
+## Adding polygons
+
+*** =left
+
+- Let's add model error envelope
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding error envelope
+polygons(x = c(xsup, xinf), y = c(ysup, yinf))
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-67](assets/fig/unnamed-chunk-67-1.pdf)
+
+--- &twocol
+
+## Adding polygons
+
+*** =left
+
+- We can customize the polygon with:
+    - `border`, the border color
+    - `col`, the background color
+    - `lwd`, the border width
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding error envelope
+polygon(x = c(xsup, xinf), y = c(ysup, yinf),
+        col = 'orange', border = 'red',
+        lwd = 4)
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-69](assets/fig/unnamed-chunk-69-1.pdf)
+
+--- &twocol
+
+## Adding polygons
+
+*** =left
+
+- Finally
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding model regression
+lines(x = mat$x, y = ypred$fit, lwd = 3)
+
+## Adding error envelope
+polygon(x = c(xsup, xinf), y = c(ysup, yinf),
+        col = '#aaaaaa88', border = '#aaaaaa88')
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-71](assets/fig/unnamed-chunk-71-1.pdf)
+
+--- &twocol
+
+## Adding polygons
+
+*** =left
+
+- rect(), density, angle
+
+
+
+*** =right
+
+
+
 ---
 
-## Adding points, lines, rectangles and polygons
-
-- the functions: `points()`, `lines()`, `rect()`, `polygon()`, `axis()` and `box()`
-- the arguments: pch, cex, lwd, lty, col, bg, fg, border, density, angle
-
----
 
 ## Adding textual informations
 
@@ -947,7 +1168,7 @@ par(mfcol=c(2,2))
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-1.pdf)
+![plot of chunk unnamed-chunk-77](assets/fig/unnamed-chunk-77-1.pdf)
 
 
 --- &twocol
@@ -965,7 +1186,7 @@ split.screen(c(3, 1), screen = 2)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-64](assets/fig/unnamed-chunk-64-1.pdf)
+![plot of chunk unnamed-chunk-79](assets/fig/unnamed-chunk-79-1.pdf)
 
 
 --- &twocol
@@ -984,7 +1205,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-66](assets/fig/unnamed-chunk-66-1.pdf)
+![plot of chunk unnamed-chunk-81](assets/fig/unnamed-chunk-81-1.pdf)
 
 
 --- &twocol
@@ -1008,7 +1229,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-69](assets/fig/unnamed-chunk-69-1.pdf)
+![plot of chunk unnamed-chunk-84](assets/fig/unnamed-chunk-84-1.pdf)
 
 
 --- &twocol
@@ -1032,7 +1253,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-72](assets/fig/unnamed-chunk-72-1.pdf)
+![plot of chunk unnamed-chunk-87](assets/fig/unnamed-chunk-87-1.pdf)
 
 
 --- &twocol
@@ -1048,7 +1269,7 @@ layout(mat_lay, widths=c(.25,1,1))
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-74](assets/fig/unnamed-chunk-74-1.pdf)
+![plot of chunk unnamed-chunk-89](assets/fig/unnamed-chunk-89-1.pdf)
 
 
 --- &twocol
@@ -1065,7 +1286,7 @@ layout(mat_lay, widths=c(.25,1,1),
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-76](assets/fig/unnamed-chunk-76-1.pdf)
+![plot of chunk unnamed-chunk-91](assets/fig/unnamed-chunk-91-1.pdf)
 
 
 --- &twocol
@@ -1089,7 +1310,7 @@ for (i in 1:4) {
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-78](assets/fig/unnamed-chunk-78-1.pdf)
+![plot of chunk unnamed-chunk-93](assets/fig/unnamed-chunk-93-1.pdf)
 
 
 
@@ -1112,7 +1333,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-80](assets/fig/unnamed-chunk-80-1.pdf)
+![plot of chunk unnamed-chunk-95](assets/fig/unnamed-chunk-95-1.pdf)
 
 
 --- &twocol
@@ -1135,7 +1356,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-82](assets/fig/unnamed-chunk-82-1.pdf)
+![plot of chunk unnamed-chunk-97](assets/fig/unnamed-chunk-97-1.pdf)
 
 
 --- &twocol
@@ -1159,7 +1380,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-84](assets/fig/unnamed-chunk-84-1.pdf)
+![plot of chunk unnamed-chunk-99](assets/fig/unnamed-chunk-99-1.pdf)
 
 <!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
 
