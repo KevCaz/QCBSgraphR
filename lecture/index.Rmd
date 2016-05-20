@@ -890,7 +890,7 @@ layout(mat_lay, widths=c(.25,1,1),
 
   1. create your first plot;
   2. use `par()`;
-  3. add your new figure;
+  3. add your embedded plot;
 
   ```{r, eval = FALSE}
     plot(...)
@@ -931,7 +931,7 @@ layout(mat_lay, widths=c(.25,1,1),
 
 ## grDevices
 
-<img src='./assets/img/Murrell2015.jpg' style="width:60%; margin: 0 20%;"/>
+<img src='assets/img/Murrell2015.jpg' style="width:60%; margin: 0 20%;"/>
 <div class='centered'>Murrell, P. (2015) <a href="https://journal.r-project.org/archive/2015-1/murrell.pdf">The gridGraphics Package</a>. The R Jounal.</div>
 
 
@@ -955,22 +955,119 @@ options('device')
 
 --- &twocol
 
-## Bimap file
+## Exporting figures as a Bitmap files
 
 *** =left
 
+- `bmp()`, `jpeg()`, `png()`, `tiff()`
 
-- the loop for
-- `pdf()`, `png()`, `jpeg()`, `bmp()`, `tiff()`
-- cairo_pdf, cairo_ps, svg
+```{r, eval=FALSE}
+?jpeg
+```
 
+- use them:
 
+```{r, eval=FALSE}
+png(filename)
+...
+dev.off()
+```
 
 *** =right
 
+```{r, echo=FALSE, results='hide'}
+<<export1>>
+```
+
+<img src='assets/img/fig1.png' style="width:100%;"/>
+
+
+--- &twocol
+
+## Exporting figures as a Bitmap files
+
+*** =left
+
+```{r, eval=FALSE}
+jpeg(filename,  width=960)
+...
+dev.off()
+```
+
+*** =right
+
+```{r, echo=FALSE, results='hide'}
+<<export2>>
+```
+
+<img src='assets/img/fig2.png' style="width:100%;"/>
 
 
 
+
+--- &twocol
+
+## Exporting figures as a Bitmap files
+
+*** =left
+
+- `pdf()`,
+- cairo_pdf, cairo_ps, svg
+
+
+*** =left
+
+```{r, eval=FALSE}
+jpeg(filename, width=1440, height=1440)
+...
+dev.off()
+```
+
+*** =right
+
+```{r, echo=FALSE, results='hide'}
+<<export3>>
+```
+
+<img src='assets/img/fig3.png' style="width:100%;"/>
+
+
+--- &twocol
+
+## Exporting figures as a Bitmap files
+
+*** =left
+
+- `pdf()`,
+- cairo_pdf, cairo_ps, svg
+
+
+*** =left
+
+```{r, eval=FALSE}
+jpeg(filename, width=1440, height=1440)
+...
+dev.off()
+```
+
+*** =right
+
+```{r, echo=FALSE, results='hide'}
+<<export4>>
+```
+
+<img src='assets/img/fig4.png' style="width:100%;"/>
+
+
+
+--- &twocol
+
+## Exporting figures as a vector files
+
+*** =left
+
+- `pdf()`,
+- cairo_pdf, cairo_ps, svg
 
 
 

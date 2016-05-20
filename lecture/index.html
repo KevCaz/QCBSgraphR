@@ -1384,7 +1384,7 @@ for (i in 1:4) {
 <ol>
 <li>create your first plot;</li>
 <li>use <code>par()</code>;</li>
-<li><p>add your new figure;</p>
+<li><p>add your embedded plot;</p>
 
 <pre><code class="r">plot(...)
 par(new=TRUE, fig=c(0.5,1,0.5,1))
@@ -1421,7 +1421,7 @@ plot(...)
     <h2>grDevices</h2>
   </hgroup>
   <article data-timings="">
-    <p><img src='./assets/img/Murrell2015.jpg' style="width:60%; margin: 0 20%;"/></p>
+    <p><img src='assets/img/Murrell2015.jpg' style="width:60%; margin: 0 20%;"/></p>
 
 <div class='centered'>Murrell, P. (2015) <a href="https://journal.r-project.org/archive/2015-1/murrell.pdf">The gridGraphics Package</a>. The R Jounal.</div>
 
@@ -1447,7 +1447,7 @@ plot(...)
 <li>in add-on package :
 
 <ul>
-<li> <a href="https://cran.r-project.org/web/packages/rgl/index.html">rgl  package</a> &nbsp;&nbsp; <a href="https://www.opengl.org"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+<li> <a href="https://cran.r-project.org/web/packages/rgl/index.html">rgl  package</a> &nbsp;&nbsp; (OpenGL website <a href="https://www.opengl.org"><i class="fa fa-globe" aria-hidden="true"></i></a>)</li>
 <li>Internet browsers <a href="https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html">googleVis</a></li>
 </ul></li>
 </ul></li>
@@ -1459,14 +1459,120 @@ plot(...)
 
 <slide class="" id="slide-61" style="background:;">
   <hgroup>
-    <h2>Embedded plots</h2>
+    <h2>Exporting figures as a Bitmap files</h2>
   </hgroup>
   <article data-timings="">
     
 <div style='float:left;width:49%;text-align:left;'>
   <ul>
-<li>the loop for</li>
-<li><code>pdf()</code>, <code>png()</code>, <code>jpeg()</code>, <code>bmp()</code>, <code>tiff()</code></li>
+<li><code>bmp()</code>, <code>jpeg()</code>, <code>png()</code>, <code>tiff()</code></li>
+</ul>
+
+<pre><code class="r">?jpeg
+</code></pre>
+
+<ul>
+<li>use them:</li>
+</ul>
+
+<pre><code class="r">png(filename)
+...
+dev.off()
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src='assets/img/fig1.png' style="width:100%;"/></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-62" style="background:;">
+  <hgroup>
+    <h2>Exporting figures as a Bitmap files</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <pre><code class="r">jpeg(filename,  width=960)
+...
+dev.off()
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src='assets/img/fig2.png' style="width:100%;"/></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-63" style="background:;">
+  <hgroup>
+    <h2>Exporting figures as a Bitmap files</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li><code>pdf()</code>,</li>
+<li>cairo_pdf, cairo_ps, svg</li>
+</ul>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src='assets/img/fig3.png' style="width:100%;"/></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-64" style="background:;">
+  <hgroup>
+    <h2>Exporting figures as a Bitmap files</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li><code>pdf()</code>,</li>
+<li>cairo_pdf, cairo_ps, svg</li>
+</ul>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src='assets/img/fig4.png' style="width:100%;"/></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-65" style="background:;">
+  <hgroup>
+    <h2>Exporting figures as a vector files</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li><code>pdf()</code>,</li>
 <li>cairo_pdf, cairo_ps, svg</li>
 </ul>
 
@@ -1481,7 +1587,7 @@ plot(...)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-62" style="background:;">
+<slide class="transition" id="slide-66" style="background:;">
   <hgroup>
     <h2>Ressources</h2>
   </hgroup>
@@ -1491,7 +1597,7 @@ plot(...)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-63" style="background:;">
+<slide class="" id="slide-67" style="background:;">
   <hgroup>
     <h2>Ressources</h2>
   </hgroup>
@@ -1506,7 +1612,7 @@ plot(...)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-64" style="background:;">
+<slide class="transition" id="slide-68" style="background:;">
   <hgroup>
     <h2>Let&#39;s pratice!</h2>
   </hgroup>
@@ -1516,7 +1622,7 @@ plot(...)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-65" style="background:;">
+<slide class="" id="slide-69" style="background:;">
   <hgroup>
     <h2>Three challenges</h2>
   </hgroup>
@@ -1897,32 +2003,56 @@ plot(...)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=61 title='Embedded plots'>
+        data-slide=61 title='Exporting figures as a Bitmap files'>
          61
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=62 title='Ressources'>
+        data-slide=62 title='Exporting figures as a Bitmap files'>
          62
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=63 title='Ressources'>
+        data-slide=63 title='Exporting figures as a Bitmap files'>
          63
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=64 title='Let&#39;s pratice!'>
+        data-slide=64 title='Exporting figures as a Bitmap files'>
          64
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=65 title='Three challenges'>
+        data-slide=65 title='Exporting figures as a vector files'>
          65
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=66 title='Ressources'>
+         66
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=67 title='Ressources'>
+         67
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=68 title='Let&#39;s pratice!'>
+         68
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=69 title='Three challenges'>
+         69
       </a>
     </li>
   </ul>

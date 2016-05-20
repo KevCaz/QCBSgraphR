@@ -840,7 +840,7 @@ for (i in 1:4) {
 
   1. create your first plot;
   2. use `par()`;
-  3. add your new figure;
+  3. add your embedded plot;
 
   
   ```r
@@ -880,7 +880,7 @@ for (i in 1:4) {
 
 ## grDevices
 
-<img src='./assets/img/Murrell2015.jpg' style="width:60%; margin: 0 20%;"/>
+<img src='assets/img/Murrell2015.jpg' style="width:60%; margin: 0 20%;"/>
 <div class='centered'>Murrell, P. (2015) <a href="https://journal.r-project.org/archive/2015-1/murrell.pdf">The gridGraphics Package</a>. The R Jounal.</div>
 
 
@@ -898,29 +898,123 @@ options('device')
   - X11 &nbsp;&nbsp; [<i class="fa fa-globe" aria-hidden="true"></i>](https://en.wikipedia.org/wiki/X_Window_System)
   - pdf, jpeg, svg, ...
   - in add-on package :
-      -  [rgl  package](https://cran.r-project.org/web/packages/rgl/index.html) &nbsp;&nbsp; [<i class="fa fa-globe" aria-hidden="true"></i>](https://www.opengl.org)
+      -  [rgl  package](https://cran.r-project.org/web/packages/rgl/index.html) &nbsp;&nbsp; (OpenGL website [<i class="fa fa-globe" aria-hidden="true"></i>](https://www.opengl.org))
       - Internet browsers [googleVis](https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html)
 
 
 
 --- &twocol
 
-## Embedded plots
+## Exporting figures as a Bitmap files
+
+*** =left
+
+- `bmp()`, `jpeg()`, `png()`, `tiff()`
+
+
+```r
+?jpeg
+```
+
+- use them:
+
+
+```r
+png(filename)
+...
+dev.off()
+```
+
+*** =right
+
+
+
+<img src='assets/img/fig1.png' style="width:100%;"/>
+
+
+--- &twocol
+
+## Exporting figures as a Bitmap files
 
 *** =left
 
 
-- the loop for
-- `pdf()`, `png()`, `jpeg()`, `bmp()`, `tiff()`
+```r
+jpeg(filename,  width=960)
+...
+dev.off()
+```
+
+*** =right
+
+
+
+<img src='assets/img/fig2.png' style="width:100%;"/>
+
+
+
+
+--- &twocol
+
+## Exporting figures as a Bitmap files
+
+*** =left
+
+- `pdf()`,
 - cairo_pdf, cairo_ps, svg
 
 
+*** =left
+
+
+```r
+jpeg(filename, width=1440, height=1440)
+...
+dev.off()
+```
+
+*** =right
 
 
 
+<img src='assets/img/fig3.png' style="width:100%;"/>
+
+
+--- &twocol
+
+## Exporting figures as a Bitmap files
+
+*** =left
+
+- `pdf()`,
+- cairo_pdf, cairo_ps, svg
+
+
+*** =left
+
+
+```r
+jpeg(filename, width=1440, height=1440)
+...
+dev.off()
+```
+
+*** =right
 
 
 
+<img src='assets/img/fig4.png' style="width:100%;"/>
+
+
+
+--- &twocol
+
+## Exporting figures as a vector files
+
+*** =left
+
+- `pdf()`,
+- cairo_pdf, cairo_ps, svg
 
 
 

@@ -37,11 +37,13 @@ fourplots <- function() {
   }
 }
 
-exExport <- function(){
-  par(mar=c(1,1,1,1))
+exExport <- function(...){
+  par(mar=rep(2,4), cex.axis=1.6, ...)
   eplot()
   fillIt(col=2)
-  text(0,0, labels=2, cex=4)
+  text(0,0,labels=expression(textstyle(M.)~~sqrt(x[i]) > bar(omega)), cex=1)
+  text(0,.5,labels=expression(textstyle(M.)~~sqrt(x[i]) > bar(omega)), cex=2)
+  text(0,-.5,labels=expression(textstyle(M.)~~sqrt(x[i]) > bar(omega)), cex=.5)
   axis(1)
 }
 
@@ -171,6 +173,26 @@ axis(2)
 ## Exportation
 
 ## @knitr export1
-# jpeg(filename)
-exExport()
-getwd()
+png(filename="assets/img/fig1.png")
+  exExport()
+dev.off()
+
+## @knitr export2
+png(filename="assets/img/fig2.png", width=1440, height=1440)
+  exExport()
+dev.off()
+
+## @knitr export3
+png(filename="assets/img/fig3.png", width=1440, height=1440)
+  exExport()
+dev.off()
+
+## @knitr export4
+png(filename="assets/img/fig4.png")
+  exExport()
+dev.off()
+
+## @knitr export5
+png(filename="assets/img/fig5.png")
+  exExport()
+dev.off()
