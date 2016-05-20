@@ -5,7 +5,7 @@ author      : 'Kévin Cazelles and Nicolas Casajus'
 job         : Université du Québec à Rimouski
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : sunburst      #
+hitheme     : tomorrow      #
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
@@ -1160,6 +1160,11 @@ for (i in 1:4) {
 *** =right
 
 ![plot of chunk unnamed-chunk-84](assets/fig/unnamed-chunk-84-1.pdf)
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 3f7c22663c4c338725ca14eec49a898f6ae808c1
 
 <!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
 
