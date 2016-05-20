@@ -37,7 +37,13 @@ fourplots <- function() {
   }
 }
 
-
+exExport <- function(){
+  par(mar=c(1,1,1,1))
+  eplot()
+  fillIt(col=2)
+  text(0,0, labels=2, cex=4)
+  axis(1)
+}
 
 
 ####################################
@@ -156,3 +162,15 @@ eplot()
 fillIt(col=3)
 text(0,0, labels=2, cex=4)
 axis(2)
+
+
+## @knitr rmvcomment
+
+####################################
+####################################
+## Exportation
+
+## @knitr export1
+# jpeg(filename)
+exExport()
+getwd()

@@ -955,7 +955,7 @@ options('device')
 
 --- &twocol
 
-## Embedded plots
+## Bimap file
 
 *** =left
 
@@ -966,7 +966,7 @@ options('device')
 
 
 
-
+*** =right
 
 
 
