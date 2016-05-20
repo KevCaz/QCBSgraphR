@@ -1312,6 +1312,26 @@ dev.off()
 *** =right
 
 
+--- &twocol
+
+## Exporting figures as a vector files
+
+*** =left
+
+- `pdf()`,
+- cairo_pdf, cairo_ps, svg
+
+*** =right
+
+- Cairo &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cairographics.org/documentation/)
+
+
+
+
+
+
+
+
 
 
 

@@ -1160,11 +1160,6 @@ for (i in 1:4) {
 *** =right
 
 ![plot of chunk unnamed-chunk-84](assets/fig/unnamed-chunk-84-1.pdf)
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 3f7c22663c4c338725ca14eec49a898f6ae808c1
 
 <!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
 
@@ -1347,6 +1342,26 @@ dev.off()
 - cairo_pdf, cairo_ps, svg
 
 *** =right
+
+
+--- &twocol
+
+## Exporting figures as a vector files
+
+*** =left
+
+- `pdf()`,
+- cairo_pdf, cairo_ps, svg
+
+*** =right
+
+- Cairo &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cairographics.org/documentation/)
+
+
+
+
+
+
 
 
 
