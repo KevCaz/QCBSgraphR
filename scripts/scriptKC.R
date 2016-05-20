@@ -16,10 +16,8 @@ colb <- "#4e7bdb"
 palette(c("transparent", colr, colg, colb))
 
 
-################## - Functions and packages
+################## - Functions
 ## @knitr kcfunction
-
-library(plotrix)
 
 fillIt <- function(col){
   lp <- par()$usr
@@ -37,14 +35,13 @@ fourplots <- function() {
   }
 }
 
-exExport <- function(...){
-  par(mar=rep(2,4), cex.axis=1.6, ...)
-  eplot()
+exExport <- function(add=FALSE, ...){
+  par(xaxs="i", yaxs="i")
+  plot(c(0,1),c(0,1), type="n", ann=FALSE, axes=FALSE)
   fillIt(col=2)
-  text(0,0,labels=expression(textstyle(M.)~~sqrt(x[i]) > bar(omega)), cex=1)
-  text(0,.5,labels=expression(textstyle(M.)~~sqrt(x[i]) > bar(omega)), cex=2)
-  text(0,-.5,labels=expression(textstyle(M.)~~sqrt(x[i]) > bar(omega)), cex=.5)
-  axis(1)
+  text(.5,.5,labels="Maps", cex=1, pos=4)
+  text(.5,.8,labels="Maps", cex=2.01, pos=4)
+  text(.5,.2,labels="Maps", cex=.5, pos=4)
 }
 
 
@@ -165,8 +162,9 @@ fillIt(col=3)
 text(0,0, labels=2, cex=4)
 axis(2)
 
-
 ## @knitr rmvcomment
+
+
 
 ####################################
 ####################################
@@ -174,21 +172,29 @@ axis(2)
 
 ## @knitr export1
 png(filename="assets/img/fig1.png")
+  par(mar=c(1,1,1,1))
   exExport()
 dev.off()
 
 ## @knitr export2
 png(filename="assets/img/fig2.png", width=1440, height=1440)
+  par(mar=c(1,1,1,1))
   exExport()
 dev.off()
 
 ## @knitr export3
-png(filename="assets/img/fig3.png", width=1440, height=1440)
+png(filename="assets/img/fig3.png", res=72)
+  par(mar=c(1,1,1,1), las=1)
   exExport()
+  axis(2, at=seq(0,1,by=1/20), label=seq(0,480,by=24), tcl=-.25,  pos=.5, col.axis=colb)
+  hl <- c(233,247,372,397)
+  abline(h=hl/480, col=colb)
 dev.off()
 
+
 ## @knitr export4
-png(filename="assets/img/fig4.png")
+png(filename="assets/img/fig4.png",res=144)
+  par(mar=c(1,1,1,1), las=1)
   exExport()
 dev.off()
 

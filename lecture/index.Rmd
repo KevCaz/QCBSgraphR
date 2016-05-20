@@ -1127,8 +1127,6 @@ layout(mat_lay, widths=c(.25,1,1),
 <<fignew2>>
 ```
 
-
-
 <!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
 
 
@@ -1176,6 +1174,7 @@ options('device')
 
 
 
+
 --- &twocol
 
 ## Exporting figures as a Bitmap files
@@ -1202,7 +1201,7 @@ dev.off()
 <<export1>>
 ```
 
-<img src='assets/img/fig1.png' style="width:100%;"/>
+<img src='assets/img/fig1.png' style="width:90%;"/>
 
 
 --- &twocol
@@ -1212,7 +1211,7 @@ dev.off()
 *** =left
 
 ```{r, eval=FALSE}
-jpeg(filename,  width=960)
+png(filename, width=1440, height=1440)
 ...
 dev.off()
 ```
@@ -1223,7 +1222,7 @@ dev.off()
 <<export2>>
 ```
 
-<img src='assets/img/fig2.png' style="width:100%;"/>
+<img src='assets/img/fig2.png' style="width:90%;"/>
 
 
 
@@ -1234,14 +1233,8 @@ dev.off()
 
 *** =left
 
-- `pdf()`,
-- cairo_pdf, cairo_ps, svg
-
-
-*** =left
-
 ```{r, eval=FALSE}
-jpeg(filename, width=1440, height=1440)
+jpeg(filename, res=72)
 ...
 dev.off()
 ```
@@ -1252,7 +1245,7 @@ dev.off()
 <<export3>>
 ```
 
-<img src='assets/img/fig3.png' style="width:100%;"/>
+<img src='assets/img/fig3.png' style="width:90%;"/>
 
 
 --- &twocol
@@ -1261,25 +1254,49 @@ dev.off()
 
 *** =left
 
-- `pdf()`,
-- cairo_pdf, cairo_ps, svg
+<img src='assets/img/fig3b.jpg' style="width:90%;margin: 8% 4%;"/>
 
+- pointsize=12
+- res=72
+- cex=1
+
+*** =right
+
+<img src='assets/img/fig3a.jpg' style="width:90%;margin: 8% 4%;"/>
+
+- pointsize=12
+- res=72
+- cex=2
+- 480/72=20/3 inches => 2.54 = 17cm
+
+
+
+<!--
+A pixel is a single square 'picture element' (hence pix-el), i.e. a single dot in your image. A 10x10 image is made up of a set of pixels in a grid 10 wide by 10 high, totaling 100 pixels.
+The 'point' (pt) on the other hand is a unit of length, commonly used to measure the height of a font, but technically capable of measuring any length. In applications, 1pt is equal to exactly 1/72th of an inch; in traditional print technically 72pt is 0.996264 inches, although I think you'll be forgiven for rounding it up!
+How many pixels = 1pt depends on the resolution of your image. If your image is 72ppi (pixels per inch), then one point will equal exactly one pixel. -->
+
+
+
+--- &twocol
+
+## Exporting figures as a Bitmap files
 
 *** =left
 
+
 ```{r, eval=FALSE}
-jpeg(filename, width=1440, height=1440)
+jpeg(filename, res=144)
 ...
 dev.off()
 ```
-
 *** =right
 
 ```{r, echo=FALSE, results='hide'}
 <<export4>>
 ```
 
-<img src='assets/img/fig4.png' style="width:100%;"/>
+<img src='assets/img/fig4.png' style="width:90%;"/>
 
 
 
@@ -1292,7 +1309,7 @@ dev.off()
 - `pdf()`,
 - cairo_pdf, cairo_ps, svg
 
-
+*** =right
 
 
 

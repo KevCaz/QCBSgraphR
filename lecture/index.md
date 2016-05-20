@@ -920,15 +920,6 @@ abline(v = seq(0.6, 1.4, by = 0.2))
 
 - mar and oma, xaxs et yaxs
 
-
-
-
-
-
-
-
-
-
 --- .transition
 
 ## Composition and multipanel plotting
@@ -956,7 +947,7 @@ par(mfcol=c(2,2))
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-46](assets/fig/unnamed-chunk-46-1.pdf)
+![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-1.pdf)
 
 
 --- &twocol
@@ -974,7 +965,7 @@ split.screen(c(3, 1), screen = 2)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-48](assets/fig/unnamed-chunk-48-1.pdf)
+![plot of chunk unnamed-chunk-64](assets/fig/unnamed-chunk-64-1.pdf)
 
 
 --- &twocol
@@ -993,7 +984,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-50](assets/fig/unnamed-chunk-50-1.pdf)
+![plot of chunk unnamed-chunk-66](assets/fig/unnamed-chunk-66-1.pdf)
 
 
 --- &twocol
@@ -1010,14 +1001,14 @@ layout(mat_lay)
 
 
 ```
-#>      [,1] [,2]
-#> [1,]    1    1
-#> [2,]    2    3
-#> [3,]    4    4
+##      [,1] [,2]
+## [1,]    1    1
+## [2,]    2    3
+## [3,]    4    4
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-53](assets/fig/unnamed-chunk-53-1.pdf)
+![plot of chunk unnamed-chunk-69](assets/fig/unnamed-chunk-69-1.pdf)
 
 
 --- &twocol
@@ -1034,14 +1025,14 @@ layout(mat_lay)
 
 
 ```
-#>      [,1] [,2] [,3]
-#> [1,]    0    1    1
-#> [2,]    2    3    4
-#> [3,]    2    3    0
+##      [,1] [,2] [,3]
+## [1,]    0    1    1
+## [2,]    2    3    4
+## [3,]    2    3    0
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-56](assets/fig/unnamed-chunk-56-1.pdf)
+![plot of chunk unnamed-chunk-72](assets/fig/unnamed-chunk-72-1.pdf)
 
 
 --- &twocol
@@ -1057,7 +1048,7 @@ layout(mat_lay, widths=c(.25,1,1))
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-58](assets/fig/unnamed-chunk-58-1.pdf)
+![plot of chunk unnamed-chunk-74](assets/fig/unnamed-chunk-74-1.pdf)
 
 
 --- &twocol
@@ -1074,7 +1065,7 @@ layout(mat_lay, widths=c(.25,1,1),
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-60](assets/fig/unnamed-chunk-60-1.pdf)
+![plot of chunk unnamed-chunk-76](assets/fig/unnamed-chunk-76-1.pdf)
 
 
 --- &twocol
@@ -1098,7 +1089,7 @@ for (i in 1:4) {
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-1.pdf)
+![plot of chunk unnamed-chunk-78](assets/fig/unnamed-chunk-78-1.pdf)
 
 
 
@@ -1121,7 +1112,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-64](assets/fig/unnamed-chunk-64-1.pdf)
+![plot of chunk unnamed-chunk-80](assets/fig/unnamed-chunk-80-1.pdf)
 
 
 --- &twocol
@@ -1144,7 +1135,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-66](assets/fig/unnamed-chunk-66-1.pdf)
+![plot of chunk unnamed-chunk-82](assets/fig/unnamed-chunk-82-1.pdf)
 
 
 --- &twocol
@@ -1168,9 +1159,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-68](assets/fig/unnamed-chunk-68-1.pdf)
-
-
+![plot of chunk unnamed-chunk-84](assets/fig/unnamed-chunk-84-1.pdf)
 
 <!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
 
@@ -1220,6 +1209,7 @@ options('device')
 
 
 
+
 --- &twocol
 
 ## Exporting figures as a Bitmap files
@@ -1246,7 +1236,7 @@ dev.off()
 
 
 
-<img src='assets/img/fig1.png' style="width:100%;"/>
+<img src='assets/img/fig1.png' style="width:90%;"/>
 
 
 --- &twocol
@@ -1257,7 +1247,7 @@ dev.off()
 
 
 ```r
-jpeg(filename,  width=960)
+png(filename, width=1440, height=1440)
 ...
 dev.off()
 ```
@@ -1266,7 +1256,7 @@ dev.off()
 
 
 
-<img src='assets/img/fig2.png' style="width:100%;"/>
+<img src='assets/img/fig2.png' style="width:90%;"/>
 
 
 
@@ -1277,15 +1267,9 @@ dev.off()
 
 *** =left
 
-- `pdf()`,
-- cairo_pdf, cairo_ps, svg
-
-
-*** =left
-
 
 ```r
-jpeg(filename, width=1440, height=1440)
+jpeg(filename, res=72)
 ...
 dev.off()
 ```
@@ -1294,7 +1278,7 @@ dev.off()
 
 
 
-<img src='assets/img/fig3.png' style="width:100%;"/>
+<img src='assets/img/fig3.png' style="width:90%;"/>
 
 
 --- &twocol
@@ -1303,24 +1287,48 @@ dev.off()
 
 *** =left
 
-- `pdf()`,
-- cairo_pdf, cairo_ps, svg
+<img src='assets/img/fig3b.jpg' style="width:90%;margin: 8% 4%;"/>
 
+- pointsize=12
+- res=72
+- cex=1
+
+*** =right
+
+<img src='assets/img/fig3a.jpg' style="width:90%;margin: 8% 4%;"/>
+
+- pointsize=12
+- res=72
+- cex=2
+- 480/72=20/3 inches => 2.54 = 17cm
+
+
+
+<!--
+A pixel is a single square 'picture element' (hence pix-el), i.e. a single dot in your image. A 10x10 image is made up of a set of pixels in a grid 10 wide by 10 high, totaling 100 pixels.
+The 'point' (pt) on the other hand is a unit of length, commonly used to measure the height of a font, but technically capable of measuring any length. In applications, 1pt is equal to exactly 1/72th of an inch; in traditional print technically 72pt is 0.996264 inches, although I think you'll be forgiven for rounding it up!
+How many pixels = 1pt depends on the resolution of your image. If your image is 72ppi (pixels per inch), then one point will equal exactly one pixel. -->
+
+
+
+--- &twocol
+
+## Exporting figures as a Bitmap files
 
 *** =left
 
 
+
 ```r
-jpeg(filename, width=1440, height=1440)
+jpeg(filename, res=144)
 ...
 dev.off()
 ```
-
 *** =right
 
 
 
-<img src='assets/img/fig4.png' style="width:100%;"/>
+<img src='assets/img/fig4.png' style="width:90%;"/>
 
 
 
@@ -1333,7 +1341,7 @@ dev.off()
 - `pdf()`,
 - cairo_pdf, cairo_ps, svg
 
-
+*** =right
 
 
 
