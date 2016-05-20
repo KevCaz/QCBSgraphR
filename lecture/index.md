@@ -1141,6 +1141,12 @@ polygon(x = c(xsup, xinf), y = c(ysup, yinf),
 
 - mar and oma, xaxs et yaxs
 
+--- .tocenter2
+
+## Exercise 1
+
+![plot of chunk unnamed-chunk-74](assets/fig/unnamed-chunk-74-1.pdf)
+
 --- .transition
 
 ## Composition and multipanel plotting
@@ -1168,7 +1174,7 @@ par(mfcol=c(2,2))
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-77](assets/fig/unnamed-chunk-77-1.pdf)
+![plot of chunk unnamed-chunk-78](assets/fig/unnamed-chunk-78-1.pdf)
 
 
 --- &twocol
@@ -1186,7 +1192,7 @@ split.screen(c(3, 1), screen = 2)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-79](assets/fig/unnamed-chunk-79-1.pdf)
+![plot of chunk unnamed-chunk-80](assets/fig/unnamed-chunk-80-1.pdf)
 
 
 --- &twocol
@@ -1205,7 +1211,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-81](assets/fig/unnamed-chunk-81-1.pdf)
+![plot of chunk unnamed-chunk-82](assets/fig/unnamed-chunk-82-1.pdf)
 
 
 --- &twocol
@@ -1229,7 +1235,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-84](assets/fig/unnamed-chunk-84-1.pdf)
+![plot of chunk unnamed-chunk-85](assets/fig/unnamed-chunk-85-1.pdf)
 
 
 --- &twocol
@@ -1253,7 +1259,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-87](assets/fig/unnamed-chunk-87-1.pdf)
+![plot of chunk unnamed-chunk-88](assets/fig/unnamed-chunk-88-1.pdf)
 
 
 --- &twocol
@@ -1269,7 +1275,7 @@ layout(mat_lay, widths=c(.25,1,1))
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-89](assets/fig/unnamed-chunk-89-1.pdf)
+![plot of chunk unnamed-chunk-90](assets/fig/unnamed-chunk-90-1.pdf)
 
 
 --- &twocol
@@ -1286,7 +1292,7 @@ layout(mat_lay, widths=c(.25,1,1),
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-91](assets/fig/unnamed-chunk-91-1.pdf)
+![plot of chunk unnamed-chunk-92](assets/fig/unnamed-chunk-92-1.pdf)
 
 
 --- &twocol
@@ -1310,7 +1316,7 @@ for (i in 1:4) {
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-93](assets/fig/unnamed-chunk-93-1.pdf)
+![plot of chunk unnamed-chunk-94](assets/fig/unnamed-chunk-94-1.pdf)
 
 
 
@@ -1333,7 +1339,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-95](assets/fig/unnamed-chunk-95-1.pdf)
+![plot of chunk unnamed-chunk-96](assets/fig/unnamed-chunk-96-1.pdf)
 
 
 --- &twocol
@@ -1356,7 +1362,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-97](assets/fig/unnamed-chunk-97-1.pdf)
+![plot of chunk unnamed-chunk-98](assets/fig/unnamed-chunk-98-1.pdf)
 
 
 --- &twocol
@@ -1380,7 +1386,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-99](assets/fig/unnamed-chunk-99-1.pdf)
+![plot of chunk unnamed-chunk-100](assets/fig/unnamed-chunk-100-1.pdf)
 
 <!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
 

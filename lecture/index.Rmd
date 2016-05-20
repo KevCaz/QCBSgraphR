@@ -1037,6 +1037,14 @@ article li.build {
 
 - mar and oma, xaxs et yaxs
 
+--- .tocenter2
+
+## Exercise 1
+
+```{r echo = FALSE, fig.height = 7, fig.width = 7}
+<<Exercise_1>>
+```
+
 --- .transition
 
 ## Composition and multipanel plotting

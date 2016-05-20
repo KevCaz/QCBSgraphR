@@ -413,3 +413,10 @@ ul li {
     width: 98%;
     height: 98%;
 }
+
+.tocenter2 img {
+    margin: 0;
+    margin-left: 27.5%;
+    margin-right: 27.5%;
+    width: 45%;
+}
