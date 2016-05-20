@@ -17,7 +17,7 @@ knit        : slidify::knit2slides
 <!-- To set knitr  -->
 ```{r echo=FALSE}
 knitr::opts_chunk$set(
-  comment = "#>",
+  comment = "##",
   collapse = TRUE,
   warning = FALSE,
   message = FALSE,
@@ -425,49 +425,112 @@ article li.build {
 
 ## The graphics package basis
 
+--- &twocol
+
+## Graphical parameters
+
+*** =left
+- Default values of graphical parameters are stored in `par()`
+- `par()` is an object
+    - we can get the value of a parameter
+- `par()` is also a function
+    - we can change the default values
+
+*** =right
+```{r eval = TRUE, echo = TRUE}
+## How many graphical parameters?
+length(par())
+
+## Let's get the default value of text color
+par()$col
+
+## Let's set 'red' for text color
+par(col = 'red')
+
+## Check
+par()$col
+
+## We're good!
+```
+
 ---
 
 ## Graphical parameters
 
-The function/object `par()`
+- Important: when you change the value of one parameter, the new value affects all the graphs until the graphical window is closed
+
+<!-- end -->
 
 ---
 
-## The major types of graphics
+## Graphical parameters
 
-- High-level plotting functions vs. low-level plotting functions
+- Important: when you change the value of one parameter, the new value affects all the graphs until the graphical window is closed
+
+<!-- end -->
+
+- A recommendation:
+    - Save the default par(): `opar <- par()`
+    - Change the values: `par(col = 'red')`
+    - Do the graph
+    - Restaure the old par(): `par(opar)`
+
+
+---
+
+## High-level vs. low-level plotting functions
+
+### <u>High-level plotting functions</u>
+
+- Open a new graphical window
+- Or erase the content of the previous window
+- Examples: `plot()`, `boxplot()`, `barplot()`, `hist()`, etc.
+
+---
+
+## High-level vs. low-level plotting functions
+
+### <u>High-level plotting functions</u>
+
+- Open a new graphical window
+- Or erase the content of the previous window
+- Examples: `plot()`, `boxplot()`, `barplot()`, `hist()`, etc.
+
+### <u>Low-level plotting functions</u>
+
+- Work only when a graphical window is open
+- Add content to the active window
+- Examples: `lines()`, `points()`, `axis()`, `legend()`, etc.
+
+--- .tocenter
+
+## High-level vs. low-level plotting functions
+
+<q>You only need to know one high-level plotting function: `plot()`</q>
+
+```{r echo = FALSE, fig.height = 4, fig.width = 12}
+<<the_plot>>
+```
 
 --- &twocol
 
-## The major types of graphics
+## Let's take a look at the data
 
 *** =left
-- Bar chart
-- Usage: representation of discrete variables
-- The length of bars is proportional to values
-
-
-```{r, eval = FALSE}
-x <- seq(50, 0, by = -10)
-
-barplot(height = x,
-        names.arg = LETTERS[1:length(x)],
-        col = '#08519c',
-        border = '#2c7fb8',
-        las = 1)
-```
+- Random data with no particular sense
+- Three variables:
+    - x and y: quantitative variables
+    - z: qualitative variable (factor)
 
 *** =right
-```{r, echo = FALSE}
-par(mar = c(4, 4, 1.5, 1.5), bg = 'transparent')
-x <- seq(50, 0, by = -10)
-names(x) <- LETTERS[1:length(x)]
-barplot(height = x,
-        names.arg = names(x),
-        col = '#08519c',
-        border = '#2c7fb8',
-        las = 1)
+```{r echo = TRUE}
+load('../data/xyz.RData')
+
+head(dat)
+
+summary(dat$z)
 ```
+
 
 --- &twocol
 
@@ -475,15 +538,19 @@ barplot(height = x,
 
 *** =left
 - The default plot
+- Quite ugly, isn't it?
 
-```{r, eval = FALSE}
-plot(x = 1, y = 1)
+```{r eval = FALSE}
+<<empty_1_cmd>>
 ```
 
+<!-- end -->
+
+- Now we are going to remove each component of the graph to create an empty plot
+
 *** =right
-```{r, echo = FALSE}
-par(mar = c(4, 4, 1.5, 1.5), bg = 'transparent')
-plot(1, 1)
+```{r echo = FALSE}
+<<empty_1>>
 ```
 
 --- &twocol
@@ -492,16 +559,15 @@ plot(1, 1)
 
 *** =left
 - First let's remove the box
+- with the argument `bty` (default: `'o'`)
 
-```{r, eval = FALSE}
-plot(x = 1, y = 1,
-     bty = 'n')
+```{r eval = FALSE}
+<<empty_2_cmd>>
 ```
 
 *** =right
-```{r, echo = FALSE}
-par(mar = c(4, 4, 1.5, 1.5), bg = 'transparent')
-plot(1, 1, bty = 'n')
+```{r echo = FALSE}
+<<empty_2>>
 ```
 
 --- &twocol
@@ -509,18 +575,16 @@ plot(1, 1, bty = 'n')
 ## An empty plot
 
 *** =left
-- Now remove the textual annotation
+- Now let's remove the textual annotation
+- with the argument `ann` (default: `'TRUE'`)
 
-```{r, eval = FALSE}
-plot(x = 1, y = 1,
-     bty = 'n',
-     ann = FALSE)
+```{r eval = FALSE}
+<<empty_3_cmd>>
 ```
 
 *** =right
-```{r, echo = FALSE}
-par(mar = c(4, 4, 1.5, 1.5), bg = 'transparent')
-plot(1, 1, bty = 'n', ann = FALSE)
+```{r echo = FALSE}
+<<empty_3>>
 ```
 
 --- &twocol
@@ -529,19 +593,18 @@ plot(1, 1, bty = 'n', ann = FALSE)
 
 *** =left
 - Let's remove the x-axis
+- with the argument `xaxt` (default: `'s'`)
 
-```{r, eval = FALSE}
-plot(x = 1, y = 1,
-     bty = 'n',
-     ann = FALSE,
-     xaxt = 'n')
+
+```{r eval = FALSE}
+<<empty_4_cmd>>
 ```
 
 *** =right
-```{r, echo = FALSE}
-par(mar = c(4, 4, 1.5, 1.5), bg = 'transparent')
-plot(1, 1, bty = 'n', ann = FALSE, xaxt = 'n')
+```{r echo = FALSE}
+<<empty_4>>
 ```
+
 
 --- &twocol
 
@@ -549,19 +612,15 @@ plot(1, 1, bty = 'n', ann = FALSE, xaxt = 'n')
 
 *** =left
 - And the y-axis
+- with the argument `yaxt` (default: `'s'`)
 
-```{r, eval = FALSE}
-plot(x = 1, y = 1,
-     bty = 'n',
-     ann = FALSE,
-     xaxt = 'n',
-     yaxt = 'n')
+```{r eval = FALSE}
+<<empty_5_cmd>>
 ```
 
 *** =right
-```{r, echo = FALSE}
-par(mar = c(4, 4, 1.5, 1.5), bg = 'transparent')
-plot(1, 1, bty = 'n', ann = FALSE, xaxt = 'n', yaxt = 'n')
+```{r echo = FALSE}
+<<empty_5>>
 ```
 
 --- &twocol
@@ -569,18 +628,16 @@ plot(1, 1, bty = 'n', ann = FALSE, xaxt = 'n', yaxt = 'n')
 ## An empty plot
 
 *** =left
-- Using `axes=FALSE` is the same as `bty='n'`+`xaxt='n'`+`yaxt='n'`
+- Using `axes=FALSE` is the same as:
+- `bty='n'`+`xaxt='n'`+`yaxt='n'`
 
-```{r, eval = FALSE}
-plot(x = 1, y = 1,
-     ann = FALSE,
-     axes = FALSE)
+```{r eval = FALSE}
+<<empty_6_cmd>>
 ```
 
 *** =right
-```{r, echo = FALSE}
-par(mar = c(4, 4, 1.5, 1.5), bg = 'transparent')
-plot(1, 1, ann = FALSE, axes = FALSE)
+```{r echo = FALSE}
+<<empty_6>>
 ```
 
 --- &twocol
@@ -589,12 +646,29 @@ plot(1, 1, ann = FALSE, axes = FALSE)
 
 *** =left
 - Finally let's remove data
+- with the argument `type` (default: `'p'`)
 
-```{r, eval = FALSE}
-plot(x = 1, y = 1,
-     ann = FALSE,
-     axes = FALSE,
-     type = 'n')
+```{r eval = FALSE}
+<<empty_7_cmd>>
+```
+
+<!-- end -->
+
+*** =right
+```{r echo = FALSE}
+<<empty_7>>
+```
+
+--- &twocol
+
+## An empty plot
+
+*** =left
+- Finally let's remove data
+- with the argument `type` (default: `'p'`)
+
+```{r eval = FALSE}
+<<empty_7_cmd>>
 ```
 
 <!-- end -->
@@ -603,9 +677,167 @@ plot(x = 1, y = 1,
 - It is now possible to use low-level plotting functions such as `points()` or `axis()`
 
 *** =right
-```{r, echo = FALSE}
-par(mar = c(4, 4, 1.5, 1.5), bg = 'transparent')
-plot(1, 1, ann = FALSE, axes = FALSE, type = 'n')
+```{r echo = FALSE}
+<<empty_7>>
+```
+
+---
+
+## An empty plot, and now what?
+
+- Now we've got an empty plot
+- We are going to add some informations to:
+    - discover useful low-level plotting functions,
+    - improve the quality of the default plot
+
+<!-- end -->
+
+- Let's go!
+
+--- &twocol
+
+## Adding points
+
+*** =left
+
+- We will use the function `points()`
+- It shares some arguments with the function `plot()`
+
+```{r eval = FALSE}
+<<points_1_cmd>>
+```
+
+
+*** =right
+
+```{r echo = FALSE}
+<<points_1>>
+```
+
+--- &twocol
+
+## Adding points
+
+*** =left
+
+- We can customize the points with:
+    - `cex`, the size
+    - `col`, the color
+    - `pch`, the symbol
+
+```{r eval = FALSE}
+<<points_2_cmd>>
+```
+
+
+*** =right
+
+```{r echo = FALSE}
+<<points_2>>
+```
+
+--- &twocol
+
+## Adding points
+
+*** =left
+
+- Some symbols have two colors:
+    - `col`: the border color,
+    - `bg `: the background color
+- This is the case for `pch` = 21 to 25
+
+```{r eval = FALSE}
+<<points_3_cmd>>
+```
+
+*** =right
+
+```{r echo = FALSE}
+<<points_3>>
+```
+
+
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- Four functions allow to plot lines:
+    - `points()`
+    - `lines()`
+    - `abline()`
+    - `segments()`
+- We will illustrate these functions with a linear regression
+
+
+*** =right
+
+```{r eval = TRUE}
+## Linear regression
+(mod <- lm(y ~ x, data = dat))
+
+(a <- coefficients(mod)[1])
+
+(b <- coefficients(mod)[2])
+```
+
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- First, let's try the function `abline()`
+- with the first way
+
+```{r eval = FALSE}
+<<lines_1_cmd>>
+```
+
+*** =right
+
+```{r echo = FALSE}
+<<lines_1>>
+```
+
+
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- The second way is to specify model parameters
+
+```{r eval = FALSE}
+<<lines_2_cmd>>
+```
+
+*** =right
+
+```{r echo = FALSE}
+<<lines_2>>
+```
+
+
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- The function `abline()` allows to draw horizontal and vertical lines
+
+```{r eval = FALSE}
+<<lines_3_cmd>>
+```
+
+*** =right
+
+```{r echo = FALSE}
+<<lines_3>>
 ```
 
 ---
@@ -651,7 +883,7 @@ plot(1, 1, ann = FALSE, axes = FALSE, type = 'n')
 
 ## Figure margins
 
-- mar and oma
+- mar and oma, xaxs et yaxs
 
 --- .transition
 
@@ -682,11 +914,11 @@ plot(1, 1, ann = FALSE, axes = FALSE, type = 'n')
 
 --- .transition
 
-## Ressources
+## Resources
 
 ---
 
-## Ressources
+## Resources
 
 - QCBS worshops
 - [QQ example](http://kevincazelles)
@@ -695,7 +927,7 @@ plot(1, 1, ann = FALSE, axes = FALSE, type = 'n')
 
 --- .transition
 
-## Let's do pratice!
+## Let's pratice!
 
 ---
 

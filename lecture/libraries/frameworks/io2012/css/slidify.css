@@ -407,3 +407,9 @@ ul li {
     background-origin: border-box;
     background-size: 40%;
 }
+
+.tocenter img {
+    margin: 1%;
+    width: 98%;
+    height: 98%;
+}

@@ -365,3 +365,333 @@ venn(ls_venn)
 library(gplots)
 venn(...)
 ## @knitr end_gplots_cmd
+
+################################################################################
+
+## @knitr the_plot
+par(mfrow = c(1, 3))
+plot(dat[dat[ , 'z'] == 'A', c('x', 'y')],
+     xlab = 'x-axis', ylab = 'y-axis',
+     xlim = c(.6, 1.4), ylim = c(.6, 1.4),
+     pch = 19, cex = 1.5, las = 1, bty = 'n', col = '#a6611a')
+points(dat[dat[ , 'z'] == 'B', c('x', 'y')],
+       pch = 19, cex = 1.5, col = '#018571')
+
+x <- seq(50, 0, by = -10)
+
+barplot(height = x,
+       names.arg = LETTERS[1:length(x)],
+       col = '#08519c',
+       border = '#2c7fb8',
+       las = 1,
+       ylab = 'y-axis')
+
+x <- rnorm(10000)
+hist(x, las = 1, main = '', col = '#810f7c', border = '#8856a7',
+     freq = F, ylim = c(0, .42), xlab = 'Values')
+lines(density(x), col = '#008837', lwd = 2)
+## @knitr end_the_plot
+
+################################################################################
+
+## @knitr empty_1
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, cex = 1.5)
+## @knitr end_empty_1
+
+################################################################################
+
+## @knitr empty_1_cmd
+plot(x = dat$x, y = dat$y)
+## @knitr end_empty_1_cmd
+
+################################################################################
+
+## @knitr empty_2
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, cex = 1.5, bty = 'n')
+## @knitr end_empty_2
+
+################################################################################
+
+## @knitr empty_2_cmd
+plot(x = dat$x, y = dat$y,
+     bty = 'n')
+## @knitr end_empty_2_cmd
+
+################################################################################
+
+## @knitr empty_3
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, cex = 1.5, bty = 'n', ann = FALSE)
+## @knitr end_empty_3
+
+################################################################################
+
+## @knitr empty_3_cmd
+plot(x = dat$x, y = dat$y,
+     bty = 'n',
+     ann = FALSE)
+## @knitr end_empty_3_cmd
+
+################################################################################
+
+## @knitr empty_4
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, cex = 1.5, bty = 'n', ann = FALSE, xaxt = 'n')
+## @knitr end_empty_4
+
+################################################################################
+
+## @knitr empty_4_cmd
+plot(x = dat$x, y = dat$y,
+     bty = 'n',
+     ann = FALSE,
+     xaxt = 'n')
+## @knitr end_empty_4_cmd
+
+################################################################################
+
+## @knitr empty_5
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, cex = 1.5, bty = 'n', ann = FALSE, xaxt = 'n', yaxt = 'n')
+## @knitr end_empty_5
+
+################################################################################
+
+## @knitr empty_5_cmd
+plot(x = dat$x, y = dat$y,
+     bty = 'n',
+     ann = FALSE,
+     xaxt = 'n',
+     yaxt = 'n')
+## @knitr end_empty_5_cmd
+
+################################################################################
+
+## @knitr empty_6
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, cex = 1.5, axes = FALSE, ann = FALSE)
+## @knitr end_empty_6
+
+################################################################################
+
+## @knitr empty_6_cmd
+plot(x = dat$x, y = dat$y,
+     ann = FALSE,
+     axes = FALSE)
+## @knitr end_empty_6_cmd
+
+################################################################################
+
+## @knitr empty_7
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, cex = 1.5, axes = FALSE, ann = FALSE, type = 'n')
+par(family = 'serif')
+text(1, 1, 'Oops!', font = 4, cex = 5, col = '#aaaaaa')
+## @knitr end_empty_7
+
+################################################################################
+
+## @knitr empty_7_cmd
+plot(x = dat$x, y = dat$y,
+     ann = FALSE,
+     axes = FALSE,
+     type = 'n')
+## @knitr end_empty_7_cmd
+
+################################################################################
+
+## @knitr points_1
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, ann = FALSE,
+     bty = 'n', type = 'n')
+
+## Adding points (default settings)
+points(x = dat$x, y = dat$y)
+## @knitr end_points_1
+
+################################################################################
+
+## @knitr points_1_cmd
+## Empty plot
+plot(x = dat$x, y = dat$y, ann = FALSE,
+     bty = 'n', type = 'n')
+
+## Adding points (default settings)
+points(x = dat$x, y = dat$y)
+## @knitr end_points_1_cmd
+
+################################################################################
+
+## @knitr points_2
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, ann = FALSE,
+     bty = 'n', type = 'n')
+
+## Adding points (user settings)
+points(x = dat$x, y = dat$y,
+       cex = 3, col = 'red', pch = 17)
+## @knitr end_points_2
+
+################################################################################
+
+## @knitr points_2_cmd
+## Empty plot
+plot(x = dat$x, y = dat$y, ann = FALSE,
+     bty = 'n', type = 'n')
+
+## Adding points (user settings)
+points(x = dat$x, y = dat$y,
+       cex = 3, col = 'red', pch = 17)
+## @knitr end_points_2_cmd
+
+################################################################################
+
+## @knitr points_3
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, ann = FALSE,
+     bty = 'n', type = 'n')
+
+## Adding points (user settings)
+points(x = dat$x, y = dat$y,
+       cex = 4, pch = 21,
+       col = 'white', bg = 'red')
+## @knitr end_points_3
+
+################################################################################
+
+## @knitr points_3_cmd
+## Empty plot
+plot(x = dat$x, y = dat$y, ann = FALSE,
+     bty = 'n', type = 'n')
+
+## Adding points (user settings)
+points(x = dat$x, y = dat$y,
+       cex = 4, pch = 21,
+       col = 'white', bg = 'red')
+## @knitr end_points_3_cmd
+
+################################################################################
+
+## @knitr lines_1
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding line (default settings)
+abline(reg = mod)
+## @knitr end_lines_1
+
+################################################################################
+
+## @knitr lines_1_cmd
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding line (default settings)
+abline(reg = mod)
+## @knitr end_lines_1_cmd
+
+################################################################################
+
+## @knitr lines_2
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding line (default settings)
+abline(a = a, b = b)
+## @knitr end_lines_2
+
+################################################################################
+
+## @knitr lines_2_cmd
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding line (default settings)
+abline(a = a, b = b)
+## @knitr end_lines_2_cmd
+
+################################################################################
+
+## @knitr lines_3
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+plot(x = dat$x, y = dat$y, bty = 'o',
+     type = 'p', pch = 19)
+
+## Adding lines (default settings)
+abline(h = 0.8)
+abline(h = seq(0.9, 1.2, by = 0.1))
+abline(v = seq(0.6, 1.4, by = 0.2))
+## @knitr end_lines_3
+
+################################################################################
+
+## @knitr lines_3_cmd
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'o',
+     type = 'p', pch = 19)
+
+## Adding line (default settings)
+abline(h = 0.8)
+abline(h = seq(0.9, 1.2, by = 0.1))
+abline(v = seq(0.6, 1.4, by = 0.2))
+## @knitr end_lines_3_cmd
+
+################################################################################

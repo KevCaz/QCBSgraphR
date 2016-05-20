@@ -723,20 +723,60 @@ venn(...)
     <h2>Graphical parameters</h2>
   </hgroup>
   <article data-timings="">
-    <p>The function/object <code>par()</code></p>
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Default values of graphical parameters are stored in <code>par()</code></li>
+<li><code>par()</code> is an object
 
+<ul>
+<li>we can get the value of a parameter</li>
+</ul></li>
+<li><code>par()</code> is also a function
+
+<ul>
+<li>we can change the default values</li>
+</ul></li>
+</ul>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <pre><code class="r">## How many graphical parameters?
+length(par())
+## [1] 72
+
+## Let&#39;s get the default value of text color
+par()$col
+## [1] &quot;black&quot;
+
+## Let&#39;s set &#39;red&#39; for text color
+par(col = &#39;red&#39;)
+
+## Check
+par()$col
+## [1] &quot;red&quot;
+
+## We&#39;re good!
+</code></pre>
+
+</div>
+<div>
+  
+</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-30" style="background:;">
   <hgroup>
-    <h2>The major types of graphics</h2>
+    <h2>Graphical parameters</h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li>High-level plotting functions vs. low-level plotting functions</li>
+<li>Important: when you change the value of one parameter, the new value affects all the graphs until the graphical window is closed</li>
 </ul>
+
+<!-- end -->
 
   </article>
   <!-- Presenter Notes -->
@@ -744,139 +784,119 @@ venn(...)
 
 <slide class="" id="slide-31" style="background:;">
   <hgroup>
-    <h2>The major types of graphics</h2>
+    <h2>Graphical parameters</h2>
   </hgroup>
   <article data-timings="">
-    
-<div style='float:left;width:49%;text-align:left;'>
-  <ul>
-<li>Bar chart</li>
-<li>Usage: representation of discrete variables</li>
-<li>The length of bars is proportional to values</li>
+    <ul>
+<li>Important: when you change the value of one parameter, the new value affects all the graphs until the graphical window is closed</li>
 </ul>
 
-<pre><code class="r">x &lt;- seq(50, 0, by = -10)
+<!-- end -->
 
-barplot(height = x,
-        names.arg = LETTERS[1:length(x)],
-        col = &#39;#08519c&#39;,
-        border = &#39;#2c7fb8&#39;,
-        las = 1)
-</code></pre>
+<ul>
+<li>A recommendation:
 
-</div>
-<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-28-1.pdf" alt="plot of chunk unnamed-chunk-28"></p>
+<ul>
+<li>Save the default par(): <code>opar &lt;- par()</code></li>
+<li>Change the values: <code>par(col = &#39;red&#39;)</code></li>
+<li>Do the graph</li>
+<li>Restaure the old par(): <code>par(opar)</code></li>
+</ul></li>
+</ul>
 
-</div>
-<div>
-  
-</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-32" style="background:;">
   <hgroup>
-    <h2>An empty plot</h2>
+    <h2>High-level vs. low-level plotting functions</h2>
   </hgroup>
   <article data-timings="">
-    
-<div style='float:left;width:49%;text-align:left;'>
-  <ul>
-<li>The default plot</li>
+    <h3><u>High-level plotting functions</u></h3>
+
+<ul>
+<li>Open a new graphical window</li>
+<li>Or erase the content of the previous window</li>
+<li>Examples: <code>plot()</code>, <code>boxplot()</code>, <code>barplot()</code>, <code>hist()</code>, etc.</li>
 </ul>
 
-<pre><code class="r">plot(x = 1, y = 1)
-</code></pre>
-
-</div>
-<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-30-1.pdf" alt="plot of chunk unnamed-chunk-30"></p>
-
-</div>
-<div>
-  
-</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-33" style="background:;">
   <hgroup>
-    <h2>An empty plot</h2>
+    <h2>High-level vs. low-level plotting functions</h2>
   </hgroup>
   <article data-timings="">
-    
-<div style='float:left;width:49%;text-align:left;'>
-  <ul>
-<li>First let&#39;s remove the box</li>
+    <h3><u>High-level plotting functions</u></h3>
+
+<ul>
+<li>Open a new graphical window</li>
+<li>Or erase the content of the previous window</li>
+<li>Examples: <code>plot()</code>, <code>boxplot()</code>, <code>barplot()</code>, <code>hist()</code>, etc.</li>
 </ul>
 
-<pre><code class="r">plot(x = 1, y = 1,
-     bty = &#39;n&#39;)
-</code></pre>
+<h3><u>Low-level plotting functions</u></h3>
 
-</div>
-<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-32-1.pdf" alt="plot of chunk unnamed-chunk-32"></p>
+<ul>
+<li>Work only when a graphical window is open</li>
+<li>Add content to the active window</li>
+<li>Examples: <code>lines()</code>, <code>points()</code>, <code>axis()</code>, <code>legend()</code>, etc.</li>
+</ul>
 
-</div>
-<div>
-  
-</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-34" style="background:;">
+<slide class="tocenter" id="slide-34" style="background:;">
   <hgroup>
-    <h2>An empty plot</h2>
+    <h2>High-level vs. low-level plotting functions</h2>
   </hgroup>
   <article data-timings="">
-    
-<div style='float:left;width:49%;text-align:left;'>
-  <ul>
-<li>Now remove the textual annotation</li>
-</ul>
+    <p><q>You only need to know one high-level plotting function: <code>plot()</code></q></p>
 
-<pre><code class="r">plot(x = 1, y = 1,
-     bty = &#39;n&#39;,
-     ann = FALSE)
-</code></pre>
+<p><img src="assets/fig/unnamed-chunk-28-1.pdf" alt="plot of chunk unnamed-chunk-28"></p>
 
-</div>
-<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-34-1.pdf" alt="plot of chunk unnamed-chunk-34"></p>
-
-</div>
-<div>
-  
-</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-35" style="background:;">
   <hgroup>
-    <h2>An empty plot</h2>
+    <h2>Let&#39;s take a look at the data</h2>
   </hgroup>
   <article data-timings="">
     
 <div style='float:left;width:49%;text-align:left;'>
   <ul>
-<li>Let&#39;s remove the x-axis</li>
-</ul>
+<li>Random data with no particular sense</li>
+<li>Three variables:
 
-<pre><code class="r">plot(x = 1, y = 1,
-     bty = &#39;n&#39;,
-     ann = FALSE,
-     xaxt = &#39;n&#39;)
-</code></pre>
+<ul>
+<li>x and y: quantitative variables</li>
+<li>z: qualitative variable (factor)</li>
+</ul></li>
+</ul>
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-36-1.pdf" alt="plot of chunk unnamed-chunk-36"></p>
+  <pre><code class="r">load(&#39;../data/xyz.RData&#39;)
+
+head(dat)
+##       x     y z
+## 1 0.680 1.075 A
+## 2 0.720 0.835 A
+## 3 0.865 1.050 A
+## 4 0.800 1.045 A
+## 5 0.745 0.815 A
+## 6 0.995 0.840 A
+
+summary(dat$z)
+##  A  B 
+## 50 50
+</code></pre>
 
 </div>
 <div>
@@ -894,19 +914,22 @@ barplot(height = x,
     
 <div style='float:left;width:49%;text-align:left;'>
   <ul>
-<li>And the y-axis</li>
+<li>The default plot</li>
+<li>Quite ugly, isn&#39;t it?</li>
 </ul>
 
-<pre><code class="r">plot(x = 1, y = 1,
-     bty = &#39;n&#39;,
-     ann = FALSE,
-     xaxt = &#39;n&#39;,
-     yaxt = &#39;n&#39;)
+<pre><code class="r">plot(x = dat$x, y = dat$y)
 </code></pre>
+
+<!-- end -->
+
+<ul>
+<li>Now we are going to remove each component of the graph to create an empty plot</li>
+</ul>
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-38-1.pdf" alt="plot of chunk unnamed-chunk-38"></p>
+  <p><img src="assets/fig/unnamed-chunk-31-1.pdf" alt="plot of chunk unnamed-chunk-31"></p>
 
 </div>
 <div>
@@ -924,17 +947,17 @@ barplot(height = x,
     
 <div style='float:left;width:49%;text-align:left;'>
   <ul>
-<li>Using <code>axes=FALSE</code> is the same as <code>bty=&#39;n&#39;</code>+<code>xaxt=&#39;n&#39;</code>+<code>yaxt=&#39;n&#39;</code></li>
+<li>First let&#39;s remove the box</li>
+<li>with the argument <code>bty</code> (default: <code>&#39;o&#39;</code>)</li>
 </ul>
 
-<pre><code class="r">plot(x = 1, y = 1,
-     ann = FALSE,
-     axes = FALSE)
+<pre><code class="r">plot(x = dat$x, y = dat$y,
+     bty = &#39;n&#39;)
 </code></pre>
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-40-1.pdf" alt="plot of chunk unnamed-chunk-40"></p>
+  <p><img src="assets/fig/unnamed-chunk-33-1.pdf" alt="plot of chunk unnamed-chunk-33"></p>
 
 </div>
 <div>
@@ -952,10 +975,162 @@ barplot(height = x,
     
 <div style='float:left;width:49%;text-align:left;'>
   <ul>
-<li>Finally let&#39;s remove data</li>
+<li>Now let&#39;s remove the textual annotation</li>
+<li>with the argument <code>ann</code> (default: <code>&#39;TRUE&#39;</code>)</li>
 </ul>
 
-<pre><code class="r">plot(x = 1, y = 1,
+<pre><code class="r">plot(x = dat$x, y = dat$y,
+     bty = &#39;n&#39;,
+     ann = FALSE)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-35-1.pdf" alt="plot of chunk unnamed-chunk-35"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-39" style="background:;">
+  <hgroup>
+    <h2>An empty plot</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Let&#39;s remove the x-axis</li>
+<li>with the argument <code>xaxt</code> (default: <code>&#39;s&#39;</code>)</li>
+</ul>
+
+<pre><code class="r">plot(x = dat$x, y = dat$y,
+     bty = &#39;n&#39;,
+     ann = FALSE,
+     xaxt = &#39;n&#39;)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-37-1.pdf" alt="plot of chunk unnamed-chunk-37"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-40" style="background:;">
+  <hgroup>
+    <h2>An empty plot</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>And the y-axis</li>
+<li>with the argument <code>yaxt</code> (default: <code>&#39;s&#39;</code>)</li>
+</ul>
+
+<pre><code class="r">plot(x = dat$x, y = dat$y,
+     bty = &#39;n&#39;,
+     ann = FALSE,
+     xaxt = &#39;n&#39;,
+     yaxt = &#39;n&#39;)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-39-1.pdf" alt="plot of chunk unnamed-chunk-39"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-41" style="background:;">
+  <hgroup>
+    <h2>An empty plot</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Using <code>axes=FALSE</code> is the same as:</li>
+<li><code>bty=&#39;n&#39;</code>+<code>xaxt=&#39;n&#39;</code>+<code>yaxt=&#39;n&#39;</code></li>
+</ul>
+
+<pre><code class="r">plot(x = dat$x, y = dat$y,
+     ann = FALSE,
+     axes = FALSE)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-41-1.pdf" alt="plot of chunk unnamed-chunk-41"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-42" style="background:;">
+  <hgroup>
+    <h2>An empty plot</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Finally let&#39;s remove data</li>
+<li>with the argument <code>type</code> (default: <code>&#39;p&#39;</code>)</li>
+</ul>
+
+<pre><code class="r">plot(x = dat$x, y = dat$y,
+     ann = FALSE,
+     axes = FALSE,
+     type = &#39;n&#39;)
+</code></pre>
+
+<!-- end -->
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-43-1.pdf" alt="plot of chunk unnamed-chunk-43"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-43" style="background:;">
+  <hgroup>
+    <h2>An empty plot</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Finally let&#39;s remove data</li>
+<li>with the argument <code>type</code> (default: <code>&#39;p&#39;</code>)</li>
+</ul>
+
+<pre><code class="r">plot(x = dat$x, y = dat$y,
      ann = FALSE,
      axes = FALSE,
      type = &#39;n&#39;)
@@ -970,7 +1145,7 @@ barplot(height = x,
 
 </div>
 <div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
-  <p><img src="assets/fig/unnamed-chunk-42-1.pdf" alt="plot of chunk unnamed-chunk-42"></p>
+  <p><img src="assets/fig/unnamed-chunk-45-1.pdf" alt="plot of chunk unnamed-chunk-45"></p>
 
 </div>
 <div>
@@ -980,7 +1155,285 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-39" style="background:;">
+<slide class="" id="slide-44" style="background:;">
+  <hgroup>
+    <h2>An empty plot, and now what?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Now we&#39;ve got an empty plot</li>
+<li>We are going to add some informations to:
+
+<ul>
+<li>discover useful low-level plotting functions,</li>
+<li>improve the quality of the default plot</li>
+</ul></li>
+</ul>
+
+<!-- end -->
+
+<ul>
+<li>Let&#39;s go!</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-45" style="background:;">
+  <hgroup>
+    <h2>Adding points</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>We will use the function <code>points()</code></li>
+<li>It shares some arguments with the function <code>plot()</code></li>
+</ul>
+
+<pre><code class="r">## Empty plot
+plot(x = dat$x, y = dat$y, ann = FALSE,
+     bty = &#39;n&#39;, type = &#39;n&#39;)
+
+## Adding points (default settings)
+points(x = dat$x, y = dat$y)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-47-1.pdf" alt="plot of chunk unnamed-chunk-47"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-46" style="background:;">
+  <hgroup>
+    <h2>Adding points</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>We can customize the points with:
+
+<ul>
+<li><code>cex</code>, the size</li>
+<li><code>col</code>, the color</li>
+<li><code>pch</code>, the symbol</li>
+</ul></li>
+</ul>
+
+<pre><code class="r">## Empty plot
+plot(x = dat$x, y = dat$y, ann = FALSE,
+     bty = &#39;n&#39;, type = &#39;n&#39;)
+
+## Adding points (user settings)
+points(x = dat$x, y = dat$y,
+       cex = 3, col = &#39;red&#39;, pch = 17)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-49-1.pdf" alt="plot of chunk unnamed-chunk-49"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-47" style="background:;">
+  <hgroup>
+    <h2>Adding points</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Some symbols have two colors:
+
+<ul>
+<li><code>col</code>: the border color,</li>
+<li><code>bg</code>: the background color</li>
+</ul></li>
+<li>This is the case for <code>pch</code> = 21 to 25</li>
+</ul>
+
+<pre><code class="r">## Empty plot
+plot(x = dat$x, y = dat$y, ann = FALSE,
+     bty = &#39;n&#39;, type = &#39;n&#39;)
+
+## Adding points (user settings)
+points(x = dat$x, y = dat$y,
+       cex = 4, pch = 21,
+       col = &#39;white&#39;, bg = &#39;red&#39;)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-51-1.pdf" alt="plot of chunk unnamed-chunk-51"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-48" style="background:;">
+  <hgroup>
+    <h2>Adding lines</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>Four functions allow to plot lines:
+
+<ul>
+<li><code>points()</code></li>
+<li><code>lines()</code></li>
+<li><code>abline()</code></li>
+<li><code>segments()</code></li>
+</ul></li>
+<li>We will illustrate these functions with a linear regression</li>
+</ul>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <pre><code class="r">## Linear regression
+(mod &lt;- lm(y ~ x, data = dat))
+## 
+## Call:
+## lm(formula = y ~ x, data = dat)
+## 
+## Coefficients:
+## (Intercept)            x  
+##      0.8246       0.1895
+
+(a &lt;- coefficients(mod)[1])
+## (Intercept) 
+##   0.8246096
+
+(b &lt;- coefficients(mod)[2])
+##         x 
+## 0.1894751
+</code></pre>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-49" style="background:;">
+  <hgroup>
+    <h2>Adding lines</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>First, let&#39;s try the function <code>abline()</code></li>
+<li>with the first way</li>
+</ul>
+
+<pre><code class="r">## Empty plot
+plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
+     type = &#39;p&#39;, pch = 19)
+
+## Adding line (default settings)
+abline(reg = mod)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-54-1.pdf" alt="plot of chunk unnamed-chunk-54"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-50" style="background:;">
+  <hgroup>
+    <h2>Adding lines</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>The second way is to specify model parameters</li>
+</ul>
+
+<pre><code class="r">## Empty plot
+plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
+     type = &#39;p&#39;, pch = 19)
+
+## Adding line (default settings)
+abline(a = a, b = b)
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-56-1.pdf" alt="plot of chunk unnamed-chunk-56"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-51" style="background:;">
+  <hgroup>
+    <h2>Adding lines</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:49%;text-align:left;'>
+  <ul>
+<li>The function <code>abline()</code> allows to draw horizontal and vertical lines</li>
+</ul>
+
+<pre><code class="r">## Empty plot
+plot(x = dat$x, y = dat$y, bty = &#39;o&#39;,
+     type = &#39;p&#39;, pch = 19)
+
+## Adding line (default settings)
+abline(h = 0.8)
+abline(h = seq(0.9, 1.2, by = 0.1))
+abline(v = seq(0.6, 1.4, by = 0.2))
+</code></pre>
+
+</div>
+<div style='float:right;width:49%;margin-top:0;padding-top:0;' class='toright'>
+  <p><img src="assets/fig/unnamed-chunk-58-1.pdf" alt="plot of chunk unnamed-chunk-58"></p>
+
+</div>
+<div>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-52" style="background:;">
   <hgroup>
     <h2>Adding points, lines, rectangles and polygons</h2>
   </hgroup>
@@ -994,7 +1447,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-40" style="background:;">
+<slide class="" id="slide-53" style="background:;">
   <hgroup>
     <h2>Adding textual informations</h2>
   </hgroup>
@@ -1008,7 +1461,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-41" style="background:;">
+<slide class="" id="slide-54" style="background:;">
   <hgroup>
     <h2>Changing colors</h2>
   </hgroup>
@@ -1025,7 +1478,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-42" style="background:;">
+<slide class="" id="slide-55" style="background:;">
   <hgroup>
     <h2>Changing fonts</h2>
   </hgroup>
@@ -1039,7 +1492,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-43" style="background:;">
+<slide class="" id="slide-56" style="background:;">
   <hgroup>
     <h2>Adding/changing axis</h2>
   </hgroup>
@@ -1049,7 +1502,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-44" style="background:;">
+<slide class="" id="slide-57" style="background:;">
   <hgroup>
     <h2>Adding legend</h2>
   </hgroup>
@@ -1059,20 +1512,20 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-45" style="background:;">
+<slide class="" id="slide-58" style="background:;">
   <hgroup>
     <h2>Figure margins</h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li>mar and oma</li>
+<li>mar and oma, xaxs et yaxs</li>
 </ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-46" style="background:;">
+<slide class="transition" id="slide-59" style="background:;">
   <hgroup>
     <h2>Composition and multipanel plotting</h2>
   </hgroup>
@@ -1082,7 +1535,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-47" style="background:;">
+<slide class="" id="slide-60" style="background:;">
   <hgroup>
     <h2>Window Partitioning</h2>
   </hgroup>
@@ -1097,7 +1550,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-48" style="background:;">
+<slide class="" id="slide-61" style="background:;">
   <hgroup>
     <h2>Insets</h2>
   </hgroup>
@@ -1110,7 +1563,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-49" style="background:;">
+<slide class="transition" id="slide-62" style="background:;">
   <hgroup>
     <h2>Graphics automation and export</h2>
   </hgroup>
@@ -1120,7 +1573,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-50" style="background:;">
+<slide class="" id="slide-63" style="background:;">
   <article data-timings="">
     <ul>
 <li>the loop for</li>
@@ -1131,9 +1584,9 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-51" style="background:;">
+<slide class="transition" id="slide-64" style="background:;">
   <hgroup>
-    <h2>Ressources</h2>
+    <h2>Resources</h2>
   </hgroup>
   <article data-timings="">
     
@@ -1141,9 +1594,9 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-52" style="background:;">
+<slide class="" id="slide-65" style="background:;">
   <hgroup>
-    <h2>Ressources</h2>
+    <h2>Resources</h2>
   </hgroup>
   <article data-timings="">
     <ul>
@@ -1157,9 +1610,9 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-53" style="background:;">
+<slide class="transition" id="slide-66" style="background:;">
   <hgroup>
-    <h2>Let&#39;s do pratice!</h2>
+    <h2>Let&#39;s pratice!</h2>
   </hgroup>
   <article data-timings="">
     
@@ -1167,7 +1620,7 @@ barplot(height = x,
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-54" style="background:;">
+<slide class="" id="slide-67" style="background:;">
   <hgroup>
     <h2>Two exercises</h2>
   </hgroup>
@@ -1362,37 +1815,37 @@ barplot(height = x,
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title='The major types of graphics'>
+        data-slide=30 title='Graphical parameters'>
          30
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=31 title='The major types of graphics'>
+        data-slide=31 title='Graphical parameters'>
          31
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='An empty plot'>
+        data-slide=32 title='High-level vs. low-level plotting functions'>
          32
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=33 title='An empty plot'>
+        data-slide=33 title='High-level vs. low-level plotting functions'>
          33
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=34 title='An empty plot'>
+        data-slide=34 title='High-level vs. low-level plotting functions'>
          34
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=35 title='An empty plot'>
+        data-slide=35 title='Let&#39;s take a look at the data'>
          35
       </a>
     </li>
@@ -1416,98 +1869,176 @@ barplot(height = x,
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=39 title='Adding points, lines, rectangles and polygons'>
+        data-slide=39 title='An empty plot'>
          39
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=40 title='Adding textual informations'>
+        data-slide=40 title='An empty plot'>
          40
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=41 title='Changing colors'>
+        data-slide=41 title='An empty plot'>
          41
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=42 title='Changing fonts'>
+        data-slide=42 title='An empty plot'>
          42
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=43 title='Adding/changing axis'>
+        data-slide=43 title='An empty plot'>
          43
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=44 title='Adding legend'>
+        data-slide=44 title='An empty plot, and now what?'>
          44
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=45 title='Figure margins'>
+        data-slide=45 title='Adding points'>
          45
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=46 title='Composition and multipanel plotting'>
+        data-slide=46 title='Adding points'>
          46
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=47 title='Window Partitioning'>
+        data-slide=47 title='Adding points'>
          47
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=48 title='Insets'>
+        data-slide=48 title='Adding lines'>
          48
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=49 title='Graphics automation and export'>
+        data-slide=49 title='Adding lines'>
          49
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=50 title='NA'>
+        data-slide=50 title='Adding lines'>
          50
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=51 title='Ressources'>
+        data-slide=51 title='Adding lines'>
          51
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=52 title='Ressources'>
+        data-slide=52 title='Adding points, lines, rectangles and polygons'>
          52
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=53 title='Let&#39;s do pratice!'>
+        data-slide=53 title='Adding textual informations'>
          53
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=54 title='Two exercises'>
+        data-slide=54 title='Changing colors'>
          54
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=55 title='Changing fonts'>
+         55
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=56 title='Adding/changing axis'>
+         56
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=57 title='Adding legend'>
+         57
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=58 title='Figure margins'>
+         58
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=59 title='Composition and multipanel plotting'>
+         59
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=60 title='Window Partitioning'>
+         60
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=61 title='Insets'>
+         61
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=62 title='Graphics automation and export'>
+         62
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=63 title='NA'>
+         63
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=64 title='Resources'>
+         64
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=65 title='Resources'>
+         65
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=66 title='Let&#39;s pratice!'>
+         66
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=67 title='Two exercises'>
+         67
       </a>
     </li>
   </ul>

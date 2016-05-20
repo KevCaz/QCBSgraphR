@@ -392,41 +392,124 @@ venn(...)
 
 ## The graphics package basis
 
+--- &twocol
+
+## Graphical parameters
+
+*** =left
+- Default values of graphical parameters are stored in `par()`
+- `par()` is an object
+    - we can get the value of a parameter
+- `par()` is also a function
+    - we can change the default values
+
+*** =right
+
+```r
+## How many graphical parameters?
+length(par())
+## [1] 72
+
+## Let's get the default value of text color
+par()$col
+## [1] "black"
+
+## Let's set 'red' for text color
+par(col = 'red')
+
+## Check
+par()$col
+## [1] "red"
+
+## We're good!
+```
+
 ---
 
 ## Graphical parameters
 
-The function/object `par()`
+- Important: when you change the value of one parameter, the new value affects all the graphs until the graphical window is closed
+
+<!-- end -->
 
 ---
 
-## The major types of graphics
+## Graphical parameters
 
-- High-level plotting functions vs. low-level plotting functions
+- Important: when you change the value of one parameter, the new value affects all the graphs until the graphical window is closed
+
+<!-- end -->
+
+- A recommendation:
+    - Save the default par(): `opar <- par()`
+    - Change the values: `par(col = 'red')`
+    - Do the graph
+    - Restaure the old par(): `par(opar)`
+
+
+---
+
+## High-level vs. low-level plotting functions
+
+### <u>High-level plotting functions</u>
+
+- Open a new graphical window
+- Or erase the content of the previous window
+- Examples: `plot()`, `boxplot()`, `barplot()`, `hist()`, etc.
+
+---
+
+## High-level vs. low-level plotting functions
+
+### <u>High-level plotting functions</u>
+
+- Open a new graphical window
+- Or erase the content of the previous window
+- Examples: `plot()`, `boxplot()`, `barplot()`, `hist()`, etc.
+
+### <u>Low-level plotting functions</u>
+
+- Work only when a graphical window is open
+- Add content to the active window
+- Examples: `lines()`, `points()`, `axis()`, `legend()`, etc.
+
+--- .tocenter
+
+## High-level vs. low-level plotting functions
+
+<q>You only need to know one high-level plotting function: `plot()`</q>
+
+![plot of chunk unnamed-chunk-28](assets/fig/unnamed-chunk-28-1.pdf)
 
 --- &twocol
 
-## The major types of graphics
+## Let's take a look at the data
 
 *** =left
-- Bar chart
-- Usage: representation of discrete variables
-- The length of bars is proportional to values
-
-
-
-```r
-x <- seq(50, 0, by = -10)
-
-barplot(height = x,
-        names.arg = LETTERS[1:length(x)],
-        col = '#08519c',
-        border = '#2c7fb8',
-        las = 1)
-```
+- Random data with no particular sense
+- Three variables:
+    - x and y: quantitative variables
+    - z: qualitative variable (factor)
 
 *** =right
-![plot of chunk unnamed-chunk-28](assets/fig/unnamed-chunk-28-1.pdf)
+
+```r
+load('../data/xyz.RData')
+
+head(dat)
+##       x     y z
+## 1 0.680 1.075 A
+## 2 0.720 0.835 A
+## 3 0.865 1.050 A
+## 4 0.800 1.045 A
+## 5 0.745 0.815 A
+## 6 0.995 0.840 A
+
+summary(dat$z)
+##  A  B 
+## 50 50
+```
+
 
 --- &twocol
 
@@ -434,14 +517,19 @@ barplot(height = x,
 
 *** =left
 - The default plot
+- Quite ugly, isn't it?
 
 
 ```r
-plot(x = 1, y = 1)
+plot(x = dat$x, y = dat$y)
 ```
 
+<!-- end -->
+
+- Now we are going to remove each component of the graph to create an empty plot
+
 *** =right
-![plot of chunk unnamed-chunk-30](assets/fig/unnamed-chunk-30-1.pdf)
+![plot of chunk unnamed-chunk-31](assets/fig/unnamed-chunk-31-1.pdf)
 
 --- &twocol
 
@@ -449,32 +537,34 @@ plot(x = 1, y = 1)
 
 *** =left
 - First let's remove the box
+- with the argument `bty` (default: `'o'`)
 
 
 ```r
-plot(x = 1, y = 1,
+plot(x = dat$x, y = dat$y,
      bty = 'n')
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-32](assets/fig/unnamed-chunk-32-1.pdf)
+![plot of chunk unnamed-chunk-33](assets/fig/unnamed-chunk-33-1.pdf)
 
 --- &twocol
 
 ## An empty plot
 
 *** =left
-- Now remove the textual annotation
+- Now let's remove the textual annotation
+- with the argument `ann` (default: `'TRUE'`)
 
 
 ```r
-plot(x = 1, y = 1,
+plot(x = dat$x, y = dat$y,
      bty = 'n',
      ann = FALSE)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-34](assets/fig/unnamed-chunk-34-1.pdf)
+![plot of chunk unnamed-chunk-35](assets/fig/unnamed-chunk-35-1.pdf)
 
 --- &twocol
 
@@ -482,17 +572,20 @@ plot(x = 1, y = 1,
 
 *** =left
 - Let's remove the x-axis
+- with the argument `xaxt` (default: `'s'`)
+
 
 
 ```r
-plot(x = 1, y = 1,
+plot(x = dat$x, y = dat$y,
      bty = 'n',
      ann = FALSE,
      xaxt = 'n')
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-36](assets/fig/unnamed-chunk-36-1.pdf)
+![plot of chunk unnamed-chunk-37](assets/fig/unnamed-chunk-37-1.pdf)
+
 
 --- &twocol
 
@@ -500,10 +593,11 @@ plot(x = 1, y = 1,
 
 *** =left
 - And the y-axis
+- with the argument `yaxt` (default: `'s'`)
 
 
 ```r
-plot(x = 1, y = 1,
+plot(x = dat$x, y = dat$y,
      bty = 'n',
      ann = FALSE,
      xaxt = 'n',
@@ -511,24 +605,25 @@ plot(x = 1, y = 1,
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-38](assets/fig/unnamed-chunk-38-1.pdf)
+![plot of chunk unnamed-chunk-39](assets/fig/unnamed-chunk-39-1.pdf)
 
 --- &twocol
 
 ## An empty plot
 
 *** =left
-- Using `axes=FALSE` is the same as `bty='n'`+`xaxt='n'`+`yaxt='n'`
+- Using `axes=FALSE` is the same as:
+- `bty='n'`+`xaxt='n'`+`yaxt='n'`
 
 
 ```r
-plot(x = 1, y = 1,
+plot(x = dat$x, y = dat$y,
      ann = FALSE,
      axes = FALSE)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-40](assets/fig/unnamed-chunk-40-1.pdf)
+![plot of chunk unnamed-chunk-41](assets/fig/unnamed-chunk-41-1.pdf)
 
 --- &twocol
 
@@ -536,10 +631,32 @@ plot(x = 1, y = 1,
 
 *** =left
 - Finally let's remove data
+- with the argument `type` (default: `'p'`)
 
 
 ```r
-plot(x = 1, y = 1,
+plot(x = dat$x, y = dat$y,
+     ann = FALSE,
+     axes = FALSE,
+     type = 'n')
+```
+
+<!-- end -->
+
+*** =right
+![plot of chunk unnamed-chunk-43](assets/fig/unnamed-chunk-43-1.pdf)
+
+--- &twocol
+
+## An empty plot
+
+*** =left
+- Finally let's remove data
+- with the argument `type` (default: `'p'`)
+
+
+```r
+plot(x = dat$x, y = dat$y,
      ann = FALSE,
      axes = FALSE,
      type = 'n')
@@ -551,7 +668,207 @@ plot(x = 1, y = 1,
 - It is now possible to use low-level plotting functions such as `points()` or `axis()`
 
 *** =right
-![plot of chunk unnamed-chunk-42](assets/fig/unnamed-chunk-42-1.pdf)
+![plot of chunk unnamed-chunk-45](assets/fig/unnamed-chunk-45-1.pdf)
+
+---
+
+## An empty plot, and now what?
+
+- Now we've got an empty plot
+- We are going to add some informations to:
+    - discover useful low-level plotting functions,
+    - improve the quality of the default plot
+
+<!-- end -->
+
+- Let's go!
+
+--- &twocol
+
+## Adding points
+
+*** =left
+
+- We will use the function `points()`
+- It shares some arguments with the function `plot()`
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, ann = FALSE,
+     bty = 'n', type = 'n')
+
+## Adding points (default settings)
+points(x = dat$x, y = dat$y)
+```
+
+
+*** =right
+
+![plot of chunk unnamed-chunk-47](assets/fig/unnamed-chunk-47-1.pdf)
+
+--- &twocol
+
+## Adding points
+
+*** =left
+
+- We can customize the points with:
+    - `cex`, the size
+    - `col`, the color
+    - `pch`, the symbol
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, ann = FALSE,
+     bty = 'n', type = 'n')
+
+## Adding points (user settings)
+points(x = dat$x, y = dat$y,
+       cex = 3, col = 'red', pch = 17)
+```
+
+
+*** =right
+
+![plot of chunk unnamed-chunk-49](assets/fig/unnamed-chunk-49-1.pdf)
+
+--- &twocol
+
+## Adding points
+
+*** =left
+
+- Some symbols have two colors:
+    - `col`: the border color,
+    - `bg `: the background color
+- This is the case for `pch` = 21 to 25
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, ann = FALSE,
+     bty = 'n', type = 'n')
+
+## Adding points (user settings)
+points(x = dat$x, y = dat$y,
+       cex = 4, pch = 21,
+       col = 'white', bg = 'red')
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-51](assets/fig/unnamed-chunk-51-1.pdf)
+
+
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- Four functions allow to plot lines:
+    - `points()`
+    - `lines()`
+    - `abline()`
+    - `segments()`
+- We will illustrate these functions with a linear regression
+
+
+*** =right
+
+
+```r
+## Linear regression
+(mod <- lm(y ~ x, data = dat))
+## 
+## Call:
+## lm(formula = y ~ x, data = dat)
+## 
+## Coefficients:
+## (Intercept)            x  
+##      0.8246       0.1895
+
+(a <- coefficients(mod)[1])
+## (Intercept) 
+##   0.8246096
+
+(b <- coefficients(mod)[2])
+##         x 
+## 0.1894751
+```
+
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- First, let's try the function `abline()`
+- with the first way
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding line (default settings)
+abline(reg = mod)
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-54](assets/fig/unnamed-chunk-54-1.pdf)
+
+
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- The second way is to specify model parameters
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding line (default settings)
+abline(a = a, b = b)
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-56](assets/fig/unnamed-chunk-56-1.pdf)
+
+
+--- &twocol
+
+## Adding lines
+
+*** =left
+
+- The function `abline()` allows to draw horizontal and vertical lines
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'o',
+     type = 'p', pch = 19)
+
+## Adding line (default settings)
+abline(h = 0.8)
+abline(h = seq(0.9, 1.2, by = 0.1))
+abline(v = seq(0.6, 1.4, by = 0.2))
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-58](assets/fig/unnamed-chunk-58-1.pdf)
 
 ---
 
@@ -596,7 +913,7 @@ plot(x = 1, y = 1,
 
 ## Figure margins
 
-- mar and oma
+- mar and oma, xaxs et yaxs
 
 --- .transition
 
@@ -627,11 +944,11 @@ plot(x = 1, y = 1,
 
 --- .transition
 
-## Ressources
+## Resources
 
 ---
 
-## Ressources
+## Resources
 
 - QCBS worshops
 - [QQ example](http://kevincazelles)
@@ -640,7 +957,7 @@ plot(x = 1, y = 1,
 
 --- .transition
 
-## Let's do pratice!
+## Let's pratice!
 
 ---
 
