@@ -5,16 +5,21 @@ author      : 'Kévin Cazelles and Nicolas Casajus'
 job         : Université du Québec à Rimouski
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      #
+hitheme     : sunburst      #
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
+assets      :
+  css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
 ---
 
 
-<!-- Faudra faire attention si on met des majuscule en début d'hyphenation... -->
+<!-- Rq:
+1. Faudra faire attention si on met des majuscule en début d'hyphenation...
+-->
 
-<!-- To set knitr  -->
+
+<!-- Setting knitr  -->
 
 
 <!-- Call the script -->
@@ -255,7 +260,7 @@ article li.build {
 ## The R system
 
   <img src='./assets/img/Murrell2015.jpg' style="width:60%; margin: 0 20%;"/>
-  <div class='centered'>Murrell, P. (2015) The gridGraphics Package. The R Jounal.</div>
+  <div class='centered'>Murrell, P. (2015) <a href="https://journal.r-project.org/archive/2015-1/murrell.pdf">The gridGraphics Package</a>. The R Jounal.</div>
 
 
 --- &twocol
@@ -915,32 +920,424 @@ abline(v = seq(0.6, 1.4, by = 0.2))
 
 - mar and oma, xaxs et yaxs
 
+
+
+
+
+
+
+
+
+
 --- .transition
 
 ## Composition and multipanel plotting
 
----
+*** =right
 
-## Window Partitioning
 
-- mfrow and mfcol
-- `layout()`
-- `split.screen`
 
----
+--- &twocol
 
-## Insets
+## Dividing the output device
 
-- fig and new
+*** =left
+- `mfrow` and `mfcol` in `par()`
+
+
+```r
+par(mfrow=c(2,2))
+```
+or
+
+
+```r
+par(mfcol=c(2,2))
+```
+
+*** =right
+![plot of chunk unnamed-chunk-46](assets/fig/unnamed-chunk-46-1.pdf)
+
+
+--- &twocol
+
+## Dividing the output device
+
+*** =left
+- `mfrow` and `mfcol` in `par()`
+- `split.screen()`
+
+
+```r
+split.screen(c(1, 2))
+split.screen(c(3, 1), screen = 2)
+```
+
+*** =right
+![plot of chunk unnamed-chunk-48](assets/fig/unnamed-chunk-48-1.pdf)
+
+
+--- &twocol
+
+## Dividing the output device
+
+*** =left
+- mfrow and mfcol in `par()`
+- `split.screen()`
+- layout()
+
+
+```r
+mat_lay <- matrix(c(1,2,4,1,3,4),nrow=3)
+layout(mat_lay)
+```
+
+*** =right
+![plot of chunk unnamed-chunk-50](assets/fig/unnamed-chunk-50-1.pdf)
+
+
+--- &twocol
+
+## More about 'layout()'
+
+*** =left
+
+
+```r
+mat_lay <- matrix(c(1,2,4,1,3,4), nrow=3)
+layout(mat_lay)
+```
+
+
+```
+#>      [,1] [,2]
+#> [1,]    1    1
+#> [2,]    2    3
+#> [3,]    4    4
+```
+
+*** =right
+![plot of chunk unnamed-chunk-53](assets/fig/unnamed-chunk-53-1.pdf)
+
+
+--- &twocol
+
+## More about 'layout()'
+
+*** =left
+
+
+```r
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0), nrow=3)
+layout(mat_lay)
+```
+
+
+```
+#>      [,1] [,2] [,3]
+#> [1,]    0    1    1
+#> [2,]    2    3    4
+#> [3,]    2    3    0
+```
+
+*** =right
+![plot of chunk unnamed-chunk-56](assets/fig/unnamed-chunk-56-1.pdf)
+
+
+--- &twocol
+
+## More about 'layout()'
+
+*** =left
+
+
+```r
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
+layout(mat_lay, widths=c(.25,1,1))
+```
+
+*** =right
+![plot of chunk unnamed-chunk-58](assets/fig/unnamed-chunk-58-1.pdf)
+
+
+--- &twocol
+
+## More about 'layout()'
+
+*** =left
+
+
+```r
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
+layout(mat_lay, widths=c(.25,1,1),
+  heights=c(.25,1,.25))
+```
+
+*** =right
+![plot of chunk unnamed-chunk-60](assets/fig/unnamed-chunk-60-1.pdf)
+
+
+--- &twocol
+
+## Combining 'layout()' and 'mar'
+
+*** =left
+
+
+```r
+mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
+layout(mat_lay, widths=c(.25,1,1),
+  heights=c(.2,1,.4))
+
+for (i in 1:4) {
+  if (i<3) par(mar=rep(1,4)) else par(mar=rep(4,4))
+  eplot()
+  fillIt(col=i)
+  text(0,0, labels=i, cex=4)
+}
+```
+
+*** =right
+![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-1.pdf)
+
+
+
+--- &twocol
+
+## Embedded plots
+
+*** =left
+
+- You must call `new=TRUE` and specifying `fig` in `par()`:
+
+  1. create your first plot;
+
+
+```r
+  plot(...)
+```
+
+
+
+*** =right
+
+![plot of chunk unnamed-chunk-64](assets/fig/unnamed-chunk-64-1.pdf)
+
+
+--- &twocol
+
+## Embedded plots
+
+*** =left
+
+- You must call `new=TRUE` and specifying `fig` in `par()`:
+
+  1. create your first plot;
+  2. use `par()`;
+
+
+```r
+  plot(...)
+  par(new=TRUE, fig=c(0.5,1,0.5,1))
+```
+
+
+*** =right
+
+![plot of chunk unnamed-chunk-66](assets/fig/unnamed-chunk-66-1.pdf)
+
+
+--- &twocol
+
+## Embedded plots
+
+*** =left
+
+- You must call `new=TRUE` and specifying `fig` in `par()`:
+
+  1. create your first plot;
+  2. use `par()`;
+  3. add your embedded plot;
+
+  
+  ```r
+    plot(...)
+    par(new=TRUE, fig=c(0.5,1,0.5,1))
+    plot(...)
+  ```
+
+*** =right
+
+![plot of chunk unnamed-chunk-68](assets/fig/unnamed-chunk-68-1.pdf)
+
+
+
+<!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 --- .transition
 
-## Graphics automation and export
+## Exporting figures from the command line
+
 
 ---
 
-- the loop for
-- `pdf()`, `png()`, `jpeg()`, `bmp()`, `tiff()`
+## grDevices
+
+<img src='assets/img/Murrell2015.jpg' style="width:60%; margin: 0 20%;"/>
+<div class='centered'>Murrell, P. (2015) <a href="https://journal.r-project.org/archive/2015-1/murrell.pdf">The gridGraphics Package</a>. The R Jounal.</div>
+
+
+---
+
+## grDevices
+
+
+```r
+options('device')
+```
+
+- Devices available  &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html):
+  - Quartz &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://en.wikipedia.org/wiki/Quartz_(graphics_layer)
+  - X11 &nbsp;&nbsp; [<i class="fa fa-globe" aria-hidden="true"></i>](https://en.wikipedia.org/wiki/X_Window_System)
+  - pdf, jpeg, svg, ...
+  - in add-on package :
+      -  [rgl  package](https://cran.r-project.org/web/packages/rgl/index.html) &nbsp;&nbsp; (OpenGL website [<i class="fa fa-globe" aria-hidden="true"></i>](https://www.opengl.org))
+      - Internet browsers [googleVis](https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html)
+
+
+
+--- &twocol
+
+## Exporting figures as a Bitmap files
+
+*** =left
+
+- `bmp()`, `jpeg()`, `png()`, `tiff()`
+
+
+```r
+?jpeg
+```
+
+- use them:
+
+
+```r
+png(filename)
+...
+dev.off()
+```
+
+*** =right
+
+
+
+<img src='assets/img/fig1.png' style="width:100%;"/>
+
+
+--- &twocol
+
+## Exporting figures as a Bitmap files
+
+*** =left
+
+
+```r
+jpeg(filename,  width=960)
+...
+dev.off()
+```
+
+*** =right
+
+
+
+<img src='assets/img/fig2.png' style="width:100%;"/>
+
+
+
+
+--- &twocol
+
+## Exporting figures as a Bitmap files
+
+*** =left
+
+- `pdf()`,
+- cairo_pdf, cairo_ps, svg
+
+
+*** =left
+
+
+```r
+jpeg(filename, width=1440, height=1440)
+...
+dev.off()
+```
+
+*** =right
+
+
+
+<img src='assets/img/fig3.png' style="width:100%;"/>
+
+
+--- &twocol
+
+## Exporting figures as a Bitmap files
+
+*** =left
+
+- `pdf()`,
+- cairo_pdf, cairo_ps, svg
+
+
+*** =left
+
+
+```r
+jpeg(filename, width=1440, height=1440)
+...
+dev.off()
+```
+
+*** =right
+
+
+
+<img src='assets/img/fig4.png' style="width:100%;"/>
+
+
+
+--- &twocol
+
+## Exporting figures as a vector files
+
+*** =left
+
+- `pdf()`,
+- cairo_pdf, cairo_ps, svg
+
+
+
+
+
+
 
 --- .transition
 
@@ -950,10 +1347,14 @@ abline(v = seq(0.6, 1.4, by = 0.2))
 
 ## Resources
 
-- QCBS worshops
-- [QQ example](http://kevincazelles)
-- [Task view](https://cran.r-project.org/web/views/Graphics.html)
-- Some books (R graphics, ggplot2, R graphic cookbook)
+- CRAN task view fro graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
+- more packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
+- ggplot2 website &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://docs.ggplot2.org/current/)
+
+
+
+
+
 
 --- .transition
 
@@ -961,8 +1362,8 @@ abline(v = seq(0.6, 1.4, by = 0.2))
 
 ---
 
-## Two exercises
+## Three challenges
 
-- refaire une figure du samedi
-- autre figure
-- coder son propre boxplot.
+1. "refaire une figure du samedi"
+2. a fig quite complicated...
+3. Code your own boxplot function.
