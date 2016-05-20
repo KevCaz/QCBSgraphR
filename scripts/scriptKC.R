@@ -1,7 +1,7 @@
 ## ScriptKC
 ## 2016-05-19
 
-################## - Colors
+################## - Colors / par
 ## @knitr kccolors
 
 # grey => Slidify
@@ -15,6 +15,7 @@ colb <- "#4e7bdb"
 ##
 palette(c("transparent", colr, colg, colb))
 
+mypar <- list(mar=c(1,1,1,1), las=1)
 
 ################## - Functions
 ## @knitr kcfunction
@@ -36,14 +37,18 @@ fourplots <- function() {
 }
 
 exExport <- function(add=FALSE, ...){
-  par(xaxs="i", yaxs="i")
-  plot(c(0,1),c(0,1), type="n", ann=FALSE, axes=FALSE)
+  plot(c(0,1), c(0,1), type="n", ann=FALSE, axes=FALSE)
   fillIt(col=2)
-  text(.5,.5,labels="Maps", cex=1, pos=4)
-  text(.5,.8,labels="Maps", cex=2.01, pos=4)
-  text(.5,.2,labels="Maps", cex=.5, pos=4)
+  seqy <- c(.2,.5,.8)
+  seqc <- c(.5,1,2)
+  for (i in 1:3) {
+      text(.65, seqy[i], labels="Maps", cex=seqc[i])
+      text(.75, seqy[i], labels=paste0("cex = ", seqc[i]), cex=1, pos=4)
+  }
+  points(rep(0.35,9), 1:9*.1, pch=rep(15:17, each=3), cex=rep(c(.5,1,2), 3))
+  text(rep(0.3,9), 1:9*.1, labels=rep(paste0("cex = ", seqc),3), pos=2)
 }
-
+# exExport()
 
 ####################################
 ####################################
@@ -57,7 +62,7 @@ fourplots()
 
 ################## - screen.split
 ## @knitr screen
-par(mar=c(1,1,1,1))
+par(mypar)
 spl1<- split.screen(c(1, 2))
 spl2<- split.screen(c(3, 1), screen = 2)
 
@@ -77,7 +82,7 @@ close.screen(all = TRUE)
 
 ################## - layout
 ## @knitr layout
-par(mar=c(1,1,1,1))
+par(mypar)
 mat_lay <- matrix(c(1,2,4,1,3,4),nrow=3)
 layout(mat_lay)
 fourplots()
@@ -93,7 +98,7 @@ fourplots()
 
 ## @knitr laymat1
 
-par(mar=c(1,1,1,1))
+par(mypar)
 mat_lay <- matrix(c(1,2,4,1,3,4),nrow=3)
 layout(mat_lay)
 eplot()
@@ -101,14 +106,14 @@ eplot()
 
 ## @knitr laymat2
 
-par(mar=c(1,1,1,1))
+par(mypar)
 mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
 layout(mat_lay)
 fourplots()
 
 ## @knitr laywd
 
-par(mar=c(1,1,1,1))
+par(mypar)
 mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
 layout(mat_lay, widths=c(.25,1,1))
 fourplots()
@@ -116,7 +121,7 @@ fourplots()
 
 ## @knitr layhg
 
-par(mar=c(1,1,1,1))
+par(mypar)
 mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
 layout(mat_lay, widths=c(.25,1,1), heights=c(.2,1,.4))
 fourplots()
@@ -143,7 +148,7 @@ for (i in 1:4) {
 
 ## @knitr fignew1
 
-par(mar=c(1,1,1,1))
+par(mypar)
 # fig 1
 eplot()
 fillIt(col=2)
@@ -172,19 +177,19 @@ axis(2)
 
 ## @knitr export1
 png(filename="assets/img/fig1.png")
-  par(mar=c(1,1,1,1))
+  par(mypar)
   exExport()
 dev.off()
 
 ## @knitr export2
 png(filename="assets/img/fig2.png", width=1440, height=1440)
-  par(mar=c(1,1,1,1))
+  par(mypar)
   exExport()
 dev.off()
 
 ## @knitr export3
 png(filename="assets/img/fig3.png", res=72)
-  par(mar=c(1,1,1,1), las=1)
+  par(mypar)
   exExport()
   axis(2, at=seq(0,1,by=1/20), label=seq(0,480,by=24), tcl=-.25,  pos=.5, col.axis=colb)
   hl <- c(233,247,372,397)
@@ -194,7 +199,7 @@ dev.off()
 
 ## @knitr export4
 png(filename="assets/img/fig4.png",res=144)
-  par(mar=c(1,1,1,1), las=1)
+  par(mypar)
   exExport()
 dev.off()
 

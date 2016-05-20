@@ -2255,7 +2255,7 @@ plot(...)
 <li>use them:</li>
 </ul>
 
-<pre><code class="r">png(filename)
+<pre><code class="r">png(filename, width=480, height=480)
 ...
 dev.off()
 </code></pre>
@@ -2301,9 +2301,32 @@ dev.off()
     <h2>Exporting figures as a Bitmap files</h2>
   </hgroup>
   <article data-timings="">
+    <ul class = "build incremental">
+<li>pixel (px) = small colored square;</li>
+<li><code>width=480</code> + <code>height=480</code> = grid of 480x480px ;</li>
+<li>point (pt) = unit of length (measures the height of a font);</li>
+<li>1pt = 1/72 inch;</li>
+<li><code>pointsize</code> of plotted text = how many points your font will use (size of the text);</li>
+<li>resolution <code>res</code> (in px per inch, <em>ppi</em>) links pixel and size;</li>
+<li><code>res</code> determines how many pixels = 1pt;</li>
+<li>if <code>res=72</code> then one point will equal exactly one pixel.</li>
+<li><code>res=72</code> + <code>width=480</code> + <code>height=480</code> =  6.667x6.667in =&gt; 16.9*16.9cm</li>
+<li><code>res=300</code> + <code>width=480</code> + <code>height=480</code> =  1.6x1.6in =&gt;  4.06cmx4.06cm</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-86" style="background:;">
+  <hgroup>
+    <h2>Exporting figures as a Bitmap files</h2>
+  </hgroup>
+  <article data-timings="">
     
 <div style='float:left;width:49%;text-align:left;'>
-  <pre><code class="r">jpeg(filename, res=72)
+  <pre><code class="r">jpeg(filename, res=72,
+  pointsize=12, width=480, height=480)
 ...
 dev.off()
 </code></pre>
@@ -2343,13 +2366,7 @@ dev.off()
 <li>pointsize=12</li>
 <li>res=72</li>
 <li>cex=2</li>
-<li>480/72=20/3 inches =&gt; 2.54 = 17cm</li>
 </ul>
-
-<!--
-A pixel is a single square 'picture element' (hence pix-el), i.e. a single dot in your image. A 10x10 image is made up of a set of pixels in a grid 10 wide by 10 high, totaling 100 pixels.
-The 'point' (pt) on the other hand is a unit of length, commonly used to measure the height of a font, but technically capable of measuring any length. In applications, 1pt is equal to exactly 1/72th of an inch; in traditional print technically 72pt is 0.996264 inches, although I think you'll be forgiven for rounding it up!
-How many pixels = 1pt depends on the resolution of your image. If your image is 72ppi (pixels per inch), then one point will equal exactly one pixel. -->
 
 </div>
 <div>

@@ -1402,8 +1402,6 @@ for (i in 1:4) {
 
 
 
-
-
 --- .transition
 
 ## Exporting figures from the command line
@@ -1445,16 +1443,14 @@ options('device')
 
 - `bmp()`, `jpeg()`, `png()`, `tiff()`
 
-
 ```r
 ?jpeg
 ```
 
 - use them:
 
-
 ```r
-png(filename)
+png(filename, width=480, height=480)
 ...
 dev.off()
 ```
@@ -1466,12 +1462,12 @@ dev.off()
 <img src='assets/img/fig1.png' style="width:90%;"/>
 
 
+
 --- &twocol
 
 ## Exporting figures as a Bitmap files
 
 *** =left
-
 
 ```r
 png(filename, width=1440, height=1440)
@@ -1486,6 +1482,23 @@ dev.off()
 <img src='assets/img/fig2.png' style="width:90%;"/>
 
 
+---
+
+## Exporting figures as a Bitmap files
+
+
+> - pixel (px) = small colored square;
+> - `width=480` + `height=480` = grid of 480x480px ;
+> - point (pt) = unit of length (measures the height of a font);
+> - 1pt = 1/72 inch;
+> - `pointsize` of plotted text = how many points your font will use (size of the text);
+> - resolution `res` (in px per inch, *ppi*) links pixel and size;
+> - `res` determines how many pixels = 1pt;
+> - if `res=72` then one point will equal exactly one pixel.
+> - `res=72` + `width=480` + `height=480` =  6.667x6.667in => 16.9*16.9cm
+> - `res=300` + `width=480` + `height=480` =  1.6x1.6in =>  4.06cmx4.06cm
+
+
 
 
 --- &twocol
@@ -1496,7 +1509,8 @@ dev.off()
 
 
 ```r
-jpeg(filename, res=72)
+jpeg(filename, res=72,
+  pointsize=12, width=480, height=480)
 ...
 dev.off()
 ```
@@ -1527,14 +1541,8 @@ dev.off()
 - pointsize=12
 - res=72
 - cex=2
-- 480/72=20/3 inches => 2.54 = 17cm
 
 
-
-<!--
-A pixel is a single square 'picture element' (hence pix-el), i.e. a single dot in your image. A 10x10 image is made up of a set of pixels in a grid 10 wide by 10 high, totaling 100 pixels.
-The 'point' (pt) on the other hand is a unit of length, commonly used to measure the height of a font, but technically capable of measuring any length. In applications, 1pt is equal to exactly 1/72th of an inch; in traditional print technically 72pt is 0.996264 inches, although I think you'll be forgiven for rounding it up!
-How many pixels = 1pt depends on the resolution of your image. If your image is 72ppi (pixels per inch), then one point will equal exactly one pixel. -->
 
 
 
@@ -1544,13 +1552,12 @@ How many pixels = 1pt depends on the resolution of your image. If your image is 
 
 *** =left
 
-
-
 ```r
 jpeg(filename, res=144)
 ...
 dev.off()
 ```
+
 *** =right
 
 
@@ -1583,6 +1590,10 @@ dev.off()
 *** =right
 
 - Cairo &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cairographics.org/documentation/)
+
+
+
+
 
 
 
