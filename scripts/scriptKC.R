@@ -37,6 +37,7 @@ fourplots <- function() {
 }
 
 exExport <- function(add=FALSE, ...){
+  par(fg="white")
   plot(c(0,1), c(0,1), type="n", ann=FALSE, axes=FALSE)
   fillIt(col=2)
   seqy <- c(.2,.5,.8)
@@ -191,9 +192,9 @@ dev.off()
 png(filename="assets/img/fig3.png", res=72)
   par(mypar)
   exExport()
-  axis(2, at=seq(0,1,by=1/20), label=seq(0,480,by=24), tcl=-.25,  pos=.5, col.axis=colb)
+  axis(2, at=seq(0,1,by=1/20), label=seq(0,480,by=24), tcl=-.25,  pos=.5, col.axis="white")
   hl <- c(233,247,372,397)
-  abline(h=hl/480, col=colb)
+  abline(h=hl/480, col="white")
 dev.off()
 
 
@@ -204,6 +205,47 @@ png(filename="assets/img/fig4.png",res=144)
 dev.off()
 
 ## @knitr export5
-png(filename="assets/img/fig5.png")
+png(filename="assets/img/fig5.png", res=144, height=7, width=7, unit="in")
+  par(mypar)
+  exExport()
+dev.off()
+
+
+## @knitr export6
+png(filename="assets/img/fig6.png", res=288, height=7, width=7, unit="in")
+  exExport()
+dev.off()
+
+
+## @knitr export7
+png(filename="assets/img/fig7.png", res=288, height=7, width=7, unit="in")
+  par(mypar)
+  par(mfrow=c(2,1))
+  exExport()
+  eplot()
+  fillIt(colb)
+dev.off()
+
+
+## @knitr export8
+png(filename="assets/img/fig8.png", res=288, height=2*7, width=7, unit="in")
+  par(mypar)
+  par(mfrow=c(2,1))
+  exExport()
+  eplot()
+  fillIt(colb)
+dev.off()
+
+
+## @knitr pdf1
+pdf(file="assets/img/fig9.pdf", height=7, width=7)
+  par(mypar)
+  exExport()
+dev.off()
+
+
+## @knitr svg1
+svg(filename="assets/img/fig10.svg", height=7, width=7)
+  par(mypar)
   exExport()
 dev.off()
