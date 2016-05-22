@@ -1466,12 +1466,6 @@ par(mar = c(4, 4, 4, 4))
 
 <!-- *** =right -->
 
---- .tocenter2
-
-## Exercise 1
-
-![plot of chunk unnamed-chunk-100](assets/fig/unnamed-chunk-100-1.pdf)
-
 --- &twocol
 
 ## Exercise 1
@@ -1484,19 +1478,19 @@ par(mar = c(4, 4, 4, 4))
 
 ```r
 head(tab)
-##   species petal.l petal.w n
-## 1  setosa     1.4     0.2 8
-## 2  setosa     1.3     0.2 4
-## 3  setosa     1.5     0.2 7
-## 4  setosa     1.7     0.4 1
-## 5  setosa     1.4     0.3 3
-## 6  setosa     1.5     0.1 2
+## Error in head(tab): objet 'tab' introuvable
 ```
 
 *** =right
 
 - The size of the bubble is proportional to `n`
 - Lines represent regression model and standard error
+
+--- .tocenter2
+
+## Exercise 1
+
+![plot of chunk unnamed-chunk-101](assets/fig/unnamed-chunk-101-1.pdf)
 
 --- .transition
 
@@ -2078,6 +2072,20 @@ dev.off()
 
 
 
+--- .transition
+
+## Let's practice!
+
+---
+
+## Three challenges
+
+- CRAN task view fro graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
+- more packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
+- ggplot2 website &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://docs.ggplot2.org/current/)
+- Color: [An interesting blog post](http://www.stat.ubc.ca/~jenny/STAT545A/block14_colors.html)
+- And an useful document: &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/material/assets/graphR_2014.pdf)
+
 
 
 
@@ -2093,21 +2101,3 @@ dev.off()
 - CRAN task view fro graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
 - more packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
 - ggplot2 website &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://docs.ggplot2.org/current/)
-- Color: [An interesting blog post](http://www.stat.ubc.ca/~jenny/STAT545A/block14_colors.html)
-
-
-
-
-
-
---- .transition
-
-## Let's pratice!
-
----
-
-## Three challenges
-
-1. "refaire une figure du samedi"
-2. a fig quite complicated...
-3. Code your own boxplot function.

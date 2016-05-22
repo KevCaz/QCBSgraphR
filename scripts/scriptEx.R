@@ -11,29 +11,30 @@ setwd("~/Github/formations/QCBSgraphR")
 load("data/word_eng.Rdata")
 ##
 countbin <- function(pos, sz, bin=15){
-  cool <- (pos+c(-1,0))/sz*(bin-1)
-  print(cool)
+  cool <- (pos+c(-1,0))/sz*(bin)
+  # print(cool)
   rt1 <- cool[1]-floor(cool[1])
   rt2 <- cool[2]-floor(cool[2])
-  if (rt2>0) rg <- floor(cool[1]):(floor(cool[2]))
-  else rg <- floor(cool[1]):(floor(cool[2]))
+  rg <- floor(cool[1]):(floor(cool[2]))
+  if (rt2==0) rg <- floor(cool[1]):(floor(cool[2])-1)
   rg <- rg+1
   val <- rep(1,length(rg))
-
   if (rt2>0) val[length(val)] <- rt2
-  if (rt1>0) val[1] <- rt1
+  if (rt1>0) val[1] <- 1-rt1
   return(cbind(rg,val=val/sum(val)))
 }
-countbin(2, sz=12, bin=15)
+
+# countbin(2, sz=12, bin=15)
 
 ##
 letter_tot <- unlist(strsplit(word_eng,""))
 letter_freq <- table(letter_tot)/length(letter_tot)*100
 # plot(letter_freq, type="h")
 ##
-mycount <- function(x,pattern="a"){
+mycount <- function(x, pattern="a"){
   vec <- unlist(strsplit(x,""))
   val <- grep(pattern, vec)
+  sz
   if (length(val)==0) out <- 0 else {
 
   }
@@ -42,15 +43,23 @@ mycount <- function(x,pattern="a"){
 ##
 datlet <- data.frame(matrix(0,15,26))
 colnames(datlet) <- letters[1:26]
+##
+boom <- strsplit(word_eng,"")
+
 
 for (i in 1:26){
   cat(paste0("\r letter:  ", letters[i]))
-  cool0 <- unlist(lapply(as.list(word_eng), FUN=mycount, letters[i]))
-  cool <- cool0[cool0!=0]
-  for(j in 1:length(cool)){
-    x <- cool[j]
-    datlet[floor(x), i] <- datlet[floor(x), i] + (1-(x-floor(x)))
-    if ((x-floor(x))>0) datlet[floor(x)+1,i] <- datlet[floor(x)+1,i]+(x-floor(x))
+  match_let <- lapply(boom, grep, pattern=letters[i])
+  sz_match <- lapply(match_let, length)
+  vec_pos <- unlist(match_let)
+  vec_sz <- rep(nchar(word_eng), unlist(sz_match))
+  mydata <- cbind(vec_pos, vec_sz)
+  # dat_wher <- countbin(vec_pos[1],vec_sz[1],15)
+  dat_wher <- apply( mydata, 1,  FUN=function(x) countbin(x[1],x[2],15))
+  dat_wher <- do.call( "rbind", dat_wher)
+  cool <- aggregate(val~rg, data=dat_wher, FUN=sum)
+  for (j in 1:nrow(cool)){
+    datlet[j,i] <- cool[cool[j,1], 2]
   }
 }
 cat("\n")
@@ -81,8 +90,9 @@ plot(0,0, ann=FALSE, axes=FALSE, type="n")
 text(0,.35,c("Distribution of English Letters toward"),cex=2)
 text(0,-.45,c("beggining, middle, and end of words"),cex=2)
 ## Legend
-par(mar=c(3,8,1.5,8), mgp=c(3,0.4,0))
+par(mar=c(2,8,3,8), mgp=c(3,0.4,0))
 image(matrix(1:8,ncol=1), col=mypal, axes=FALSE, ann=FALSE)
+mtext(side=3, at=0, text="Frequency of letters:")
 axis(1, at=seq(-1/14,1+1/14,len=9),labels=paste0(c(mybin,13), "%"), lwd=0)
 
 dev.off()

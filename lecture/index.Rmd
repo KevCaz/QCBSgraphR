@@ -1331,14 +1331,6 @@ par(mar = c(4, 4, 4, 4))
 
 <!-- *** =right -->
 
---- .tocenter2
-
-## Exercise 1
-
-```{r echo = FALSE, fig.height = 7, fig.width = 7}
-<<Exercise_1>>
-```
-
 --- &twocol
 
 ## Exercise 1
@@ -1356,6 +1348,14 @@ head(tab)
 
 - The size of the bubble is proportional to `n`
 - Lines represent regression model and standard error
+
+--- .tocenter2
+
+## Exercise 1
+
+```{r echo = FALSE, fig.height = 7, fig.width = 7}
+<<Exercise_1>>
+```
 
 --- .transition
 
@@ -1955,7 +1955,7 @@ dev.off()
 
 --- .transition
 
-## Let's pratice!
+## Let's practice!
 
 ---
 
@@ -1965,7 +1965,7 @@ dev.off()
 - more packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
 - ggplot2 website &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://docs.ggplot2.org/current/)
 - Color: [An interesting blog post](http://www.stat.ubc.ca/~jenny/STAT545A/block14_colors.html)
-
+- And an useful document: &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/material/assets/graphR_2014.pdf)
 
 
 
