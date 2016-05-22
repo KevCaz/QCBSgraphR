@@ -34,7 +34,6 @@ article li.build {
 }
 </style> -->
 
-
 ## Outline
 
 - Introduction
@@ -1753,8 +1752,6 @@ for (i in 1:4) {
 
 
 
-
-
 --- .transition
 
 ## Exporting figures from the command line
@@ -1764,7 +1761,7 @@ for (i in 1:4) {
 
 ## grDevices
 
-<img src='assets/img/Murrell2015.jpg' style="width:60%; margin: 0 20%;"/>
+<img src='assets/img/Murrell2015.jpg' style="width:75%; margin: 0 10%;"/>
 <div class='centered'>Murrell, P. (2015) <a href="https://journal.r-project.org/archive/2015-1/murrell.pdf">The gridGraphics Package</a>. The R Jounal.</div>
 
 
@@ -1782,7 +1779,7 @@ options('device')
   - X11 &nbsp;&nbsp; [<i class="fa fa-globe" aria-hidden="true"></i>](https://en.wikipedia.org/wiki/X_Window_System)
   - pdf, jpeg, svg, ...
   - in add-on package :
-      -  [rgl  package](https://cran.r-project.org/web/packages/rgl/index.html) &nbsp;&nbsp; (OpenGL website [<i class="fa fa-globe" aria-hidden="true"></i>](https://www.opengl.org))
+      -  [rgl  package](https://cran.r-project.org/web/packages/rgl/index.html) (OpenGL website &nbsp;&nbsp; [<i class="fa fa-globe" aria-hidden="true"></i>](https://www.opengl.org))
       - Internet browsers [googleVis](https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/Devices.html)
 
 
@@ -1790,12 +1787,11 @@ options('device')
 
 --- &twocol
 
-## Exporting figures as a Bitmap files
+## Exporting figures as bitmap files
 
 *** =left
 
 - `bmp()`, `jpeg()`, `png()`, `tiff()`
-
 
 ```r
 ?jpeg
@@ -1803,9 +1799,8 @@ options('device')
 
 - use them:
 
-
 ```r
-png(filename)
+png(filename, width=480, height=480)
 ...
 dev.off()
 ```
@@ -1817,12 +1812,12 @@ dev.off()
 <img src='assets/img/fig1.png' style="width:90%;"/>
 
 
+
 --- &twocol
 
-## Exporting figures as a Bitmap files
+## Exporting figures as bitmap files
 
 *** =left
-
 
 ```r
 png(filename, width=1440, height=1440)
@@ -1837,17 +1832,36 @@ dev.off()
 <img src='assets/img/fig2.png' style="width:90%;"/>
 
 
+---
+
+## Exporting figures as bitmap files
+
+
+> - pixel (px) = small colored square;
+> - `width=480` + `height=480` = grid of 480x480px ;
+> - point (pt) = unit of length (measures the height of a font);
+> - 1pt = 1/72 inch;
+> - `pointsize` of plotted text = how many points your font will use (size of the text);
+> - resolution `res` (in px per inch, *ppi*) links pixel and size;
+> - `res` determines how many pixels = 1pt;
+> - if `res=72` then one point will equal exactly one pixel.
+> - `res=72` + `width=480` + `height=480` =  6.667x6.667in => 16.9*16.9cm
+> - `res=300` + `width=480` + `height=480` =  1.6x1.6in =>  4.06cmx4.06cm
+> - font 12 points => 0.42cm
+
+
 
 
 --- &twocol
 
-## Exporting figures as a Bitmap files
+## Exporting figures as bitmap files
 
 *** =left
 
 
 ```r
-jpeg(filename, res=72)
+jpeg(filename, res=72,
+  pointsize=12, width=480, height=480)
 ...
 dev.off()
 ```
@@ -1859,9 +1873,10 @@ dev.off()
 <img src='assets/img/fig3.png' style="width:90%;"/>
 
 
+
 --- &twocol
 
-## Exporting figures as a Bitmap files
+## Exporting figures as bitmap files
 
 *** =left
 
@@ -1878,30 +1893,22 @@ dev.off()
 - pointsize=12
 - res=72
 - cex=2
-- 480/72=20/3 inches => 2.54 = 17cm
 
-
-
-<!--
-A pixel is a single square 'picture element' (hence pix-el), i.e. a single dot in your image. A 10x10 image is made up of a set of pixels in a grid 10 wide by 10 high, totaling 100 pixels.
-The 'point' (pt) on the other hand is a unit of length, commonly used to measure the height of a font, but technically capable of measuring any length. In applications, 1pt is equal to exactly 1/72th of an inch; in traditional print technically 72pt is 0.996264 inches, although I think you'll be forgiven for rounding it up!
-How many pixels = 1pt depends on the resolution of your image. If your image is 72ppi (pixels per inch), then one point will equal exactly one pixel. -->
 
 
 
 --- &twocol
 
-## Exporting figures as a Bitmap files
+## Exporting figures as bitmap files
 
 *** =left
 
-
-
 ```r
-jpeg(filename, res=144)
+png(filename, res=144)
 ...
 dev.off()
 ```
+
 *** =right
 
 
@@ -1912,28 +1919,157 @@ dev.off()
 
 --- &twocol
 
-## Exporting figures as a vector files
+## Exporting figures as bitmap files
 
 *** =left
 
-- `pdf()`,
-- cairo_pdf, cairo_ps, svg
+```r
+png(filename, res=144,
+  height=7, width=7, unit="in")
+...
+dev.off()
+```
 
 *** =right
+
+
+
+<img src='assets/img/fig5.png' style="width:90%;"/>
+
 
 
 --- &twocol
 
-## Exporting figures as a vector files
+## Exporting figures as bitmap files
 
 *** =left
 
-- `pdf()`,
-- cairo_pdf, cairo_ps, svg
+```r
+png(filename, res=288,
+   height=7, width=7, unit="in")
+...
+dev.off()
+```
 
 *** =right
 
-- Cairo &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cairographics.org/documentation/)
+
+
+<img src='assets/img/fig6.png' style="width:90%;"/>
+
+
+
+--- &twocol
+
+## Exporting figures as bitmap files
+
+*** =left
+
+```r
+png(filename, res=288,
+  height=7, width=7, unit="in")
+...
+dev.off()
+```
+
+*** =right
+
+
+
+<img src='assets/img/fig7.png' style="width:90%;"/>
+
+
+
+--- &twocol
+
+## Exporting figures as bitmap files
+
+*** =left
+
+```r
+png(filename, res=288,
+  height=2*7, width=7, unit="in")
+...
+dev.off()
+```
+
+*** =right
+
+
+
+<img src='assets/img/fig8.png' style="width:50%; margins:40% 40%;"/>
+
+
+
+
+
+--- &twocol
+
+## Exporting figures as vector files
+
+
+- `pdf()`;
+- Cairo  &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cairographics.org/documentation/) :
+    - `cairo_pdf()`
+    - `cairo_ps()`
+    - `svg()`
+
+
+
+
+
+--- &twocol
+
+## Exporting figures as vector files
+
+*** =left
+
+```r
+pdf(fil, pointsize=12,
+  height=2*7, width=7)
+...
+dev.off()
+```
+
+*** =right
+
+
+
+<img src='assets/img/fig9.pdf' style="width:90%"/>
+
+
+
+--- &twocol
+
+## Exporting figures as vector files
+
+*** =left
+
+```r
+svg(filename, pointsize=12,
+  height=2*7, width=7)
+...
+dev.off()
+```
+
+*** =right
+
+
+
+<img src='assets/img/fig10.svg' style="width:90%"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
