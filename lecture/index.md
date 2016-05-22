@@ -447,7 +447,7 @@ par()$col
 
 - A recommendation:
     - Save the default par(): `opar <- par()`
-    - Change the values: `par(col = 'red')`
+    - Change the values: `par(col='red')`
     - Do the graph
     - Restaure the old par(): `par(opar)`
 
@@ -995,7 +995,7 @@ names(ypred)[1:2]
 *** =left
 
 - We are going to add the error envelope with the function `polygon()`
-- So, let's calculate the y value of this envelope
+- So, let's calculate the coordinates of this envelope
 
 *** =right
 
@@ -1076,12 +1076,12 @@ polygon(x = c(xsup, xinf), y = c(ysup, yinf),
 plot(x = dat$x, y = dat$y, bty = 'n',
      type = 'p', pch = 19)
 
-## Adding model regression
-lines(x = mat$x, y = ypred$fit, lwd = 3)
-
 ## Adding error envelope
 polygon(x = c(xsup, xinf), y = c(ysup, yinf),
         col = '#aaaaaa88', border = '#aaaaaa88')
+
+## Adding model regression
+lines(x = mat$x, y = ypred$fit, lwd = 3)
 ```
 
 *** =right
@@ -1094,58 +1094,409 @@ polygon(x = c(xsup, xinf), y = c(ysup, yinf),
 
 *** =left
 
-- rect(), density, angle
+- The function `rect()` is appropiated when you want to add draw rectangle
+- Here is an example
 
 
+```r
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+rect(xleft = 0.9, ybottom = 0.8,
+     xright = 1.1, ytop = 1.2,
+     density = 20, angle = 45)
+```
 
 *** =right
 
+![plot of chunk unnamed-chunk-73](assets/fig/unnamed-chunk-73-1.pdf)
+
+--- &twocol
+
+## Adding polygons
+
+*** =left
+
+- You also can customize the rectangle
 
 
----
+```r
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
 
+rect(xleft = 0.9, ybottom = 0.8,
+     xright = 1.1, ytop = 1.2,
+     col = 'yellow', border = 'red',
+     lwd = 4, lty = 3)
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-75](assets/fig/unnamed-chunk-75-1.pdf)
+
+--- &twocol
 
 ## Adding textual informations
 
-- `title()`, `text()`, `mtext()`
-- font, family
+*** =left
+
+- Let's see now how to add text
+- First let's add a main title with the function `title()`
+
+
+```r
+## Basic plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding title
+title(main = 'Figure title')
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-77](assets/fig/unnamed-chunk-77-1.pdf)
+
+
+--- &twocol
+
+## Adding textual informations
+
+*** =left
+
+- What about adding text in the plot area?
+- We will use the function `text()`
+- Here is a first example
+
+
+```r
+## Basic plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding text
+text(x = 0.7, y = 1.19,
+     labels = 'Figure title')
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-79](assets/fig/unnamed-chunk-79-1.pdf)
+
+--- &twocol
+
+## Adding textual informations
+
+*** =left
+
+- And another example
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n', type = 'n')
+
+## Adding text
+text(x = dat$x, y = dat$y, labels = dat$z)
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-81](assets/fig/unnamed-chunk-81-1.pdf)
+
+--- &twocol
+
+## Adding textual informations
+
+*** =left
+
+- Let's customize a little the text with:
+    - `cex`, the size
+    - `col`, the color
+    - `font`, the font (bold, italic, etc.)
+    - `family`, the typeface
+
+
+```r
+## Basic plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'n')
+
+## Adding text
+text(x = 1, y = 1, labels = 'My text', col = 'red', 
+     cex = 2, font = 2, family = 'mono')
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-83](assets/fig/unnamed-chunk-83-1.pdf)
+
+
+--- &twocol
+
+## Adding textual informations
+
+*** =left
+
+- Finally, let's customize the orientation and position
+    - `srt`, the rotation angle
+    - `pos`, the position from coordinates
+
+
+```r
+## Basic plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'n')
+
+## Adding text
+text(x = 0.6, y = 0.85, labels = 'pos = 4 (right)',
+     cex = 2, font = 1, pos = 4)
+text(x = 1, y = 1, labels = 'Rotated text',
+     cex = 2, font = 2, srt = 45)
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-85](assets/fig/unnamed-chunk-85-1.pdf)
+
+--- &twocol
+
+## Adding textual informations
+
+*** =left
+
+- But the function `text()` can't add text outside the plot area
+- except if `par(xpd=TRUE)`
+- We will use the function `mtext()`
+
+
+```r
+## Basic plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19, ylab = '')
+
+## Adding text
+mtext(text = 'y-axis', side = 2, line = 2,
+      at = 1.15, font = 2, cex = 2)
+```
+
+*** =right
+
+![plot of chunk unnamed-chunk-87](assets/fig/unnamed-chunk-87-1.pdf)
 
 ---
 
-## Changing colors
+## Back to colors
 
-- [A blog post](http://www.stat.ubc.ca/~jenny/STAT545A/block14_colors.html)
-- predefined color palette
-- the rgb system
-- the hexadecimal nomenclature
-- customized color palettes
+- R has some predefine colors palettes
 
----
 
-## Changing fonts
+```r
+## Basic colors
+palette()
+## [1] "black"   "red"     "green3"  "blue"    "cyan"    "magenta" "yellow" 
+## [8] "gray"
 
-- basic fonts
-- the `showtext` package
+## and 657 others colors
+colors()[1:10]
+##  [1] "white"         "aliceblue"     "antiquewhite"  "antiquewhite1"
+##  [5] "antiquewhite2" "antiquewhite3" "antiquewhite4" "aquamarine"   
+##  [9] "aquamarine1"   "aquamarine2"
+```
 
----
+--- &twocol
 
-## Adding/changing axis
+## Back to colors
 
----
+*** =left
 
-## Adding legend
+- You can define colors in the RGB system with `rgb()`
+- You specify value between 0 to 1 for each primary colors
+- For example:
 
----
+
+```r
+red    <- rgb(red = 1,   green = 0,   blue = 0)
+yellow <- rgb(red = 1,   green = 1,   blue = 0)
+gray1  <- rgb(red = 0.5, green = 0.5, blue = 0.5)
+```
+
+<!-- *** =right -->
+
+--- &twocol
+
+## Back to colors
+
+*** =left
+
+- You can define colors in the RGB system with `rgb()`
+- You specify value between 0 to 1 for each primary colors
+- For example:
+
+
+```r
+red    <- rgb(red = 1,   green = 0,   blue = 0)
+yellow <- rgb(red = 1,   green = 1,   blue = 0)
+gray1  <- rgb(red = 0.5, green = 0.5, blue = 0.5)
+```
+
+*** =right
+- The `alpha` argument controls for opacity (default = `1`)
+- Its values vary from 0 (transparent) to 1 (opaque)
+- For example
+
+
+```r
+## Transparent red
+redp <- rgb(red = 1, green = 0, blue = 0,
+            alpha = .8)
+```
+
+--- &twocol
+
+## Back to colors
+
+*** =left
+
+- Let's see an application
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, ann = FALSE,
+     bty = 'n', type = 'n')
+
+## Transparent red
+redp <- rgb(red = 1, green = 0, blue = 0,
+            alpha = .5)
+
+## Adding points
+points(x = dat$x, y = dat$y, col = redp,
+       pch = 19, cex = 4)
+```
+
+*** =right
+![plot of chunk unnamed-chunk-93](assets/fig/unnamed-chunk-93-1.pdf)
+
+--- &twocol
+
+## Back to colors
+
+*** =left
+
+- You can also define colors in the hexadecimal system
+- Each primary colors is define by two values varying from 0 to 9 and A to F
+- For example:
+
+
+```r
+red    <- '#FF0000'
+yellow <- '#FFFF00'
+gray1  <- '#888888'
+```
+
+<!-- *** =right -->
+
+--- &twocol
+
+## Back to colors
+
+*** =left
+
+- You can also define colors in the hexadecimal system
+- Each primary colors is define by two values varying from 0 to 9 and A to F
+- For example:
+
+
+```r
+red    <- '#FF0000'
+yellow <- '#FFFF00'
+gray1  <- '#888888'
+```
+
+*** =right
+- To add transparency, we have to add two hexadecimal character at the end
+- For example,
+
+
+```r
+## Transparent red
+redp <- '#FF000088'
+```
+
+--- &twocol
+
+## Adding axis
+
+*** =left
+- The function `axis()` allows to add axis
+- Here is an example of usage
+
+
+```r
+## Empty plot
+plot(x = dat$x, y = dat$y, pch = 19)
+
+## Adding top-axis
+axis(side = 3, at = seq(0.6, 1.4, by = 0.1),
+     labels = seq(0.6, 1.4, by = 0.1), las = 1)
+
+## Adding right-axis
+axis(side = 4, at = seq(0.8, 1.2, by = 0.1),
+     labels = format(seq(0.8, 1.2, by = 0.1)),
+     las = 2)
+```
+
+*** =right
+![plot of chunk unnamed-chunk-98](assets/fig/unnamed-chunk-98-1.pdf)
+
+--- &twocol
 
 ## Figure margins
 
-- mar and oma, xaxs et yaxs
+*** =left
+- To change the figure margins you have to change the values of the parameter `mar` in the `par()`
+- The order is the follow: bottom, left, top and right
+- For example:
+
+
+```r
+par(mar = c(4, 4, 4, 4))
+```
+
+<!-- *** =right -->
 
 --- .tocenter2
 
 ## Exercise 1
 
-![plot of chunk unnamed-chunk-74](assets/fig/unnamed-chunk-74-1.pdf)
+![plot of chunk unnamed-chunk-100](assets/fig/unnamed-chunk-100-1.pdf)
+
+--- &twocol
+
+## Exercise 1
+
+*** =left
+
+- Objective: reproduce this figure
+- Using the dataset `iris.txt` (Dropbox)
+
+
+```r
+head(tab)
+##   species petal.l petal.w n
+## 1  setosa     1.4     0.2 8
+## 2  setosa     1.3     0.2 4
+## 3  setosa     1.5     0.2 7
+## 4  setosa     1.7     0.4 1
+## 5  setosa     1.4     0.3 3
+## 6  setosa     1.5     0.1 2
+```
+
+*** =right
+
+- The size of the bubble is proportional to `n`
+- Lines represent regression model and standard error
 
 --- .transition
 
@@ -1174,7 +1525,7 @@ par(mfcol=c(2,2))
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-78](assets/fig/unnamed-chunk-78-1.pdf)
+![plot of chunk unnamed-chunk-105](assets/fig/unnamed-chunk-105-1.pdf)
 
 
 --- &twocol
@@ -1192,7 +1543,7 @@ split.screen(c(3, 1), screen = 2)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-80](assets/fig/unnamed-chunk-80-1.pdf)
+![plot of chunk unnamed-chunk-107](assets/fig/unnamed-chunk-107-1.pdf)
 
 
 --- &twocol
@@ -1211,7 +1562,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-82](assets/fig/unnamed-chunk-82-1.pdf)
+![plot of chunk unnamed-chunk-109](assets/fig/unnamed-chunk-109-1.pdf)
 
 
 --- &twocol
@@ -1235,7 +1586,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-85](assets/fig/unnamed-chunk-85-1.pdf)
+![plot of chunk unnamed-chunk-112](assets/fig/unnamed-chunk-112-1.pdf)
 
 
 --- &twocol
@@ -1259,7 +1610,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-88](assets/fig/unnamed-chunk-88-1.pdf)
+![plot of chunk unnamed-chunk-115](assets/fig/unnamed-chunk-115-1.pdf)
 
 
 --- &twocol
@@ -1275,7 +1626,7 @@ layout(mat_lay, widths=c(.25,1,1))
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-90](assets/fig/unnamed-chunk-90-1.pdf)
+![plot of chunk unnamed-chunk-117](assets/fig/unnamed-chunk-117-1.pdf)
 
 
 --- &twocol
@@ -1292,7 +1643,7 @@ layout(mat_lay, widths=c(.25,1,1),
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-92](assets/fig/unnamed-chunk-92-1.pdf)
+![plot of chunk unnamed-chunk-119](assets/fig/unnamed-chunk-119-1.pdf)
 
 
 --- &twocol
@@ -1316,7 +1667,7 @@ for (i in 1:4) {
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-94](assets/fig/unnamed-chunk-94-1.pdf)
+![plot of chunk unnamed-chunk-121](assets/fig/unnamed-chunk-121-1.pdf)
 
 
 
@@ -1339,7 +1690,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-96](assets/fig/unnamed-chunk-96-1.pdf)
+![plot of chunk unnamed-chunk-123](assets/fig/unnamed-chunk-123-1.pdf)
 
 
 --- &twocol
@@ -1362,7 +1713,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-98](assets/fig/unnamed-chunk-98-1.pdf)
+![plot of chunk unnamed-chunk-125](assets/fig/unnamed-chunk-125-1.pdf)
 
 
 --- &twocol
@@ -1386,7 +1737,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-100](assets/fig/unnamed-chunk-100-1.pdf)
+![plot of chunk unnamed-chunk-127](assets/fig/unnamed-chunk-127-1.pdf)
 
 <!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
 
@@ -1605,6 +1956,7 @@ dev.off()
 - CRAN task view fro graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
 - more packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
 - ggplot2 website &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://docs.ggplot2.org/current/)
+- Color: [An interesting blog post](http://www.stat.ubc.ca/~jenny/STAT545A/block14_colors.html)
 
 
 

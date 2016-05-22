@@ -515,8 +515,6 @@ par(mar = c(4, 4, 1.5, 1.5),
     col.axis = 'black',
     fg = 'black')
 plot(x = dat$x, y = dat$y, cex = 1.5, axes = FALSE, ann = FALSE, type = 'n')
-par(family = 'serif')
-text(1, 1, 'Oops!', font = 4, cex = 5, col = '#aaaaaa')
 ## @knitr end_empty_7
 
 ################################################################################
@@ -898,12 +896,12 @@ polygon(x = c(xsup, xinf), y = c(ysup, yinf),
 plot(x = dat$x, y = dat$y, bty = 'n',
      type = 'p', pch = 19)
 
-## Adding model regression
-lines(x = mat$x, y = ypred$fit, lwd = 3)
-
 ## Adding error envelope
 polygon(x = c(xsup, xinf), y = c(ysup, yinf),
         col = '#aaaaaa88', border = '#aaaaaa88')
+
+## Adding model regression
+lines(x = mat$x, y = ypred$fit, lwd = 3)
 ## @knitr end_polygons_3_cmd
 
 ################################################################################
@@ -918,10 +916,237 @@ par(mar = c(4, 4, 1.5, 1.5),
 plot(x = dat$x, y = dat$y, bty = 'n',
      type = 'p', pch = 19)
 
-## Adding model regression
-lines(x = mat$x, y = ypred$fit, lwd = 3)
-
 ## Adding error envelope
 polygon(x = c(xsup, xinf), y = c(ysup, yinf),
         col = '#aaaaaa88', border = '#aaaaaa88')
+
+## Adding model regression
+lines(x = mat$x, y = ypred$fit, lwd = 3)
 ## @knitr end_polygons_3
+
+################################################################################
+
+## @knitr rect_1
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+rect(xleft = 0.9, ybottom = 0.8, xright = 1.1, ytop = 1.2, density = 20, angle = 45)
+## @knitr end_rect_1
+
+################################################################################
+
+## @knitr rect_1_cmd
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+rect(xleft = 0.9, ybottom = 0.8,
+     xright = 1.1, ytop = 1.2,
+     density = 20, angle = 45)
+## @knitr end_rect_1_cmd
+
+################################################################################
+
+## @knitr rect_2
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+rect(xleft = 0.9, ybottom = 0.8, xright = 1.1, ytop = 1.2,
+     col = 'yellow', border = 'red',
+     lwd = 4, lty = 3)
+## @knitr end_rect_2
+
+################################################################################
+
+## @knitr rect_2_cmd
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+rect(xleft = 0.9, ybottom = 0.8,
+     xright = 1.1, ytop = 1.2,
+     col = 'yellow', border = 'red',
+     lwd = 4, lty = 3)
+## @knitr end_rect_2_cmd
+
+###############################################################################
+
+## @knitr text_1
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+## Adding title
+title(main = 'Figure title')
+## @knitr end_text_1
+
+################################################################################
+
+## @knitr text_1_cmd
+## Basic plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding title
+title(main = 'Figure title')
+## @knitr end_text_1_cmd
+
+
+## @knitr text_1
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+## Adding title
+title(main = 'Figure title')
+## @knitr end_text_1
+
+################################################################################
+
+## @knitr text_2_cmd
+## Basic plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+
+## Adding text
+text(x = 0.7, y = 1.19,
+     labels = 'Figure title')
+## @knitr end_text_2_cmd
+
+## @knitr text_2
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19)
+## Adding text
+text(x = 0.7, y = 1.19,
+     labels = 'Figure title')
+## @knitr end_text_2
+
+################################################################################
+
+## @knitr text_3_cmd
+## Basic plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'n')
+
+## Adding text
+text(x = 1, y = 1, labels = 'My text', col = 'red', 
+     cex = 2, font = 2, family = 'mono')
+## @knitr end_text_3_cmd
+
+## @knitr text_3
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'n')
+## Adding text
+text(x = 1, y = 1, labels = 'My text',
+     col = 'red', cex = 2, font = 2, family = 'mono')
+## @knitr end_text_3
+
+################################################################################
+
+## @knitr text_4_cmd
+## Basic plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'n')
+
+## Adding text
+text(x = 0.6, y = 0.85, labels = 'pos = 4 (right)',
+     cex = 2, font = 1, pos = 4)
+text(x = 1, y = 1, labels = 'Rotated text',
+     cex = 2, font = 2, srt = 45)
+## @knitr end_text_4_cmd
+
+## @knitr text_4
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'n')
+## Adding text
+text(x = 0.6, y = 0.85, labels = 'pos = 4 (right)',
+     cex = 2, font = 1, pos = 4)
+text(x = 1, y = 1, labels = 'Rotated text',
+     cex = 2, font = 2, srt = 45)
+## @knitr end_text_4
+
+################################################################################
+
+## @knitr text_5_cmd
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n', type = 'n')
+
+## Adding text
+text(x = dat$x, y = dat$y, labels = dat$z)
+## @knitr end_text_5_cmd
+
+## @knitr text_5
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'n', pch = 19)
+## Adding text
+text(x = dat$x, y = dat$y,
+     labels = dat$z)
+## @knitr end_text_5
+
+################################################################################
+
+## @knitr text_6_cmd
+## Basic plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19, ylab = '')
+
+## Adding text
+mtext(text = 'y-axis', side = 2, line = 2,
+      at = 1.15, font = 2, cex = 2)
+## @knitr end_text_6_cmd
+
+## @knitr text_6
+par(mar = c(4, 4, 1.5, 1.5),
+    bg = 'transparent',
+    col.lab = 'black',
+    col.axis = 'black',
+    fg = 'black')
+## Empty plot
+plot(x = dat$x, y = dat$y, bty = 'n',
+     type = 'p', pch = 19, ylab = '')
+## Adding text
+mtext(text = 'y-axis', side = 2, line = 2,
+      at = 1.15, font = 2, cex = 2)
+## @knitr end_text_6
