@@ -11,11 +11,18 @@ setwd("~/Github/formations/QCBSgraphR")
 load("data/word_eng.Rdata")
 ##
 countbin <- function(pos, sz, bin=15){
-  seqy <- seq(0, sz, len=bin+1)
-  bin <- which(floor(seqy-floor((pos-1)))==0)
-  val1 <- bin[min(out)
-  return(out)
-  seq(bd1,bd2)
+  cool <- (pos+c(-1,0))/sz*(bin-1)
+  print(cool)
+  rt1 <- cool[1]-floor(cool[1])
+  rt2 <- cool[2]-floor(cool[2])
+  if (rt2>0) rg <- floor(cool[1]):(floor(cool[2]))
+  else rg <- floor(cool[1]):(floor(cool[2]))
+  rg <- rg+1
+  val <- rep(1,length(rg))
+
+  if (rt2>0) val[length(val)] <- rt2
+  if (rt1>0) val[1] <- rt1
+  return(cbind(rg,val=val/sum(val)))
 }
 countbin(2, sz=12, bin=15)
 
