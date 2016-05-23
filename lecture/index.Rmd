@@ -1957,19 +1957,6 @@ dev.off()
 
 ## Let's practice!
 
----
-
-## Three challenges
-
-- CRAN task view fro graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
-- more packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
-- ggplot2 website &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://docs.ggplot2.org/current/)
-- Color: [An interesting blog post](http://www.stat.ubc.ca/~jenny/STAT545A/block14_colors.html)
-- And an useful document: &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/material/assets/graphR_2014.pdf)
-
-
-
-
 
 --- .transition
 

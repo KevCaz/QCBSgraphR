@@ -1,15 +1,10 @@
-#######
-##
-##
-##
-##
-##
-##
-##
-setwd("~/Github/formations/QCBSgraphR")
-##
-load("data/word_eng.Rdata")
-##
+###############################################################
+###############################################################
+
+
+## Functions methodology => david Taylor
+## See http://www.prooffreader.com/2014/05/graphing-distribution-of-english.html
+
 countbin <- function(pos, sz, bin=15){
   cool <- (pos+c(-1,0))/sz*(bin)
   # print(cool)
@@ -24,22 +19,15 @@ countbin <- function(pos, sz, bin=15){
   return(cbind(rg,val=val/sum(val)))
 }
 
-# countbin(2, sz=12, bin=15)
 
+##
+setwd("~/Dropbox/QCBS_DV/exo2")
+
+load("word_eng.Rdata")
 ##
 letter_tot <- unlist(strsplit(word_eng,""))
 letter_freq <- table(letter_tot)/length(letter_tot)*100
-# plot(letter_freq, type="h")
-##
-mycount <- function(x, pattern="a"){
-  vec <- unlist(strsplit(x,""))
-  val <- grep(pattern, vec)
-  sz
-  if (length(val)==0) out <- 0 else {
-
-  }
-  return(out)
-}
+## plot(letter_freq, type="h")
 ##
 datlet <- data.frame(matrix(0,15,26))
 colnames(datlet) <- letters[1:26]
@@ -65,14 +53,22 @@ for (i in 1:26){
 cat("\n")
 
 
+
+###############################################################
+###############################################################
+
+load("datlet.Rdata")
+
+fallInto <- function (x) max(which(x > mybin))
+mypal <- colorRampPalette(c("#ffffd1","#981729"))(8)
+mybin <- c(0,0.1,0.5,1,2,3,5,9)
+categ <- sapply(letter_freq, fallInto)
+
+
 ## Figure
 pdf("~/Desktop/cool.pdf", width=6, height=12)
 
-mypal <- colorRampPalette(c("#ffffd1","#981729"))(8)
-mybin <- c(0,0.1,0.5,1,2,3,5,9)
 
-fallInto <- function (x) max(which(x > mybin))
-categ <- sapply(letter_freq, fallInto)
 
 lay_mat <- matrix(1:26,13)
 lay_mat <- rbind(27,lay_mat,28)
@@ -96,3 +92,16 @@ mtext(side=3, at=0, text="Frequency of letters:")
 axis(1, at=seq(-1/14,1+1/14,len=9),labels=paste0(c(mybin,13), "%"), lwd=0)
 
 dev.off()
+
+
+
+
+
+###############################################################
+###############################################################
+
+## figures
+
+
+for (i in 1:)
+plot()
