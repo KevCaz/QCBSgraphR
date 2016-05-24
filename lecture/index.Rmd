@@ -9,14 +9,12 @@ hitheme     : tomorrow      #
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
+user        : KevCaz
+repo        : QCBSgraphR
 assets      :
   css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
 ---
 
-
-<!-- Rq:
-1. Faudra faire attention si on met des majuscule en début d'hyphenation...
--->
 
 
 <!-- Setting knitr  -->
@@ -30,20 +28,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-<!-- Call the script -->
+<!-- Call our scripts -->
 
 ```{r echo = FALSE}
 for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
     knitr::read_chunk(i)
 ```
 
-
-
-<!-- <style>
-article li.build {
-  font-size: 16px;
-}
-</style> -->
 
 
 ## Outline
@@ -1946,26 +1937,30 @@ dev.off()
 
 
 
-
-
-
-
-
-
-
 --- .transition
-
 ## Let's practice!
 
 
---- .transition
-
-## Resources
 
 ---
+## Exercise 2
 
+Reproduce the [figure depicting distribution of english letters made by David Taylor](http://www.prooffreader.com/2014/05/graphing-distribution-of-english.html) :
+
+- **advanced users** : try to find relevant data and to reproduce the methodology described;
+
+- **beginners** : use the data ('data/word_eng.Rdata' file available on &nbsp;&nbsp;[<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/KevCaz/QCBSgraphR).
+
+
+
+
+--- .transition
 ## Resources
 
-- CRAN task view fro graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
-- more packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
+
+---
+## Resources
+
+- CRAN task view for graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
+- more R packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
 - ggplot2 website &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://docs.ggplot2.org/current/)

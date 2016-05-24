@@ -9,30 +9,21 @@ hitheme     : tomorrow      #
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
+user        : KevCaz
+repo        : QCBSgraphR
 assets      :
   css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
 ---
 
 
-<!-- Rq:
-1. Faudra faire attention si on met des majuscule en début d'hyphenation...
--->
-
 
 <!-- Setting knitr  -->
 
 
-<!-- Call the script -->
+<!-- Call our scripts -->
 
 
 
-
-
-<!-- <style>
-article li.build {
-  font-size: 16px;
-}
-</style> -->
 
 
 ## Outline
@@ -2065,37 +2056,28 @@ dev.off()
 
 
 
-
-
-
-
-
-
-
 --- .transition
-
 ## Let's practice!
 
+
+
 ---
+## Exercise 2
 
-## Three challenges
+Reproduce the [figure depicting distribution of english letters made by David Taylor](http://www.prooffreader.com/2014/05/graphing-distribution-of-english.html) :
 
-- CRAN task view fro graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
-- more packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
-- ggplot2 website &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://docs.ggplot2.org/current/)
-- Color: [An interesting blog post](http://www.stat.ubc.ca/~jenny/STAT545A/block14_colors.html)
-- And an useful document: &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/material/assets/graphR_2014.pdf)
+- **advanced users** : try to find relevant data and to reproduce the methodology described;
 
+- **beginners** : use the data ('data/word_eng.Rdata' file available on &nbsp;&nbsp;[<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/KevCaz/QCBSgraphR).
 
 
 
 
 --- .transition
-
 ## Resources
 
----
 
+---
 ## Resources
 
 - CRAN task view fro graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
