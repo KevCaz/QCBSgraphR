@@ -979,7 +979,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 *** =left
 
-- The function `rect()` is appropiated when you want to add draw rectangle
+- `rect()` is appropriated when you want to add draw rectangle
 - Here is an example
 
 ```{r eval = FALSE}
@@ -1038,7 +1038,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 - What about adding text in the plot area?
 - We will use the function `text()`
-- Here is a first example
+- Here is a first example:
 
 ```{r eval = FALSE}
 <<text_2_cmd>>
@@ -1056,7 +1056,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 *** =left
 
-- And another example
+- another example
 
 ```{r eval = FALSE}
 <<text_5_cmd>>
