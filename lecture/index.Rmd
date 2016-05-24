@@ -1330,25 +1330,31 @@ par(mar = c(4, 4, 4, 4))
 
 *** =left
 
-- Objective: reproduce this figure
+- Use the dataset in 'iris.txt' (available on &nbsp;&nbsp;[<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/KevCaz/QCBSgraphR) in the  'data' folder)
 - Using the dataset `iris.txt` (Dropbox)
 
 ```{r echo = TRUE}
-head(tab)
+<<tabex1>>
 ```
 
 *** =right
 
-- The size of the bubble is proportional to `n`
-- Lines represent regression model and standard error
-
---- .tocenter2
-
-## Exercise 1
-
 ```{r echo = FALSE, fig.height = 7, fig.width = 7}
 <<Exercise_1>>
 ```
+
+<!-- - The size of the bubble is proportional to `n`
+- Lines represent regression model and standard error
+ -->
+
+
+
+
+
+
+
+
+
 
 --- .transition
 
@@ -1587,7 +1593,6 @@ layout(mat_lay, widths=c(.25,1,1),
 <<fignew2>>
 ```
 
-<!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
 
 
 

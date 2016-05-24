@@ -1463,25 +1463,40 @@ par(mar = c(4, 4, 4, 4))
 
 *** =left
 
-- Objective: reproduce this figure
+- Use the dataset in 'iris.txt' (available on &nbsp;&nbsp;[<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/KevCaz/QCBSgraphR) in the  'data' folder)
 - Using the dataset `iris.txt` (Dropbox)
 
 
 ```r
+## Importing data
+tab <- read.delim('../data/iris.txt')
 head(tab)
-## Error in head(tab): objet 'tab' introuvable
+##   species petal.l petal.w n
+## 1  setosa     1.4     0.2 8
+## 2  setosa     1.3     0.2 4
+## 3  setosa     1.5     0.2 7
+## 4  setosa     1.7     0.4 1
+## 5  setosa     1.4     0.3 3
+## 6  setosa     1.5     0.1 2
 ```
 
 *** =right
 
-- The size of the bubble is proportional to `n`
-- Lines represent regression model and standard error
-
---- .tocenter2
-
-## Exercise 1
-
 ![plot of chunk unnamed-chunk-101](assets/fig/unnamed-chunk-101-1.pdf)
+
+
+<!-- - The size of the bubble is proportional to `n`
+- Lines represent regression model and standard error
+ -->
+
+
+
+
+
+
+
+
+
 
 --- .transition
 
@@ -1724,7 +1739,6 @@ for (i in 1:4) {
 
 ![plot of chunk unnamed-chunk-127](assets/fig/unnamed-chunk-127-1.pdf)
 
-<!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
 
 
 

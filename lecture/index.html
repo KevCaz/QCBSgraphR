@@ -2098,38 +2098,36 @@ axis(side = 4, at = seq(0.8, 1.2, by = 0.1),
     
 <div style='float:left;width:49%;margin-top:0;margin-bottom:10%;'>  <!-- class='centered'> -->
   <ul>
-<li>Objective: reproduce this figure</li>
+<li>Use the dataset in &#39;iris.txt&#39; (available on &nbsp;&nbsp;<a href="https://github.com/KevCaz/QCBSgraphR"><i class="fa fa-github" aria-hidden="true"></i></a> in the  &#39;data&#39; folder)</li>
 <li>Using the dataset <code>iris.txt</code> (Dropbox)</li>
 </ul>
 
-<pre><code class="r">head(tab)
-## Error in head(tab): objet &#39;tab&#39; introuvable
+<pre><code class="r">## Importing data
+tab &lt;- read.delim(&#39;../data/iris.txt&#39;)
+head(tab)
+##   species petal.l petal.w n
+## 1  setosa     1.4     0.2 8
+## 2  setosa     1.3     0.2 4
+## 3  setosa     1.5     0.2 7
+## 4  setosa     1.7     0.4 1
+## 5  setosa     1.4     0.3 3
+## 6  setosa     1.5     0.1 2
 </code></pre>
 
 </div>
 <div style='float:right;width:49%;margin-top:0;margin-bottom:10;padding-top=-2'>
-  <ul>
-<li>The size of the bubble is proportional to <code>n</code></li>
-<li>Lines represent regression model and standard error</li>
-</ul>
+  <p><img src="assets/fig/unnamed-chunk-101-1.pdf" alt="plot of chunk unnamed-chunk-101"></p>
+
+<!-- - The size of the bubble is proportional to `n`
+- Lines represent regression model and standard error
+ -->
 
 </div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="tocenter2" id="slide-78" style="background:;">
-  <hgroup>
-    <h2>Exercise 1</h2>
-  </hgroup>
-  <article data-timings="">
-    <p><img src="assets/fig/unnamed-chunk-101-1.pdf" alt="plot of chunk unnamed-chunk-101"></p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="transition" id="slide-79" style="background:;">
+<slide class="transition" id="slide-78" style="background:;">
   <hgroup>
     <h2>Composition and multipanel plotting</h2>
   </hgroup>
@@ -2139,7 +2137,7 @@ axis(side = 4, at = seq(0.8, 1.2, by = 0.1),
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-80" style="background:;">
+<slide class="" id="slide-79" style="background:;">
   <hgroup>
     <h2>Dividing the output device</h2>
   </hgroup>
@@ -2167,7 +2165,7 @@ axis(side = 4, at = seq(0.8, 1.2, by = 0.1),
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-81" style="background:;">
+<slide class="" id="slide-80" style="background:;">
   <hgroup>
     <h2>Dividing the output device</h2>
   </hgroup>
@@ -2192,7 +2190,7 @@ split.screen(c(3, 1), screen = 2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-82" style="background:;">
+<slide class="" id="slide-81" style="background:;">
   <hgroup>
     <h2>Dividing the output device</h2>
   </hgroup>
@@ -2218,7 +2216,7 @@ layout(mat_lay)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-83" style="background:;">
+<slide class="" id="slide-82" style="background:;">
   <hgroup>
     <h2>More about &#39;layout()&#39;</h2>
   </hgroup>
@@ -2244,7 +2242,7 @@ layout(mat_lay)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-84" style="background:;">
+<slide class="" id="slide-83" style="background:;">
   <hgroup>
     <h2>More about &#39;layout()&#39;</h2>
   </hgroup>
@@ -2270,7 +2268,7 @@ layout(mat_lay)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-85" style="background:;">
+<slide class="" id="slide-84" style="background:;">
   <hgroup>
     <h2>More about &#39;layout()&#39;</h2>
   </hgroup>
@@ -2290,7 +2288,7 @@ layout(mat_lay, widths=c(.25,1,1))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-86" style="background:;">
+<slide class="" id="slide-85" style="background:;">
   <hgroup>
     <h2>More about &#39;layout()&#39;</h2>
   </hgroup>
@@ -2311,7 +2309,7 @@ layout(mat_lay, widths=c(.25,1,1),
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-87" style="background:;">
+<slide class="" id="slide-86" style="background:;">
   <hgroup>
     <h2>Combining &#39;layout()&#39; and &#39;mar&#39;</h2>
   </hgroup>
@@ -2339,7 +2337,7 @@ for (i in 1:4) {
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-88" style="background:;">
+<slide class="" id="slide-87" style="background:;">
   <hgroup>
     <h2>Embedded plots</h2>
   </hgroup>
@@ -2366,7 +2364,7 @@ for (i in 1:4) {
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-89" style="background:;">
+<slide class="" id="slide-88" style="background:;">
   <hgroup>
     <h2>Embedded plots</h2>
   </hgroup>
@@ -2395,7 +2393,7 @@ for (i in 1:4) {
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-90" style="background:;">
+<slide class="" id="slide-89" style="background:;">
   <hgroup>
     <h2>Embedded plots</h2>
   </hgroup>
@@ -2421,14 +2419,12 @@ plot(...)
 <div style='float:right;width:49%;margin-top:0;margin-bottom:10;padding-top=-2'>
   <p><img src="assets/fig/unnamed-chunk-127-1.pdf" alt="plot of chunk unnamed-chunk-127"></p>
 
-<!-- http://www.r-bloggers.com/digging-up-embedded-plots/ -->
-
 </div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-91" style="background:;">
+<slide class="transition" id="slide-90" style="background:;">
   <hgroup>
     <h2>Exporting figures from the command line</h2>
   </hgroup>
@@ -2438,7 +2434,7 @@ plot(...)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-92" style="background:;">
+<slide class="" id="slide-91" style="background:;">
   <hgroup>
     <h2>grDevices</h2>
   </hgroup>
@@ -2451,7 +2447,7 @@ plot(...)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-93" style="background:;">
+<slide class="" id="slide-92" style="background:;">
   <hgroup>
     <h2>grDevices</h2>
   </hgroup>
@@ -2479,7 +2475,7 @@ plot(...)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-94" style="background:;">
+<slide class="" id="slide-93" style="background:;">
   <hgroup>
     <h2>Exporting figures as bitmap files</h2>
   </hgroup>
@@ -2511,7 +2507,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-95" style="background:;">
+<slide class="" id="slide-94" style="background:;">
   <hgroup>
     <h2>Exporting figures as bitmap files</h2>
   </hgroup>
@@ -2532,7 +2528,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-96" style="background:;">
+<slide class="" id="slide-95" style="background:;">
   <hgroup>
     <h2>Exporting figures as bitmap files</h2>
   </hgroup>
@@ -2555,7 +2551,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-97" style="background:;">
+<slide class="" id="slide-96" style="background:;">
   <hgroup>
     <h2>Exporting figures as bitmap files</h2>
   </hgroup>
@@ -2577,7 +2573,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-98" style="background:;">
+<slide class="" id="slide-97" style="background:;">
   <hgroup>
     <h2>Exporting figures as bitmap files</h2>
   </hgroup>
@@ -2607,7 +2603,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-99" style="background:;">
+<slide class="" id="slide-98" style="background:;">
   <hgroup>
     <h2>Exporting figures as bitmap files</h2>
   </hgroup>
@@ -2628,7 +2624,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-100" style="background:;">
+<slide class="" id="slide-99" style="background:;">
   <hgroup>
     <h2>Exporting figures as bitmap files</h2>
   </hgroup>
@@ -2650,7 +2646,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-101" style="background:;">
+<slide class="" id="slide-100" style="background:;">
   <hgroup>
     <h2>Exporting figures as bitmap files</h2>
   </hgroup>
@@ -2672,7 +2668,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-102" style="background:;">
+<slide class="" id="slide-101" style="background:;">
   <hgroup>
     <h2>Exporting figures as bitmap files</h2>
   </hgroup>
@@ -2694,7 +2690,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-103" style="background:;">
+<slide class="" id="slide-102" style="background:;">
   <hgroup>
     <h2>Exporting figures as bitmap files</h2>
   </hgroup>
@@ -2716,7 +2712,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-104" style="background:;">
+<slide class="" id="slide-103" style="background:;">
   <hgroup>
     <h2>Exporting figures as vector files</h2>
   </hgroup>
@@ -2742,7 +2738,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-105" style="background:;">
+<slide class="" id="slide-104" style="background:;">
   <hgroup>
     <h2>Exporting figures as vector files</h2>
   </hgroup>
@@ -2764,7 +2760,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-106" style="background:;">
+<slide class="" id="slide-105" style="background:;">
   <hgroup>
     <h2>Exporting figures as vector files</h2>
   </hgroup>
@@ -2786,7 +2782,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-107" style="background:;">
+<slide class="transition" id="slide-106" style="background:;">
   <hgroup>
     <h2>Let&#39;s practice!</h2>
   </hgroup>
@@ -2796,7 +2792,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-108" style="background:;">
+<slide class="" id="slide-107" style="background:;">
   <hgroup>
     <h2>Exercise 2</h2>
   </hgroup>
@@ -2812,7 +2808,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="transition" id="slide-109" style="background:;">
+<slide class="transition" id="slide-108" style="background:;">
   <hgroup>
     <h2>Resources</h2>
   </hgroup>
@@ -2822,7 +2818,7 @@ dev.off()
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-110" style="background:;">
+<slide class="" id="slide-109" style="background:;">
   <hgroup>
     <h2>Resources</h2>
   </hgroup>
@@ -3305,13 +3301,13 @@ dev.off()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=78 title='Exercise 1'>
+        data-slide=78 title='Composition and multipanel plotting'>
          78
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=79 title='Composition and multipanel plotting'>
+        data-slide=79 title='Dividing the output device'>
          79
       </a>
     </li>
@@ -3329,7 +3325,7 @@ dev.off()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=82 title='Dividing the output device'>
+        data-slide=82 title='More about &#39;layout()&#39;'>
          82
       </a>
     </li>
@@ -3353,13 +3349,13 @@ dev.off()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=86 title='More about &#39;layout()&#39;'>
+        data-slide=86 title='Combining &#39;layout()&#39; and &#39;mar&#39;'>
          86
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=87 title='Combining &#39;layout()&#39; and &#39;mar&#39;'>
+        data-slide=87 title='Embedded plots'>
          87
       </a>
     </li>
@@ -3377,13 +3373,13 @@ dev.off()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=90 title='Embedded plots'>
+        data-slide=90 title='Exporting figures from the command line'>
          90
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=91 title='Exporting figures from the command line'>
+        data-slide=91 title='grDevices'>
          91
       </a>
     </li>
@@ -3395,7 +3391,7 @@ dev.off()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=93 title='grDevices'>
+        data-slide=93 title='Exporting figures as bitmap files'>
          93
       </a>
     </li>
@@ -3455,7 +3451,7 @@ dev.off()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=103 title='Exporting figures as bitmap files'>
+        data-slide=103 title='Exporting figures as vector files'>
          103
       </a>
     </li>
@@ -3473,19 +3469,19 @@ dev.off()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=106 title='Exporting figures as vector files'>
+        data-slide=106 title='Let&#39;s practice!'>
          106
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=107 title='Let&#39;s practice!'>
+        data-slide=107 title='Exercise 2'>
          107
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=108 title='Exercise 2'>
+        data-slide=108 title='Resources'>
          108
       </a>
     </li>
@@ -3493,12 +3489,6 @@ dev.off()
       <a href="#" target="_self" rel='tooltip' 
         data-slide=109 title='Resources'>
          109
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=110 title='Resources'>
-         110
       </a>
     </li>
   </ul>

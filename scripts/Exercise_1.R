@@ -1,7 +1,10 @@
-## @knitr Exercise_1
+## @knitr tabex1
 
 ## Importing data
 tab <- read.delim('../data/iris.txt')
+head(tab)
+
+## @knitr Exercise_1
 
 ## Graphical parameters settings
 par(xaxs = 'i', yaxs = 'i', mar = c(3, 3, 2, 2), family = 'serif')
