@@ -75,8 +75,8 @@ cat("\n")
 load("data/dat_let.Rdata")
 load("data/let_frq.Rdata")
 
-dat_let <- dat_let
-let_freq <- let_frq
+dat_let <- dat_let_fr
+let_freq <- let_frq_fr
 
 fallInto <- function (x) max(which(x > mybin))
 # mypal <- colorRampPalette(c("#ffffd1","#981729"))(8)
