@@ -1,6 +1,8 @@
 ###############################################################
-###############################################################
+##################### I- Get the data #########################
 
+## For those who simply want to reproduce only the figure,
+## do directly to section II
 
 ## Functions methodology => david Taylor
 ## See http://www.prooffreader.com/2014/05/graphing-distribution-of-english.html
@@ -21,12 +23,13 @@ countbin <- function(pos, sz, bin=15){
 
 
 ##
-setwd("~/Dropbox/QCBS_DV/exo2")
+## Set your directory 'setwd()'
 
 load("word_eng.Rdata")
 ##
 letter_tot <- unlist(strsplit(word_eng,""))
 letter_freq <- table(letter_tot)/length(letter_tot)*100
+## a quick plo of the letter frequency:
 ## plot(letter_freq, type="h")
 ##
 datlet <- data.frame(matrix(0,15,26))
@@ -52,10 +55,14 @@ for (i in 1:26){
 }
 cat("\n")
 
+# save(datlet, file="datlet.Rdata")
+
+
+
 
 
 ###############################################################
-###############################################################
+################### I- Get the figure #########################
 
 load("datlet.Rdata")
 
@@ -68,27 +75,25 @@ categ <- sapply(letter_freq, fallInto)
 ## Figure
 pdf("~/Desktop/cool.pdf", width=6, height=12)
 
+  lay_mat <- matrix(1:26,13)
+  lay_mat <- rbind(27,lay_mat,28)
+  layout(lay_mat)
 
-
-lay_mat <- matrix(1:26,13)
-lay_mat <- rbind(27,lay_mat,28)
-layout(lay_mat)
-
-par(mar=c(1,1.8,0,0), las=1)
-for (i in 1:26){
-  vec <- datlet[,i]/sum(datlet[,i])
-  plot(vec, type = 'l', axes=FALSE, ann=FALSE)
-  polygon(c(1,1:15,15),c(0,vec,0), border=NA, col=mypal[categ[i]])
-  mtext(side=2, letters[i], cex=1.2)
-}
-## Title
-plot(0,0, ann=FALSE, axes=FALSE, type="n")
-text(0,.35,c("Distribution of English Letters toward"),cex=2)
-text(0,-.45,c("beggining, middle, and end of words"),cex=2)
-## Legend
-par(mar=c(2,8,3,8), mgp=c(3,0.4,0))
-image(matrix(1:8,ncol=1), col=mypal, axes=FALSE, ann=FALSE)
-mtext(side=3, at=0, text="Frequency of letters:")
-axis(1, at=seq(-1/14,1+1/14,len=9),labels=paste0(c(mybin,13), "%"), lwd=0)
+  par(mar=c(1,1.8,0,0), las=1)
+  for (i in 1:26){
+    vec <- datlet[,i]/sum(datlet[,i])
+    plot(vec, type = 'l', axes=FALSE, ann=FALSE)
+    polygon(c(1,1:15,15),c(0,vec,0), border=NA, col=mypal[categ[i]])
+    mtext(side=2, letters[i], cex=1.2)
+  }
+  ## Title
+  plot(0,0, ann=FALSE, axes=FALSE, type="n")
+  text(0,.35,c("Distribution of English Letters toward"),cex=2)
+  text(0,-.45,c("beggining, middle, and end of words"),cex=2)
+  ## Legend
+  par(mar=c(2,8,3,8), mgp=c(3,0.4,0))
+  image(matrix(1:8,ncol=1), col=mypal, axes=FALSE, ann=FALSE)
+  mtext(side=3, at=0, text="Frequency of letters:")
+  axis(1, at=seq(-1/14,1+1/14,len=9),labels=paste0(c(mybin,13), "%"), lwd=0)
 
 dev.off()

@@ -58,7 +58,7 @@ assets      :
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 <!-- *** =left -->
 
@@ -67,7 +67,7 @@ assets      :
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 *** =left
 - Chart area
@@ -77,7 +77,7 @@ assets      :
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 *** =left
 - Chart area
@@ -88,7 +88,7 @@ assets      :
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 *** =left
 - Chart area
@@ -101,7 +101,7 @@ assets      :
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 *** =left
 - Chart area
@@ -114,7 +114,7 @@ assets      :
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 *** =left
 - Chart area
@@ -128,7 +128,7 @@ assets      :
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 *** =left
 - Chart area
@@ -143,11 +143,11 @@ assets      :
 
 ---
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 --- &twocol
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 *** =left
 - Do not use pie chart
@@ -159,7 +159,7 @@ assets      :
 
 --- &twocol
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 *** =left
 - Do not use pie chart
@@ -172,7 +172,7 @@ assets      :
 
 --- &twocol
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 *** =left
 - Do not use more than 6 colors
@@ -183,7 +183,7 @@ assets      :
 
 --- &twocol
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 *** =left
 - Do not use more than 6 colors
@@ -195,7 +195,7 @@ assets      :
 
 --- &twocol
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 *** =left
 - Write textual informations horizontally
@@ -207,7 +207,7 @@ assets      :
 
 --- &twocol
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 *** =left
 - Write textual informations horizontally
@@ -220,7 +220,7 @@ assets      :
 
 ---
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 <q>Each element of a graph has to help understanding data</q>
 
@@ -1085,7 +1085,7 @@ lines(x = mat$x, y = ypred$fit, lwd = 3)
 
 *** =left
 
-- The function `rect()` is appropiated when you want to add draw rectangle
+- `rect()` is appropriated when you want to add draw rectangle
 - Here is an example
 
 
@@ -1157,7 +1157,7 @@ title(main = 'Figure title')
 
 - What about adding text in the plot area?
 - We will use the function `text()`
-- Here is a first example
+- Here is a first example:
 
 
 ```r
@@ -1180,7 +1180,7 @@ text(x = 0.7, y = 1.19,
 
 *** =left
 
-- And another example
+- another example
 
 
 ```r
@@ -2060,15 +2060,16 @@ dev.off()
 ## Let's practice!
 
 
-
 ---
 ## Exercise 2
 
-Reproduce the [figure depicting distribution of english letters made by David Taylor](http://www.prooffreader.com/2014/05/graphing-distribution-of-english.html) :
+Reproduce the [distribution of english letters made by David Taylor](http://www.prooffreader.com/2014/05/graphing-distribution-of-english.html) :
 
-- **advanced users** : try to find relevant data and to reproduce the methodology described;
+- **advanced users** : try to find relevant dataset (in any language!) and to reproduce the methodology described;
 
-- **beginners** : use the data ('data/word_eng.Rdata' file available on &nbsp;&nbsp;[<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/KevCaz/QCBSgraphR).
+- **beginners** : use the dataset 'data/datlet.Rdata' file available on &nbsp;&nbsp;[<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/KevCaz/QCBSgraphR).
+
+
 
 
 
@@ -2080,6 +2081,6 @@ Reproduce the [figure depicting distribution of english letters made by David Ta
 ---
 ## Resources
 
-- CRAN task view fro graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
-- more packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
+- CRAN task view for graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
+- more R packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
 - ggplot2 website &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://docs.ggplot2.org/current/)

@@ -332,10 +332,10 @@ slides > slide.title-slide:after {
   -o-background-size: contain;
   background-size: contain;
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
   right: 40px;
   width: 100%;
-  height: 60px;
+  height: 50px;
 }
 /* line 206, ../scss/default.scss */
 slides > slide.backdrop {

@@ -24,7 +24,9 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   warning = FALSE,
   message = FALSE,
-  dev = 'pdf'
+  dev = 'pdf',
+  fig.width=6.4,
+  fig.height=6.4
 )
 ```
 
@@ -69,7 +71,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 <!-- *** =left -->
 
@@ -81,7 +83,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 *** =left
 - Chart area
@@ -93,7 +95,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 *** =left
 - Chart area
@@ -106,7 +108,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 *** =left
 - Chart area
@@ -121,7 +123,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 *** =left
 - Chart area
@@ -136,7 +138,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 *** =left
 - Chart area
@@ -152,7 +154,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 --- &twocol
 
-## The components of a graphic
+## The components of a graph
 
 *** =left
 - Chart area
@@ -169,11 +171,11 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 ---
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 --- &twocol
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 *** =left
 - Do not use pie chart
@@ -187,7 +189,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 --- &twocol
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 *** =left
 - Do not use pie chart
@@ -202,7 +204,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 --- &twocol
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 *** =left
 - Do not use more than 6 colors
@@ -215,7 +217,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 --- &twocol
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 *** =left
 - Do not use more than 6 colors
@@ -229,7 +231,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 --- &twocol
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 *** =left
 - Write textual informations horizontally
@@ -243,7 +245,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 --- &twocol
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 *** =left
 - Write textual informations horizontally
@@ -258,7 +260,7 @@ for (i in list.files("../scripts", pattern="*\\.R$", full.names = TRUE))
 
 ---
 
-## Some guidelines for better graphics
+## Some guidelines for better graphs
 
 <q>Each element of a graph has to help understanding data</q>
 
@@ -1941,15 +1943,16 @@ dev.off()
 ## Let's practice!
 
 
-
 ---
 ## Exercise 2
 
-Reproduce the [figure depicting distribution of english letters made by David Taylor](http://www.prooffreader.com/2014/05/graphing-distribution-of-english.html) :
+Reproduce the [distribution of english letters made by David Taylor](http://www.prooffreader.com/2014/05/graphing-distribution-of-english.html) :
 
-- **advanced users** : try to find relevant data and to reproduce the methodology described;
+- **advanced users** : try to find relevant dataset (in any language!) and to reproduce the methodology described;
 
-- **beginners** : use the data ('data/word_eng.Rdata' file available on &nbsp;&nbsp;[<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/KevCaz/QCBSgraphR).
+- **beginners** : use the dataset 'data/datlet.Rdata' file available on &nbsp;&nbsp;[<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/KevCaz/QCBSgraphR).
+
+
 
 
 
