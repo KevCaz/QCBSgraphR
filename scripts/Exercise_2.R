@@ -4,8 +4,9 @@
 ## For those who simply want to reproduce only the figure,
 ## do directly to section II
 
-## Functions methodology => david Taylor
-## See http://www.prooffreader.com/2014/05/graphing-distribution-of-english.html
+## Function to alloacte letters to a choosen number of bins (= convert letter position into bins);
+## see methodology => David Taylor
+## at http://www.prooffreader.com/2014/05/graphing-distribution-of-english.html
 
 countbin <- function(pos, sz, bin=15){
   cool <- (pos+c(-1,0))/sz*(bin)
@@ -22,41 +23,48 @@ countbin <- function(pos, sz, bin=15){
 }
 
 
-##
-## Set your directory 'setwd()'
 
-load("word_eng.Rdata")
+## Set your directory 'setwd()'
+# setwd(yourpath)
+
+
+## Load the data
+# eng
+load("data/word_eng.Rdata")
+# load("data/word_fr.Rdata")
+wrd_ls <- word_eng
+# wrd_ls <- word_fr
 ##
-letter_tot <- unlist(strsplit(word_eng,""))
-letter_freq <- table(letter_tot)/length(letter_tot)*100
-## a quick plo of the letter frequency:
+let_tot <- unlist(strsplit(wrd_ls,""))
+let_frq <- table(letter_tot)/length(letter_tot)*100
+## a quick graph showing the letter frequency:
 ## plot(letter_freq, type="h")
 ##
-datlet <- data.frame(matrix(0,15,26))
-colnames(datlet) <- letters[1:26]
+dat_let <- data.frame(matrix(0,15,26))
+colnames(dat_let) <- letters[1:26]
 ##
-boom <- strsplit(word_eng,"")
-
+boom <- strsplit(wrd_ls,"")
 
 for (i in 1:26){
   cat(paste0("\r letter:  ", letters[i]))
   match_let <- lapply(boom, grep, pattern=letters[i])
   sz_match <- lapply(match_let, length)
   vec_pos <- unlist(match_let)
-  vec_sz <- rep(nchar(word_eng), unlist(sz_match))
+  vec_sz <- rep(nchar(wrd_ls), unlist(sz_match))
   mydata <- cbind(vec_pos, vec_sz)
   # dat_wher <- countbin(vec_pos[1],vec_sz[1],15)
   dat_wher <- apply( mydata, 1,  FUN=function(x) countbin(x[1],x[2],15))
   dat_wher <- do.call( "rbind", dat_wher)
   cool <- aggregate(val~rg, data=dat_wher, FUN=sum)
   for (j in 1:nrow(cool)){
-    datlet[j,i] <- cool[cool[j,1], 2]
+    dat_let[j,i] <- cool[cool[j,1], 2]
   }
 }
 cat("\n")
 
-# save(datlet, file="datlet.Rdata")
-
+## to save the datasets you need for the graph, run the command line below:
+# save(dat_let, file="data/dat_let.Rdata")
+# save(let_frq, file="data/let_frq.Rdata")
 
 
 
@@ -64,16 +72,24 @@ cat("\n")
 ###############################################################
 ################### I- Get the figure #########################
 
-load("datlet.Rdata")
+load("data/dat_let.Rdata")
+load("data/let_frq.Rdata")
+
+dat_let <- dat_let
+let_freq <- let_frq
 
 fallInto <- function (x) max(which(x > mybin))
-mypal <- colorRampPalette(c("#ffffd1","#981729"))(8)
+# mypal <- colorRampPalette(c("#ffffd1","#981729"))(8)
+mypal <- c("#feffcb", "#fcf1a9", "#f9dd74", "#f9b74b", "#f68c3f", "#f44234", "#dd0029", "#ab002d")
+
+
+
 mybin <- c(0,0.1,0.5,1,2,3,5,9)
-categ <- sapply(letter_freq, fallInto)
+categ <- sapply(let_freq, fallInto)
 
 
-## Figure
-pdf("~/Desktop/cool.pdf", width=6, height=12)
+## Figure (change the path to export your figure wherever you want)
+pdf("./let_distr_eng.pdf", width=6, height=12)
 
   lay_mat <- matrix(1:26,13)
   lay_mat <- rbind(27,lay_mat,28)
@@ -81,7 +97,7 @@ pdf("~/Desktop/cool.pdf", width=6, height=12)
 
   par(mar=c(1,1.8,0,0), las=1)
   for (i in 1:26){
-    vec <- datlet[,i]/sum(datlet[,i])
+    vec <- dat_let[,i]/sum(dat_let[,i])
     plot(vec, type = 'l', axes=FALSE, ann=FALSE)
     polygon(c(1,1:15,15),c(0,vec,0), border=NA, col=mypal[categ[i]])
     mtext(side=2, letters[i], cex=1.2)

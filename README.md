@@ -1,2 +1,2 @@
 # QCBSgraphR
-Code source of the  'Graphic programming with R' presentation.  
+Code source of the 'R Graphs' presentation.  
