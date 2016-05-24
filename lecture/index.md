@@ -1484,7 +1484,6 @@ head(tab)
 
 ![plot of chunk unnamed-chunk-101](assets/fig/unnamed-chunk-101-1.pdf)
 
-
 <!-- - The size of the bubble is proportional to `n`
 - Lines represent regression model and standard error
  -->
@@ -2098,3 +2097,4 @@ Reproduce the [distribution of english letters made by David Taylor](http://www.
 - CRAN task view for graphs &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](https://cran.r-project.org/web/views/Graphics.html)
 - more R packages indexed &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://kevincazelles.fr/rgraphics/2015/12/04/r-and-graphics.html)
 - ggplot2 website &nbsp;&nbsp;[<i class="fa fa-globe" aria-hidden="true"></i>](http://docs.ggplot2.org/current/)
+- a pdf (fr) for base graphs &nbsp;&nbsp;[<i class="fa fa-file-pdf-o" aria-hidden="true"></i>](http://kevincazelles.fr/material/assets/graphR_2014.pdf)
