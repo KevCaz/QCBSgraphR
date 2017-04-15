@@ -1,6 +1,0 @@
-library(slidify)
-ext_arg <- commandArgs(trailingOnly=TRUE)
-setwd(ext_arg)
-system('rm -rf ./lecture/.cache')
-slidify('./lecture/index.Rmd')
-system('rm -rf ./lecture/.cache')

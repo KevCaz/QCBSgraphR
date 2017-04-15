@@ -2,6 +2,13 @@
 
 Code source of the 'R Graphs' presentation made with [Slidify](http://slidify.org)
 
+## InstallL slidify
+
+```
+library(devtools)
+install_github("ramnathv/slidify")
+install_github("ramnathv/slidifyLibraries")
+```
 
 ## Content
 

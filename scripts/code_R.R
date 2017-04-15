@@ -694,10 +694,13 @@ abline(v = seq(0.6, 1.4, by = 0.2))
 
 ################################################################################
 
-## @knitr par_cmd
+## @knitr par_cmd0
 ## How many graphical parameters?
 length(par())
+## @knitr end_par_cmd0
 
+
+## @knitr par_cmd
 ## Let's get the default value of text color
 par()$col
 
@@ -726,9 +729,9 @@ summary(dat$z)
 ## Linear regression
 (mod <- lm(y ~ x, data = dat))
 
-(a <- coefficients(mod)[1])
-
-(b <- coefficients(mod)[2])
+a <- coefficients(mod)[1]
+b <- coefficients(mod)[2]
+(c(a,b))
 ## @knitr end_regression
 
 ################################################################################
@@ -1053,7 +1056,7 @@ plot(x = dat$x, y = dat$y, bty = 'n',
      type = 'n')
 
 ## Adding text
-text(x = 1, y = 1, labels = 'My text', col = 'red', 
+text(x = 1, y = 1, labels = 'My text', col = 'red',
      cex = 2, font = 2, family = 'mono')
 ## @knitr end_text_3_cmd
 

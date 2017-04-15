@@ -1,0 +1,16 @@
+base
+png
+jpeg
+devtools
+magrittr
+graphicsutils
+letiRmisc
+slidify
+yaml
+leaflet
+sysfonts
+showtext
+plotrix
+lattice
+ggplot2
+gplots
