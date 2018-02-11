@@ -1,11 +1,12 @@
-rmd=./docs/index.Rmd
-html=./docs/index.html
+rmd = docs/index.Rmd
+code = scripts/code_R.R
+html = docs/index.html
 
 ALL: $(html)
 
-$(html): $(rmd)
-	Rscript --no-site-file --no-init-file -e 'library(slidify); slidify('./docs/index.Rmd')'
+$(html): $(rmd) $(code)
+	Rscript -e 'slidify::slidify("docs/index.Rmd")'
 
 clean:
-	rm ./docs/index.md ./docs/index.html
+	rm ./docs/index.md $(html)
 	rm -rf ./docs/.cache
