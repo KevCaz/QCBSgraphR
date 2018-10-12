@@ -85,9 +85,10 @@ close.screen(all = TRUE)
 ################## - layout
 ## @knitr layout
 par(mypar)
-mat_lay <- matrix(c(1,2,4,1,3,4),nrow=3)
+mat_lay <- matrix(c(1,2,4,1,3,4), nrow = 3)
 layout(mat_lay)
 fourplots()
+
 
 
 

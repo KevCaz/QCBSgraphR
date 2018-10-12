@@ -1,16 +1,16 @@
 ---
-title       : R Graphics
-subtitle    : An overview of possibilities
-author      : 'Kevin Cazelles and Nicolas Casajus'
-job         : Université du Québec à Rimouski
-framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      #
-mode        : selfcontained # {standalone, draft}
-knit        : slidify::knit2slides
-user        : KevCaz
-repo        : QCBSgraphR
-assets      :
+title: "R Graphics"
+subtitle   : An overview of possibilities
+author     : 'Kevin Cazelles and Nicolas Casajus'
+job        : Université du Québec à Rimouski
+framework  : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter: highlight.js  # {highlight.js, prettify, highlight}
+hitheme    : tomorrow      #
+mode       : selfcontained # {standalone, draft}
+knit       : slidify::knit2slides
+user       : KevCaz
+repo       : QCBSgraphR
+assets     :
   css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
 ---
 
@@ -64,7 +64,7 @@ assets      :
 
 *** =right
 
-![plot of chunk unnamed-chunk-3](assets/fig/unnamed-chunk-3-1.png)
+
 
 --- &twocol w1:40% w2:60%
 
@@ -76,7 +76,7 @@ assets      :
 
 *** =right
 
-![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png)
+
 
 --- &twocol w1:40% w2:60%
 
@@ -87,7 +87,7 @@ assets      :
 - Plot area
 
 *** =right
-![plot of chunk unnamed-chunk-5](assets/fig/unnamed-chunk-5-1.png)
+
 
 --- &twocol
 
@@ -100,7 +100,7 @@ assets      :
 
 
 *** =right
-![plot of chunk unnamed-chunk-6](assets/fig/unnamed-chunk-6-1.png)
+
 
 --- &twocol
 
@@ -113,7 +113,7 @@ assets      :
 - Axis (scaling, labeling)
 
 *** =right
-![plot of chunk unnamed-chunk-7](assets/fig/unnamed-chunk-7-1.png)
+
 
 --- &twocol
 
@@ -127,7 +127,7 @@ assets      :
 - Figure title
 
 *** =right
-![plot of chunk unnamed-chunk-8](assets/fig/unnamed-chunk-8-1.png)
+
 
 --- &twocol
 
@@ -142,7 +142,7 @@ assets      :
 - Legend
 
 *** =right
-![plot of chunk unnamed-chunk-9](assets/fig/unnamed-chunk-9-1.png)
+
 
 ---
 
@@ -158,7 +158,7 @@ assets      :
 - Use consistent colors
 
 *** =right
-![plot of chunk unnamed-chunk-10](assets/fig/unnamed-chunk-10-1.png)
+
 
 --- &twocol
 
@@ -171,7 +171,7 @@ assets      :
 - Do prefer this representation
 
 *** =right
-![plot of chunk unnamed-chunk-11](assets/fig/unnamed-chunk-11-1.png)
+
 
 --- &twocol
 
@@ -182,7 +182,7 @@ assets      :
 - Do not use high contrast color
 
 *** =right
-![plot of chunk unnamed-chunk-12](assets/fig/unnamed-chunk-12-1.png)
+
 
 --- &twocol
 
@@ -194,7 +194,7 @@ assets      :
 - Sometimes sizes and symbols are better
 
 *** =right
-![plot of chunk unnamed-chunk-13](assets/fig/unnamed-chunk-13-1.png)
+
 
 --- &twocol
 
@@ -206,7 +206,7 @@ assets      :
 - Do not add chart junk
 
 *** =right
-![plot of chunk unnamed-chunk-14](assets/fig/unnamed-chunk-14-1.png)
+
 
 --- &twocol
 
@@ -219,7 +219,7 @@ assets      :
 - Think about the Data-Ink ratio (Tufte, 1983)
 
 *** =right
-![plot of chunk unnamed-chunk-15](assets/fig/unnamed-chunk-15-1.png)
+
 
 --- &slide
 
@@ -273,16 +273,10 @@ assets      :
   - etc.
 
 
-```r
-plot(x, y, ...)
-points(x, y, ...)
-title(main, ...)
-legend(legend, ...)
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17-1.png)
+
 
 --- &twocol w1:40% w2:60%
 
@@ -295,7 +289,7 @@ legend(legend, ...)
 
 
 *** =right
-![plot of chunk unnamed-chunk-18](assets/fig/unnamed-chunk-18-1.png)
+
 
 --- &twocol w1:40% w2:60%
 
@@ -308,15 +302,10 @@ legend(legend, ...)
 - and multipanel figures
 
 
-```r
-library(lattice)
-xyplot(y ~ x, dat, group = z,
-       auto.key = list(columns = 2))
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-20](assets/fig/unnamed-chunk-20-1.png)
+
 
 
 --- &twocol w1:40% w2:60%
@@ -331,17 +320,10 @@ xyplot(y ~ x, dat, group = z,
 - and requires a long time to master it
 
 
-```r
-library(ggplot2)
-p <- ggplot(data = dat,
-            aes(x = x, y = y, colour = z))
-p <- p + geom_point(size = 3)
-p
-```
 
 - See the QCBS workshop on [ggplot2](http://qcbs.ca/wiki/r_workshop4)
 *** =right
-![plot of chunk unnamed-chunk-22](assets/fig/unnamed-chunk-22-1.png)
+
 
 
 --- &twocol w1:40% w2:60%
@@ -354,14 +336,9 @@ p
 - axis, labeling and color scaling functions
 
 
-```r
-library(plotrix)
-data(soils)
-triax.plot(...)
-```
 
 *** =right
-![plot of chunk unnamed-chunk-24](assets/fig/unnamed-chunk-24-1.png)
+
 
 
 --- &twocol w1:40% w2:60%
@@ -374,13 +351,9 @@ triax.plot(...)
 - some extra functions (e.g. Venn diagram)
 
 
-```r
-library(gplots)
-venn(...)
-```
 
 *** =right
-![plot of chunk unnamed-chunk-26](assets/fig/unnamed-chunk-26-1.png)
+
 
 ---
 
@@ -414,42 +387,10 @@ venn(...)
 - `par()` allows changing the values
 
 
-```r
-## How many graphical parameters?
-length(par())
-```
-
-```
-## [1] 72
-```
 
 
 *** =right
 
-```r
-## Let's get the default value of text color
-par()$col
-```
-
-```
-## [1] "black"
-```
-
-```r
-## Let's set 'red' for text color
-par(col = 'red')
-
-## Check
-par()$col
-```
-
-```
-## [1] "red"
-```
-
-```r
-## We're good!
-```
 
 ---
 
@@ -523,7 +464,7 @@ par()$col
 
 <q>You only need to know one high-level plotting function: `plot()`</q>
 
-![plot of chunk unnamed-chunk-29](assets/fig/unnamed-chunk-29-1.png)
+
 
 --- &twocol
 
@@ -537,30 +478,6 @@ par()$col
 
 *** =right
 
-```r
-load('../data/xyz.RData')
-
-head(dat)
-```
-
-```
-##       x     y z
-## 1 0.680 1.075 A
-## 2 0.720 0.835 A
-## 3 0.865 1.050 A
-## 4 0.800 1.045 A
-## 5 0.745 0.815 A
-## 6 0.995 0.840 A
-```
-
-```r
-summary(dat$z)
-```
-
-```
-##  A  B 
-## 50 50
-```
 
 
 --- &twocol
@@ -572,9 +489,6 @@ summary(dat$z)
 - Quite ugly, isn't it?
 
 
-```r
-plot(x = dat$x, y = dat$y)
-```
 
 <!-- end -->
 
@@ -584,7 +498,7 @@ plot(x = dat$x, y = dat$y)
 - We make an empty graph
 
 *** =right
-![plot of chunk unnamed-chunk-32](assets/fig/unnamed-chunk-32-1.png)
+
 
 --- &twocol
 
@@ -595,13 +509,9 @@ plot(x = dat$x, y = dat$y)
 - with the argument `bty` (default: `'o'`)
 
 
-```r
-plot(x = dat$x, y = dat$y,
-     bty = 'n')
-```
 
 *** =right
-![plot of chunk unnamed-chunk-34](assets/fig/unnamed-chunk-34-1.png)
+
 
 --- &twocol
 
@@ -612,14 +522,9 @@ plot(x = dat$x, y = dat$y,
 - with the argument `ann` (default: `'TRUE'`)
 
 
-```r
-plot(x = dat$x, y = dat$y,
-     bty = 'n',
-     ann = FALSE)
-```
 
 *** =right
-![plot of chunk unnamed-chunk-36](assets/fig/unnamed-chunk-36-1.png)
+
 
 --- &twocol
 
@@ -631,15 +536,9 @@ plot(x = dat$x, y = dat$y,
 
 
 
-```r
-plot(x = dat$x, y = dat$y,
-     bty = 'n',
-     ann = FALSE,
-     xaxt = 'n')
-```
 
 *** =right
-![plot of chunk unnamed-chunk-38](assets/fig/unnamed-chunk-38-1.png)
+
 
 
 --- &twocol
@@ -651,16 +550,9 @@ plot(x = dat$x, y = dat$y,
 - with the argument `yaxt` (default: `'s'`)
 
 
-```r
-plot(x = dat$x, y = dat$y,
-     bty = 'n',
-     ann = FALSE,
-     xaxt = 'n',
-     yaxt = 'n')
-```
 
 *** =right
-![plot of chunk unnamed-chunk-40](assets/fig/unnamed-chunk-40-1.png)
+
 
 --- &twocol
 
@@ -671,14 +563,9 @@ plot(x = dat$x, y = dat$y,
 - `bty='n'`+`xaxt='n'`+`yaxt='n'`
 
 
-```r
-plot(x = dat$x, y = dat$y,
-     ann = FALSE,
-     axes = FALSE)
-```
 
 *** =right
-![plot of chunk unnamed-chunk-42](assets/fig/unnamed-chunk-42-1.png)
+
 
 --- &twocol
 
@@ -689,17 +576,11 @@ plot(x = dat$x, y = dat$y,
 - with the argument `type` (default: `'p'`)
 
 
-```r
-plot(x = dat$x, y = dat$y,
-     ann = FALSE,
-     axes = FALSE,
-     type = 'n')
-```
 
 <!-- end -->
 
 *** =right
-![plot of chunk unnamed-chunk-44](assets/fig/unnamed-chunk-44-1.png)
+
 
 --- &twocol
 
@@ -710,12 +591,6 @@ plot(x = dat$x, y = dat$y,
 - with the argument `type` (default: `'p'`)
 
 
-```r
-plot(x = dat$x, y = dat$y,
-     ann = FALSE,
-     axes = FALSE,
-     type = 'n')
-```
 
 <!-- end -->
 
@@ -723,7 +598,7 @@ plot(x = dat$x, y = dat$y,
 - It is now possible to use low-level plotting functions such as `points()` or `axis()`
 
 *** =right
-![plot of chunk unnamed-chunk-46](assets/fig/unnamed-chunk-46-1.png)
+
 
 ---
 
@@ -748,19 +623,11 @@ plot(x = dat$x, y = dat$y,
 - It shares some arguments with `plot()`
 
 
-```r
-## Empty plot
-plot(x = dat$x, y = dat$y, ann = FALSE,
-     bty = 'n', type = 'n')
-
-## Adding points (default settings)
-points(x = dat$x, y = dat$y)
-```
 
 
 *** =right
 
-![plot of chunk unnamed-chunk-48](assets/fig/unnamed-chunk-48-1.png)
+
 
 --- &twocol
 
@@ -774,20 +641,11 @@ points(x = dat$x, y = dat$y)
     - `pch`, the symbol
 
 
-```r
-## Empty plot
-plot(x = dat$x, y = dat$y, ann = FALSE,
-     bty = 'n', type = 'n')
-
-## Adding points (user settings)
-points(x = dat$x, y = dat$y,
-       cex = 3, col = 'red', pch = 17)
-```
 
 
 *** =right
 
-![plot of chunk unnamed-chunk-50](assets/fig/unnamed-chunk-50-1.png)
+
 
 --- &twocol
 
@@ -801,20 +659,10 @@ points(x = dat$x, y = dat$y,
 - This is the case for `pch` = 21 to 25
 
 
-```r
-## Empty plot
-plot(x = dat$x, y = dat$y, ann = FALSE,
-     bty = 'n', type = 'n')
-
-## Adding points (user settings)
-points(x = dat$x, y = dat$y,
-       cex = 4, pch = 21,
-       col = 'white', bg = 'red')
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-52](assets/fig/unnamed-chunk-52-1.png)
+
 
 
 --- &twocol
@@ -834,31 +682,6 @@ points(x = dat$x, y = dat$y,
 *** =right
 
 
-```r
-## Linear regression
-(mod <- lm(y ~ x, data = dat))
-```
-
-```
-## 
-## Call:
-## lm(formula = y ~ x, data = dat)
-## 
-## Coefficients:
-## (Intercept)            x  
-##      0.8246       0.1895
-```
-
-```r
-a <- coefficients(mod)[1]
-b <- coefficients(mod)[2]
-(c(a,b))
-```
-
-```
-## (Intercept)           x 
-##   0.8246096   0.1894751
-```
 
 --- &twocol
 
@@ -870,18 +693,10 @@ b <- coefficients(mod)[2]
 - with the first way
 
 
-```r
-## Empty plot
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'p', pch = 19)
-
-## Adding line (default settings)
-abline(reg = mod)
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-55](assets/fig/unnamed-chunk-55-1.png)
+
 
 
 --- &twocol
@@ -893,18 +708,10 @@ abline(reg = mod)
 - The second way is to specify model parameters
 
 
-```r
-## Empty plot
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'p', pch = 19)
-
-## Adding line (default settings)
-abline(a = a, b = b)
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-57](assets/fig/unnamed-chunk-57-1.png)
+
 
 
 --- &twocol
@@ -916,20 +723,10 @@ abline(a = a, b = b)
 - The function `abline()` allows to draw horizontal and vertical lines
 
 
-```r
-## Empty plot
-plot(x = dat$x, y = dat$y, bty = 'o',
-     type = 'p', pch = 19)
-
-## Adding line (default settings)
-abline(h = 0.8)
-abline(h = seq(0.9, 1.2, by = 0.1))
-abline(v = seq(0.6, 1.4, by = 0.2))
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-59](assets/fig/unnamed-chunk-59-1.png)
+
 
 --- &twocol
 
@@ -943,13 +740,6 @@ abline(v = seq(0.6, 1.4, by = 0.2))
 *** =right
 
 
-```r
-## New data frame
-mat <- data.frame(x = seq(0.6, 1.4, by = 0.05))
-
-## Model prediction
-ypred <- predict(object = mod, newdata = mat)
-```
 
 --- &twocol
 
@@ -960,21 +750,10 @@ ypred <- predict(object = mod, newdata = mat)
 - Let's add model regression with the functions `lines()` and `points()`
 
 
-```r
-## Empty plot
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'p', pch = 19)
-
-## Adding line (default settings)
-lines(x = mat$x, y = ypred)
-
-## Or, with the function points()
-points(x = mat$x, y = ypred, type = 'l')
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-62](assets/fig/unnamed-chunk-62-1.png)
+
 
 --- &twocol
 
@@ -988,19 +767,10 @@ points(x = mat$x, y = ypred, type = 'l')
     - `lty`, the line type
 
 
-```r
-## Empty plot
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'p', pch = 19)
-
-## Adding line (user settings)
-lines(x = mat$x, y = ypred,
-      col = 'red', lwd = 4, lty = 2)
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-64](assets/fig/unnamed-chunk-64-1.png)
+
 
 --- &twocol
 
@@ -1014,25 +784,6 @@ lines(x = mat$x, y = ypred,
 
 *** =right
 
-```r
-## Model prediction with se
-ypred <- predict(object = mod, newdata = mat,
-                 se.fit = TRUE)
-
-class(ypred)
-```
-
-```
-## [1] "list"
-```
-
-```r
-names(ypred)[1:2]
-```
-
-```
-## [1] "fit"    "se.fit"
-```
 
 
 --- &twocol
@@ -1046,19 +797,6 @@ names(ypred)[1:2]
 
 *** =right
 
-```r
-## Superior interval
-xsup <- mat[ , 'x']
-ysup <- ypred$fit + ypred$se.fit
-
-## Inferior interval
-xinf <- mat[ , 'x']
-yinf <- ypred$fit - ypred$se.fit
-
-## Reverse sort of inf.
-xinf <- mat[nrow(mat) : 1, 'x']
-yinf <- yinf[length(yinf) : 1]
-```
 
 --- &twocol
 
@@ -1069,18 +807,10 @@ yinf <- yinf[length(yinf) : 1]
 - Let's add model error envelope
 
 
-```r
-## Empty plot
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'p', pch = 19)
-
-## Adding error envelope
-polygons(x = c(xsup, xinf), y = c(ysup, yinf))
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-68](assets/fig/unnamed-chunk-68-1.png)
+
 
 --- &twocol
 
@@ -1094,20 +824,10 @@ polygons(x = c(xsup, xinf), y = c(ysup, yinf))
     - `lwd`, the border width
 
 
-```r
-## Empty plot
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'p', pch = 19)
-
-## Adding error envelope
-polygon(x = c(xsup, xinf), y = c(ysup, yinf),
-        col = 'orange', border = 'red',
-        lwd = 4)
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-70](assets/fig/unnamed-chunk-70-1.png)
+
 
 --- &twocol
 
@@ -1118,22 +838,10 @@ polygon(x = c(xsup, xinf), y = c(ysup, yinf),
 - Finally
 
 
-```r
-## Empty plot
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'p', pch = 19)
-
-## Adding error envelope
-polygon(x = c(xsup, xinf), y = c(ysup, yinf),
-        col = '#aaaaaa88', border = '#aaaaaa88')
-
-## Adding model regression
-lines(x = mat$x, y = ypred$fit, lwd = 3)
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-72](assets/fig/unnamed-chunk-72-1.png)
+
 
 --- &twocol
 
@@ -1145,18 +853,10 @@ lines(x = mat$x, y = ypred$fit, lwd = 3)
 - Here is an example
 
 
-```r
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'p', pch = 19)
-
-rect(xleft = 0.9, ybottom = 0.8,
-     xright = 1.1, ytop = 1.2,
-     density = 20, angle = 45)
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-74](assets/fig/unnamed-chunk-74-1.png)
+
 
 --- &twocol
 
@@ -1167,19 +867,10 @@ rect(xleft = 0.9, ybottom = 0.8,
 - You also can customize the rectangle
 
 
-```r
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'p', pch = 19)
-
-rect(xleft = 0.9, ybottom = 0.8,
-     xright = 1.1, ytop = 1.2,
-     col = 'yellow', border = 'red',
-     lwd = 4, lty = 3)
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-76](assets/fig/unnamed-chunk-76-1.png)
+
 
 --- &twocol
 
@@ -1191,18 +882,10 @@ rect(xleft = 0.9, ybottom = 0.8,
 - First let's add a main title with the function `title()`
 
 
-```r
-## Basic plot
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'p', pch = 19)
-
-## Adding title
-title(main = 'Figure title')
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-78](assets/fig/unnamed-chunk-78-1.png)
+
 
 
 --- &twocol
@@ -1216,19 +899,10 @@ title(main = 'Figure title')
 - Here is a first example:
 
 
-```r
-## Basic plot
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'p', pch = 19)
-
-## Adding text
-text(x = 0.7, y = 1.19,
-     labels = 'Figure title')
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-80](assets/fig/unnamed-chunk-80-1.png)
+
 
 --- &twocol
 
@@ -1239,17 +913,10 @@ text(x = 0.7, y = 1.19,
 - another example
 
 
-```r
-## Empty plot
-plot(x = dat$x, y = dat$y, bty = 'n', type = 'n')
-
-## Adding text
-text(x = dat$x, y = dat$y, labels = dat$z)
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-82](assets/fig/unnamed-chunk-82-1.png)
+
 
 --- &twocol
 
@@ -1264,19 +931,10 @@ text(x = dat$x, y = dat$y, labels = dat$z)
     - `family`, the typeface
 
 
-```r
-## Basic plot
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'n')
-
-## Adding text
-text(x = 1, y = 1, labels = 'My text', col = 'red',
-     cex = 2, font = 2, family = 'mono')
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-84](assets/fig/unnamed-chunk-84-1.png)
+
 
 
 --- &twocol
@@ -1290,21 +948,10 @@ text(x = 1, y = 1, labels = 'My text', col = 'red',
     - `pos`, the position from coordinates
 
 
-```r
-## Basic plot
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'n')
-
-## Adding text
-text(x = 0.6, y = 0.85, labels = 'pos = 4 (right)',
-     cex = 2, font = 1, pos = 4)
-text(x = 1, y = 1, labels = 'Rotated text',
-     cex = 2, font = 2, srt = 45)
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-86](assets/fig/unnamed-chunk-86-1.png)
+
 
 --- &twocol
 
@@ -1317,19 +964,10 @@ text(x = 1, y = 1, labels = 'Rotated text',
 - We will use the function `mtext()`
 
 
-```r
-## Basic plot
-plot(x = dat$x, y = dat$y, bty = 'n',
-     type = 'p', pch = 19, ylab = '')
-
-## Adding text
-mtext(text = 'y-axis', side = 2, line = 2,
-      at = 1.15, font = 2, cex = 2)
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-88](assets/fig/unnamed-chunk-88-1.png)
+
 
 ---
 
@@ -1530,25 +1168,10 @@ par(mar = c(4, 4, 4, 4))
 - Using the dataset `iris.txt` (Dropbox)
 
 
-```r
-## Importing data
-tab <- read.delim('../data/iris.txt')
-head(tab)
-```
-
-```
-##   species petal.l petal.w n
-## 1  setosa     1.4     0.2 8
-## 2  setosa     1.3     0.2 4
-## 3  setosa     1.5     0.2 7
-## 4  setosa     1.7     0.4 1
-## 5  setosa     1.4     0.3 3
-## 6  setosa     1.5     0.1 2
-```
 
 *** =right
 
-![plot of chunk unnamed-chunk-102](assets/fig/unnamed-chunk-102-1.png)
+
 
 <!-- - The size of the bubble is proportional to `n`
 - Lines represent regression model and standard error
@@ -1590,7 +1213,7 @@ par(mfcol=c(2,2))
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-106](assets/fig/unnamed-chunk-106-1.png)
+
 
 
 --- &twocol
@@ -1608,7 +1231,7 @@ split.screen(c(3, 1), screen = 2)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-108](assets/fig/unnamed-chunk-108-1.png)
+
 
 
 --- &twocol
@@ -1627,7 +1250,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-110](assets/fig/unnamed-chunk-110-1.png)
+
 
 
 --- &twocol
@@ -1651,7 +1274,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-113](assets/fig/unnamed-chunk-113-1.png)
+
 
 
 --- &twocol
@@ -1675,7 +1298,7 @@ layout(mat_lay)
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-116](assets/fig/unnamed-chunk-116-1.png)
+
 
 
 --- &twocol
@@ -1691,7 +1314,7 @@ layout(mat_lay, widths=c(.25,1,1))
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-118](assets/fig/unnamed-chunk-118-1.png)
+
 
 
 --- &twocol
@@ -1708,7 +1331,7 @@ layout(mat_lay, widths=c(.25,1,1),
 ```
 
 *** =right
-![plot of chunk unnamed-chunk-120](assets/fig/unnamed-chunk-120-1.png)
+
 
 
 --- &twocol
@@ -1718,21 +1341,9 @@ layout(mat_lay, widths=c(.25,1,1),
 *** =left
 
 
-```r
-mat_lay <- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
-layout(mat_lay, widths=c(.25,1,1),
-  heights=c(.2,1,.4))
-
-for (i in 1:4) {
-  if (i<3) par(mar=rep(1,4)) else par(mar=rep(4,4))
-  eplot()
-  fillIt(col=i)
-  text(0,0, labels=i, cex=4)
-}
-```
 
 *** =right
-![plot of chunk unnamed-chunk-122](assets/fig/unnamed-chunk-122-1.png)
+
 
 
 
@@ -1754,7 +1365,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-124](assets/fig/unnamed-chunk-124-1.png)
+
 
 
 --- &twocol
@@ -1778,7 +1389,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-126](assets/fig/unnamed-chunk-126-1.png)
+
 
 
 --- &twocol
@@ -1803,7 +1414,7 @@ for (i in 1:4) {
 
 *** =right
 
-![plot of chunk unnamed-chunk-128](assets/fig/unnamed-chunk-128-1.png)
+
 
 
 

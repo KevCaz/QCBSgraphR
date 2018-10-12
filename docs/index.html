@@ -111,8 +111,7 @@
  
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -131,8 +130,7 @@
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -152,8 +150,7 @@
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -174,8 +171,7 @@
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -197,8 +193,7 @@
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -221,8 +216,7 @@
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -246,8 +240,7 @@
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -278,8 +271,7 @@
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-10-1.png" alt="plot of chunk unnamed-chunk-10"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -301,8 +293,7 @@
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -322,8 +313,7 @@
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -344,8 +334,7 @@
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-13-1.png" alt="plot of chunk unnamed-chunk-13"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -366,8 +355,7 @@
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-14-1.png" alt="plot of chunk unnamed-chunk-14"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -389,8 +377,7 @@
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-15-1.png" alt="plot of chunk unnamed-chunk-15"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -464,16 +451,9 @@
 </ul></li>
 </ul>
 
-<pre><code class="r">plot(x, y, ...)
-points(x, y, ...)
-title(main, ...)
-legend(legend, ...)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-17-1.png" alt="plot of chunk unnamed-chunk-17"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -494,8 +474,7 @@ legend(legend, ...)
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-18-1.png" alt="plot of chunk unnamed-chunk-18"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -515,15 +494,9 @@ legend(legend, ...)
 <li>and multipanel figures</li>
 </ul>
 
-<pre><code class="r">library(lattice)
-xyplot(y ~ x, dat, group = z,
-       auto.key = list(columns = 2))
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-20-1.png" alt="plot of chunk unnamed-chunk-20"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -541,24 +514,13 @@ xyplot(y ~ x, dat, group = z,
 <li>A complete plotting system for R</li>
 <li>Based on the Grammar of Graphics</li>
 <li>But introduces its own syntax</li>
-<li>and requires a long time to master it</li>
-</ul>
-
-<pre><code class="r">library(ggplot2)
-p &lt;- ggplot(data = dat,
-            aes(x = x, y = y, colour = z))
-p &lt;- p + geom_point(size = 3)
-p
-</code></pre>
-
-<ul>
-<li>See the QCBS workshop on <a href="http://qcbs.ca/wiki/r_workshop4">ggplot2</a></li>
+<li><p>and requires a long time to master it</p></li>
+<li><p>See the QCBS workshop on <a href="http://qcbs.ca/wiki/r_workshop4">ggplot2</a></p></li>
 </ul>
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -577,15 +539,9 @@ p
 <li>axis, labeling and color scaling functions</li>
 </ul>
 
-<pre><code class="r">library(plotrix)
-data(soils)
-triax.plot(...)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-24-1.png" alt="plot of chunk unnamed-chunk-24"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -604,14 +560,9 @@ triax.plot(...)
 <li>some extra functions (e.g. Venn diagram)</li>
 </ul>
 
-<pre><code class="r">library(gplots)
-venn(...)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-26-1.png" alt="plot of chunk unnamed-chunk-26"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -662,35 +613,9 @@ venn(...)
 <li><code>par()</code> allows changing the values</li>
 </ul>
 
-<pre><code class="r">## How many graphical parameters?
-length(par())
-</code></pre>
-
-<pre><code>## [1] 72
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <pre><code class="r">## Let&#39;s get the default value of text color
-par()$col
-</code></pre>
-
-<pre><code>## [1] &quot;black&quot;
-</code></pre>
-
-<pre><code class="r">## Let&#39;s set &#39;red&#39; for text color
-par(col = &#39;red&#39;)
-
-## Check
-par()$col
-</code></pre>
-
-<pre><code>## [1] &quot;red&quot;
-</code></pre>
-
-<pre><code class="r">## We&#39;re good!
-</code></pre>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -818,8 +743,6 @@ par()$col
   <article data-timings="">
     <p><q>You only need to know one high-level plotting function: <code>plot()</code></q></p>
 
-<p><img src="assets/fig/unnamed-chunk-29-1.png" alt="plot of chunk unnamed-chunk-29"></p>
-
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -843,27 +766,7 @@ par()$col
 
 </div>
 <div class='right' style='float:right;width:'>
- <pre><code class="r">load(&#39;../data/xyz.RData&#39;)
-
-head(dat)
-</code></pre>
-
-<pre><code>##       x     y z
-## 1 0.680 1.075 A
-## 2 0.720 0.835 A
-## 3 0.865 1.050 A
-## 4 0.800 1.045 A
-## 5 0.745 0.815 A
-## 6 0.995 0.840 A
-</code></pre>
-
-<pre><code class="r">summary(dat$z)
-</code></pre>
-
-<pre><code>##  A  B 
-## 50 50
-</code></pre>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -881,9 +784,6 @@ head(dat)
 <li>Quite ugly, isn&#39;t it?</li>
 </ul>
 
-<pre><code class="r">plot(x = dat$x, y = dat$y)
-</code></pre>
-
 <!-- end -->
 
 <p><br/></p>
@@ -895,8 +795,7 @@ head(dat)
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-32-1.png" alt="plot of chunk unnamed-chunk-32"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -914,14 +813,9 @@ head(dat)
 <li>with the argument <code>bty</code> (default: <code>&#39;o&#39;</code>)</li>
 </ul>
 
-<pre><code class="r">plot(x = dat$x, y = dat$y,
-     bty = &#39;n&#39;)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-34-1.png" alt="plot of chunk unnamed-chunk-34"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -939,15 +833,9 @@ head(dat)
 <li>with the argument <code>ann</code> (default: <code>&#39;TRUE&#39;</code>)</li>
 </ul>
 
-<pre><code class="r">plot(x = dat$x, y = dat$y,
-     bty = &#39;n&#39;,
-     ann = FALSE)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-36-1.png" alt="plot of chunk unnamed-chunk-36"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -965,16 +853,9 @@ head(dat)
 <li>with the argument <code>xaxt</code> (default: <code>&#39;s&#39;</code>)</li>
 </ul>
 
-<pre><code class="r">plot(x = dat$x, y = dat$y,
-     bty = &#39;n&#39;,
-     ann = FALSE,
-     xaxt = &#39;n&#39;)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-38-1.png" alt="plot of chunk unnamed-chunk-38"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -992,17 +873,9 @@ head(dat)
 <li>with the argument <code>yaxt</code> (default: <code>&#39;s&#39;</code>)</li>
 </ul>
 
-<pre><code class="r">plot(x = dat$x, y = dat$y,
-     bty = &#39;n&#39;,
-     ann = FALSE,
-     xaxt = &#39;n&#39;,
-     yaxt = &#39;n&#39;)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-40-1.png" alt="plot of chunk unnamed-chunk-40"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1020,15 +893,9 @@ head(dat)
 <li><code>bty=&#39;n&#39;</code>+<code>xaxt=&#39;n&#39;</code>+<code>yaxt=&#39;n&#39;</code></li>
 </ul>
 
-<pre><code class="r">plot(x = dat$x, y = dat$y,
-     ann = FALSE,
-     axes = FALSE)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-42-1.png" alt="plot of chunk unnamed-chunk-42"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1046,18 +913,11 @@ head(dat)
 <li>with the argument <code>type</code> (default: <code>&#39;p&#39;</code>)</li>
 </ul>
 
-<pre><code class="r">plot(x = dat$x, y = dat$y,
-     ann = FALSE,
-     axes = FALSE,
-     type = &#39;n&#39;)
-</code></pre>
-
 <!-- end -->
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-44-1.png" alt="plot of chunk unnamed-chunk-44"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1075,12 +935,6 @@ head(dat)
 <li>with the argument <code>type</code> (default: <code>&#39;p&#39;</code>)</li>
 </ul>
 
-<pre><code class="r">plot(x = dat$x, y = dat$y,
-     ann = FALSE,
-     axes = FALSE,
-     type = &#39;n&#39;)
-</code></pre>
-
 <!-- end -->
 
 <ul>
@@ -1090,8 +944,7 @@ head(dat)
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-46-1.png" alt="plot of chunk unnamed-chunk-46"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1134,18 +987,9 @@ head(dat)
 <li>It shares some arguments with <code>plot()</code></li>
 </ul>
 
-<pre><code class="r">## Empty plot
-plot(x = dat$x, y = dat$y, ann = FALSE,
-     bty = &#39;n&#39;, type = &#39;n&#39;)
-
-## Adding points (default settings)
-points(x = dat$x, y = dat$y)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-48-1.png" alt="plot of chunk unnamed-chunk-48"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1168,19 +1012,9 @@ points(x = dat$x, y = dat$y)
 </ul></li>
 </ul>
 
-<pre><code class="r">## Empty plot
-plot(x = dat$x, y = dat$y, ann = FALSE,
-     bty = &#39;n&#39;, type = &#39;n&#39;)
-
-## Adding points (user settings)
-points(x = dat$x, y = dat$y,
-       cex = 3, col = &#39;red&#39;, pch = 17)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-50-1.png" alt="plot of chunk unnamed-chunk-50"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1203,20 +1037,9 @@ points(x = dat$x, y = dat$y,
 <li>This is the case for <code>pch</code> = 21 to 25</li>
 </ul>
 
-<pre><code class="r">## Empty plot
-plot(x = dat$x, y = dat$y, ann = FALSE,
-     bty = &#39;n&#39;, type = &#39;n&#39;)
-
-## Adding points (user settings)
-points(x = dat$x, y = dat$y,
-       cex = 4, pch = 21,
-       col = &#39;white&#39;, bg = &#39;red&#39;)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-52-1.png" alt="plot of chunk unnamed-chunk-52"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1243,28 +1066,7 @@ points(x = dat$x, y = dat$y,
 
 </div>
 <div class='right' style='float:right;width:'>
- <pre><code class="r">## Linear regression
-(mod &lt;- lm(y ~ x, data = dat))
-</code></pre>
-
-<pre><code>## 
-## Call:
-## lm(formula = y ~ x, data = dat)
-## 
-## Coefficients:
-## (Intercept)            x  
-##      0.8246       0.1895
-</code></pre>
-
-<pre><code class="r">a &lt;- coefficients(mod)[1]
-b &lt;- coefficients(mod)[2]
-(c(a,b))
-</code></pre>
-
-<pre><code>## (Intercept)           x 
-##   0.8246096   0.1894751
-</code></pre>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1282,18 +1084,9 @@ b &lt;- coefficients(mod)[2]
 <li>with the first way</li>
 </ul>
 
-<pre><code class="r">## Empty plot
-plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;p&#39;, pch = 19)
-
-## Adding line (default settings)
-abline(reg = mod)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-55-1.png" alt="plot of chunk unnamed-chunk-55"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1310,18 +1103,9 @@ abline(reg = mod)
 <li>The second way is to specify model parameters</li>
 </ul>
 
-<pre><code class="r">## Empty plot
-plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;p&#39;, pch = 19)
-
-## Adding line (default settings)
-abline(a = a, b = b)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-57-1.png" alt="plot of chunk unnamed-chunk-57"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1338,20 +1122,9 @@ abline(a = a, b = b)
 <li>The function <code>abline()</code> allows to draw horizontal and vertical lines</li>
 </ul>
 
-<pre><code class="r">## Empty plot
-plot(x = dat$x, y = dat$y, bty = &#39;o&#39;,
-     type = &#39;p&#39;, pch = 19)
-
-## Adding line (default settings)
-abline(h = 0.8)
-abline(h = seq(0.9, 1.2, by = 0.1))
-abline(v = seq(0.6, 1.4, by = 0.2))
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-59-1.png" alt="plot of chunk unnamed-chunk-59"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1371,13 +1144,7 @@ abline(v = seq(0.6, 1.4, by = 0.2))
 
 </div>
 <div class='right' style='float:right;width:'>
- <pre><code class="r">## New data frame
-mat &lt;- data.frame(x = seq(0.6, 1.4, by = 0.05))
-
-## Model prediction
-ypred &lt;- predict(object = mod, newdata = mat)
-</code></pre>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1394,21 +1161,9 @@ ypred &lt;- predict(object = mod, newdata = mat)
 <li>Let&#39;s add model regression with the functions <code>lines()</code> and <code>points()</code></li>
 </ul>
 
-<pre><code class="r">## Empty plot
-plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;p&#39;, pch = 19)
-
-## Adding line (default settings)
-lines(x = mat$x, y = ypred)
-
-## Or, with the function points()
-points(x = mat$x, y = ypred, type = &#39;l&#39;)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-62-1.png" alt="plot of chunk unnamed-chunk-62"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1431,19 +1186,9 @@ points(x = mat$x, y = ypred, type = &#39;l&#39;)
 </ul></li>
 </ul>
 
-<pre><code class="r">## Empty plot
-plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;p&#39;, pch = 19)
-
-## Adding line (user settings)
-lines(x = mat$x, y = ypred,
-      col = &#39;red&#39;, lwd = 4, lty = 2)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-64-1.png" alt="plot of chunk unnamed-chunk-64"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1464,22 +1209,7 @@ lines(x = mat$x, y = ypred,
 
 </div>
 <div class='right' style='float:right;width:'>
- <pre><code class="r">## Model prediction with se
-ypred &lt;- predict(object = mod, newdata = mat,
-                 se.fit = TRUE)
-
-class(ypred)
-</code></pre>
-
-<pre><code>## [1] &quot;list&quot;
-</code></pre>
-
-<pre><code class="r">names(ypred)[1:2]
-</code></pre>
-
-<pre><code>## [1] &quot;fit&quot;    &quot;se.fit&quot;
-</code></pre>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1499,19 +1229,7 @@ class(ypred)
 
 </div>
 <div class='right' style='float:right;width:'>
- <pre><code class="r">## Superior interval
-xsup &lt;- mat[ , &#39;x&#39;]
-ysup &lt;- ypred$fit + ypred$se.fit
-
-## Inferior interval
-xinf &lt;- mat[ , &#39;x&#39;]
-yinf &lt;- ypred$fit - ypred$se.fit
-
-## Reverse sort of inf.
-xinf &lt;- mat[nrow(mat) : 1, &#39;x&#39;]
-yinf &lt;- yinf[length(yinf) : 1]
-</code></pre>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1528,18 +1246,9 @@ yinf &lt;- yinf[length(yinf) : 1]
 <li>Let&#39;s add model error envelope</li>
 </ul>
 
-<pre><code class="r">## Empty plot
-plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;p&#39;, pch = 19)
-
-## Adding error envelope
-polygons(x = c(xsup, xinf), y = c(ysup, yinf))
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-68-1.png" alt="plot of chunk unnamed-chunk-68"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1562,20 +1271,9 @@ polygons(x = c(xsup, xinf), y = c(ysup, yinf))
 </ul></li>
 </ul>
 
-<pre><code class="r">## Empty plot
-plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;p&#39;, pch = 19)
-
-## Adding error envelope
-polygon(x = c(xsup, xinf), y = c(ysup, yinf),
-        col = &#39;orange&#39;, border = &#39;red&#39;,
-        lwd = 4)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-70-1.png" alt="plot of chunk unnamed-chunk-70"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1592,22 +1290,9 @@ polygon(x = c(xsup, xinf), y = c(ysup, yinf),
 <li>Finally</li>
 </ul>
 
-<pre><code class="r">## Empty plot
-plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;p&#39;, pch = 19)
-
-## Adding error envelope
-polygon(x = c(xsup, xinf), y = c(ysup, yinf),
-        col = &#39;#aaaaaa88&#39;, border = &#39;#aaaaaa88&#39;)
-
-## Adding model regression
-lines(x = mat$x, y = ypred$fit, lwd = 3)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-72-1.png" alt="plot of chunk unnamed-chunk-72"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1625,18 +1310,9 @@ lines(x = mat$x, y = ypred$fit, lwd = 3)
 <li>Here is an example</li>
 </ul>
 
-<pre><code class="r">plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;p&#39;, pch = 19)
-
-rect(xleft = 0.9, ybottom = 0.8,
-     xright = 1.1, ytop = 1.2,
-     density = 20, angle = 45)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-74-1.png" alt="plot of chunk unnamed-chunk-74"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1653,19 +1329,9 @@ rect(xleft = 0.9, ybottom = 0.8,
 <li>You also can customize the rectangle</li>
 </ul>
 
-<pre><code class="r">plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;p&#39;, pch = 19)
-
-rect(xleft = 0.9, ybottom = 0.8,
-     xright = 1.1, ytop = 1.2,
-     col = &#39;yellow&#39;, border = &#39;red&#39;,
-     lwd = 4, lty = 3)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-76-1.png" alt="plot of chunk unnamed-chunk-76"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1683,18 +1349,9 @@ rect(xleft = 0.9, ybottom = 0.8,
 <li>First let&#39;s add a main title with the function <code>title()</code></li>
 </ul>
 
-<pre><code class="r">## Basic plot
-plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;p&#39;, pch = 19)
-
-## Adding title
-title(main = &#39;Figure title&#39;)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-78-1.png" alt="plot of chunk unnamed-chunk-78"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1713,19 +1370,9 @@ title(main = &#39;Figure title&#39;)
 <li>Here is a first example:</li>
 </ul>
 
-<pre><code class="r">## Basic plot
-plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;p&#39;, pch = 19)
-
-## Adding text
-text(x = 0.7, y = 1.19,
-     labels = &#39;Figure title&#39;)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-80-1.png" alt="plot of chunk unnamed-chunk-80"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1742,17 +1389,9 @@ text(x = 0.7, y = 1.19,
 <li>another example</li>
 </ul>
 
-<pre><code class="r">## Empty plot
-plot(x = dat$x, y = dat$y, bty = &#39;n&#39;, type = &#39;n&#39;)
-
-## Adding text
-text(x = dat$x, y = dat$y, labels = dat$z)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-82-1.png" alt="plot of chunk unnamed-chunk-82"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1776,19 +1415,9 @@ text(x = dat$x, y = dat$y, labels = dat$z)
 </ul></li>
 </ul>
 
-<pre><code class="r">## Basic plot
-plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;n&#39;)
-
-## Adding text
-text(x = 1, y = 1, labels = &#39;My text&#39;, col = &#39;red&#39;,
-     cex = 2, font = 2, family = &#39;mono&#39;)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-84-1.png" alt="plot of chunk unnamed-chunk-84"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1810,21 +1439,9 @@ text(x = 1, y = 1, labels = &#39;My text&#39;, col = &#39;red&#39;,
 </ul></li>
 </ul>
 
-<pre><code class="r">## Basic plot
-plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;n&#39;)
-
-## Adding text
-text(x = 0.6, y = 0.85, labels = &#39;pos = 4 (right)&#39;,
-     cex = 2, font = 1, pos = 4)
-text(x = 1, y = 1, labels = &#39;Rotated text&#39;,
-     cex = 2, font = 2, srt = 45)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-86-1.png" alt="plot of chunk unnamed-chunk-86"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -1843,19 +1460,9 @@ text(x = 1, y = 1, labels = &#39;Rotated text&#39;,
 <li>We will use the function <code>mtext()</code></li>
 </ul>
 
-<pre><code class="r">## Basic plot
-plot(x = dat$x, y = dat$y, bty = &#39;n&#39;,
-     type = &#39;p&#39;, pch = 19, ylab = &#39;&#39;)
-
-## Adding text
-mtext(text = &#39;y-axis&#39;, side = 2, line = 2,
-      at = 1.15, font = 2, cex = 2)
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-88-1.png" alt="plot of chunk unnamed-chunk-88"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -2121,25 +1728,9 @@ axis(side = 4, at = seq(0.8, 1.2, by = 0.1),
 <li>Using the dataset <code>iris.txt</code> (Dropbox)</li>
 </ul>
 
-<pre><code class="r">## Importing data
-tab &lt;- read.delim(&#39;../data/iris.txt&#39;)
-head(tab)
-</code></pre>
-
-<pre><code>##   species petal.l petal.w n
-## 1  setosa     1.4     0.2 8
-## 2  setosa     1.3     0.2 4
-## 3  setosa     1.5     0.2 7
-## 4  setosa     1.7     0.4 1
-## 5  setosa     1.4     0.3 3
-## 6  setosa     1.5     0.1 2
-</code></pre>
-
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-102-1.png" alt="plot of chunk unnamed-chunk-102"></p>
-
-<!-- - The size of the bubble is proportional to `n`
+ <!-- - The size of the bubble is proportional to `n`
 - Lines represent regression model and standard error
  -->
 
@@ -2179,8 +1770,7 @@ head(tab)
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-106-1.png" alt="plot of chunk unnamed-chunk-106"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -2204,8 +1794,7 @@ split.screen(c(3, 1), screen = 2)
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-108-1.png" alt="plot of chunk unnamed-chunk-108"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -2230,8 +1819,7 @@ layout(mat_lay)
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-110-1.png" alt="plot of chunk unnamed-chunk-110"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -2256,8 +1844,7 @@ layout(mat_lay)
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-113-1.png" alt="plot of chunk unnamed-chunk-113"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -2282,8 +1869,7 @@ layout(mat_lay)
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-116-1.png" alt="plot of chunk unnamed-chunk-116"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -2302,8 +1888,7 @@ layout(mat_lay, widths=c(.25,1,1))
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-118-1.png" alt="plot of chunk unnamed-chunk-118"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -2323,8 +1908,7 @@ layout(mat_lay, widths=c(.25,1,1),
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-120-1.png" alt="plot of chunk unnamed-chunk-120"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -2337,22 +1921,10 @@ layout(mat_lay, widths=c(.25,1,1),
   <article data-timings="">
     
 <div class='left' style='float:left;width:'>
- <pre><code class="r">mat_lay &lt;- matrix(c(0,2,2,1,3,3,1,4,0),nrow=3)
-layout(mat_lay, widths=c(.25,1,1),
-  heights=c(.2,1,.4))
-
-for (i in 1:4) {
-  if (i&lt;3) par(mar=rep(1,4)) else par(mar=rep(4,4))
-  eplot()
-  fillIt(col=i)
-  text(0,0, labels=i, cex=4)
-}
-</code></pre>
-
+ 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-122-1.png" alt="plot of chunk unnamed-chunk-122"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -2379,8 +1951,7 @@ for (i in 1:4) {
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-124-1.png" alt="plot of chunk unnamed-chunk-124"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -2409,8 +1980,7 @@ for (i in 1:4) {
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-126-1.png" alt="plot of chunk unnamed-chunk-126"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -2441,8 +2011,7 @@ plot(...)
 
 </div>
 <div class='right' style='float:right;width:'>
- <p><img src="assets/fig/unnamed-chunk-128-1.png" alt="plot of chunk unnamed-chunk-128"></p>
-
+ 
 </div>
   </article>
   <!-- Presenter Notes -->

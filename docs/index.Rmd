@@ -1,16 +1,16 @@
 ---
-title       : R Graphics
-subtitle    : An overview of possibilities
-author      : 'Kevin Cazelles and Nicolas Casajus'
-job         : Université du Québec à Rimouski
-framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      #
-mode        : selfcontained # {standalone, draft}
-knit        : slidify::knit2slides
-user        : KevCaz
-repo        : QCBSgraphR
-assets      :
+title: "R Graphics"
+subtitle   : An overview of possibilities
+author     : 'Kevin Cazelles and Nicolas Casajus'
+job        : Université du Québec à Rimouski
+framework  : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter: highlight.js  # {highlight.js, prettify, highlight}
+hitheme    : tomorrow      #
+mode       : selfcontained # {standalone, draft}
+knit       : slidify::knit2slides
+user       : KevCaz
+repo       : QCBSgraphR
+assets     :
   css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
 ---
 
